@@ -156,7 +156,7 @@ Execute these commands on all nodes.
 
 [Index](./index.md)
 |
-Previous: [Prerequisites](./prerequisites.md)
+Prev: [Prerequisites](./prerequisites.md)
 |
 **Install HDFS + MapReduce**
 |
