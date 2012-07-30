@@ -1,4 +1,6 @@
-Back to [Index](./index.md)
+[Index](./index.md) / **Prerequisites**
+
+------
 
 Install HDFS + MapReduce
 ==========
@@ -147,6 +149,6 @@ Execute these commands on all nodes.
 /
 [Prerequisites](./prerequisites.md)
 /
-[Install HDFS + MapReduce](./install-hdfs-mapreduce.md)
+**Install HDFS + MapReduce**
 /
 Next Step: [Install HDFS + MapReduce](./install-hdfs-mapreduce.md)
