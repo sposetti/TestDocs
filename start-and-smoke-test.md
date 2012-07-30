@@ -1,4 +1,4 @@
-[Index](./index.md) / **Validate Installation**
+[Index](./index.md) / **Start and Smoke Test**
 
 ------
 
@@ -18,4 +18,4 @@ Prev: [Validate Installation](./validate-installation.md)
 |
 **Start and Smoke Test**
 |
-next: [Essestional](./start-and-smoke-test.md)
+next: [Essential Hadoop Projects](./essential-hadoop-projects.md)
