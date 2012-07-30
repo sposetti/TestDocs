@@ -1,11 +1,6 @@
 [Index](./index.md)
-|
-Previous: [Prerequisites](./prerequisites.md)
-|
+/
 **Install HDFS + MapReduce**
-|
-Next: [Deploy Configurations](./deploy-configs.md)
-
 
 ------
 
