@@ -17,11 +17,13 @@ Confirm you meet the system requirements and perform the following tasks before 
 		Operating System
 		</td>
 		<td>
-* Red Hat Enterprise Linux – RHEL 5 (64-bit)
-* Red Hat Enterprise Linux – RHEL 6 (64-bit)
-* CentOS 5 (64-bit)
-* CentOS 6 (64-bit)
-* SUSE Linux Enterprise Server – SLES 11, SP1 (64-bit)
+<ul>
+<li>Red Hat Enterprise Linux – RHEL 5 (64-bit)</li>
+<li>Red Hat Enterprise Linux – RHEL 6 (64-bit)</li>
+<li>CentOS 5 (64-bit)</li>
+<li>CentOS 6 (64-bit)</li>
+<li>SUSE Linux Enterprise Server – SLES 11, SP1 (64-bit)</li>
+</ul>
 		</td>
 	</tr>
 	<tr>
