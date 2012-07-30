@@ -224,77 +224,76 @@ Definition
 	</tr>
 	<tr>
 		<td>
-'''HDFS_USER'''
+<code>HDFS_USER</code>
 		</td>
 		<td>
-User which will own the HDFS services. For example, '''hdfs'''.
-		</td>
-	</tr>
-	<tr>
-		<td>
-'''MAPRED_USER'''
-		</td>
-		<td>
-User which will own the MapReduce services. For example, mapred.
+User which will own the HDFS services. For example, <code>hdfs</code>.
 		</td>
 	</tr>
 	<tr>
 		<td>
-ZOOKEEPER_USER
+<code>MAPRED_USER</code>
 		</td>
 		<td>
-User which will own the ZooKeeper services. For example, zookeeper.
-		</td>
-	</tr>
-	<tr>
-		<td>
-HIVE_USER
-		</td>
-		<td>
-User which will own the Hive services. For example, hive.
+User which will own the MapReduce services. For example, <code>mapred</code>.
 		</td>
 	</tr>
 	<tr>
 		<td>
-HBASE_USER
+<code>ZOOKEEPER_USER</code>
 		</td>
 		<td>
-User which will own the HBase services. For example, hbase.
-		</td>
-	</tr>
-	<tr>
-		<td>
-OOZIE_USER
-		</td>
-		<td>
-User which will own the Oozie services. For example, oozie.
+User which will own the ZooKeeper services. For example, <code>zookeeper</code>.
 		</td>
 	</tr>
 	<tr>
 		<td>
-PIG_USER
+<code>HIVE_USER</code>
 		</td>
 		<td>
-User which will own the Pig services. For example, pig.
+User which will own the Hive services. For example, <code>hive</code>.
 		</td>
 	</tr>
 	<tr>
 		<td>
-HADOOP_GROUP
+<code>HBASE_USER</code>
 		</td>
 		<td>
-A common group shared by services. For example, hadoop.
+User which will own the HBase services. For example, <code>hbase</code>.
+		</td>
+	</tr>
+	<tr>
+		<td>
+<code>OOZIE_USER</code>
+		</td>
+		<td>
+User which will own the Oozie services. For example, <code>oozie</code>.
+		</td>
+	</tr>
+	<tr>
+		<td>
+<code>PIG_USER</code>
+		</td>
+		<td>
+User which will own the Pig services. For example, <code>pig</code>.
+		</td>
+	</tr>
+	<tr>
+		<td>
+<code>HADOOP_GROUP</code>
+		</td>
+		<td>
+A common group shared by services. For example, <code>hadoop</code>.
 		</td>
 	</tr>
 </table>
 
 
 
-
 The following table describes the directories for install, configuration, data, processes and logs.
 
+Link to [directories.sh](./scripts/directories.sh) script
 
-scripts/directories.sh
 
 
 Parameter	Definition
