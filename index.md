@@ -1,12 +1,17 @@
 
+* **Introduction**
+ * [Prerequisites](./prerequisites.md)
 
-Part I Prerequisites
+* **Core Hadoop**
 
-Part II Core Hadoop
+ * Install HDFS + MapReduce
+ * Deploy Configurations
+ * Validate Installation
+ * Start and Smoke Test
 
-Install HDFS + MapReduce
-Deploy Configurations
-Validate Installation
-Start and Smoke Test
+* **Essential Hadoop Services**
 
-Part III: Essential Hadoop Services
+ * Apache Pig
+ * Apache Hive and Apache HCatalog
+ * Apache Oozie
+ * Apache HBase and Apache Zookeeper
