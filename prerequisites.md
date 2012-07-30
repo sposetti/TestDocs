@@ -68,7 +68,7 @@ TBD – get from existing docs
 Preparing
 ======
 
-* Confirm the Fully Qualified Domain Name (FQDN) for each host using the command hostname -f.
+* Confirm the Fully Qualified Domain Name (FQDN) for each host using the command '''hostname -f'''.
 <pre>
 	Note: if deploying your cluster to Amazon EC2, be sure to use the Private DNS host name.
 </pre>
@@ -76,26 +76,26 @@ Preparing
 * Disable SELinux.
 * Enable Network Time Protocol (NTP) for your cluster. In environments with no access to the Internet, ensure that you make one of your master nodes as NTP server.
 
-h2. Collect Cluster Information
-
+Collect Cluster Information
+======
 TBD
 http://docs.hortonworks.com/CURRENT/index.htm#Deploying_Hortonworks_Data_Platform/Using_HMC/Getting_Ready_To_Install/Collect_Information.htm
 
-h2. Create System Users and Groups
-
+Create System Users and Groups
+======
 It is recommended that Hadoop services be owned by specific users and not by root or application users. In the table below are the typical users for Hadoop services. Identify the users that you want for your Hadoop services and the common group.
 
 <table>
 	<tr>
-		<td>
+		<th>
 Hadoop Service
-		</td>
-		<td>
+		</th>
+		<th>
 User
-		</td>
-		<td>
+		</th>
+		<th>
 Group
-		</td>
+		</th>
 	</tr>
 	<tr>
 		<td>
@@ -198,32 +198,32 @@ hadoop
 	</tr>
 </table>
 
-h2. Environment Parameters
-
+Environment Parameters
+======
 The following table describes system user account and groups.
 
-scripts/usersAndGroups.sh
+Link to [usersAndGroups.sh](./scripts/usersAndGroups.sh) script
 
 <table>
-	<th>
-		<td>
+	<tr>
+		<th>
 Parameter
-		</td>
-		<td>
+		</th>
+		<th>
 Definition
-		</td>
-	</th>
+		</th>
+	</tr>
 	<tr>
 		<td>
-HDFS_USER
+'''HDFS_USER'''
 		</td>
 		<td>
-User which will own the HDFS services. For example, hdfs.
+User which will own the HDFS services. For example, '''hdfs'''.
 		</td>
 	</tr>
 	<tr>
 		<td>
-MAPRED_USER
+'''MAPRED_USER'''
 		</td>
 		<td>
 User which will own the MapReduce services. For example, mapred.
