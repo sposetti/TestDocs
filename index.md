@@ -4,7 +4,7 @@ Hortonworks Data Platform - Manual Install Instructions
 
 ------
 
-This guide is intended for IT Operators and Administrators who need to install the Hortonworks Data Platform.
+This guide is intended for Operators and IT Administrators who need to install the Hortonworks Data Platform.
 
 
 * **Introduction**
