@@ -7,12 +7,12 @@ Prerequisites
 
 This guide is intended for IT Operators and Administrators who need to install the Hortonworks Data Platform.
 
-* System Requirements
-* Preparing Your Cluster
-* Collect Cluster Information
-* Installing the Java Development Kit (JDK)
-* Installing MySQL (optional)
-* Set Environment Parameters
+* [System Requirements](#system-requirements)
+* [Preparing Your Cluster](#[preparing-your-cluster)
+* [Collect Cluster Information](#collect-cluster-information)
+* [Installing the Java Development Kit (JDK)](#installing-the-java-development-kit)
+* [Installing MySQL (optional)](#installing-mysql-optional)
+* [Set Environment Parameters](#set-environment-parameters)
 
 Before you install the Hortonworks Data Platform, confirm you meet the system requirements and perform the following tasks.
 
@@ -316,8 +316,6 @@ directory parameters. Edit and execute as necessary to fit your environment.
 	<th>
 Parameter
 	</th>
-   </tr>
-   <tr>
 	<th>
    Definition
 	</th>
