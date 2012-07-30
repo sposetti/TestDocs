@@ -1,7 +1,8 @@
 Hortonworks Data Platform - Manual Install Instructions
 =====
+*HDP 1.0.0.12*
 
-HDP 1.0.0.12
+This guide is intended for IT Operators and Administrators who need to install the Hortonworks Data Platform.
 
 
 * **Introduction**
