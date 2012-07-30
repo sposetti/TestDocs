@@ -510,6 +510,6 @@ Directory to store the Oozie process ID. For example, <code>"/var/run/oozie"</co
 
 [Index](./index.md)
 /
-**Prerequisites**
+**[Prerequisites](./prequisites.md)**
 /
 Next Step: [Install HDFS + MapReduce](./install-hdfs-mapreduce.md)
