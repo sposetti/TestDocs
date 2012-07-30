@@ -15,7 +15,6 @@ This guide is intended for Operators and IT Administrators who need to install t
  * [Install HDFS + MapReduce](./install-hdfs-mapreduce.md)
  * [Deploy Configurations](./deploy-configs.md)
  * [Validate Installation](./validate-installation.md)
- * [Start and Smoke Test](./start-and-smoke-test.md)
 
 * **Essential Hadoop Services**
 
