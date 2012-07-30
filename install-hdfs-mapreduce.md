@@ -35,17 +35,13 @@ http://docs.hortonworks.com/CURRENT/index.htm#Deploying_Hortonworks_Data_Platfor
 Install Hadoop RPMs (All Nodes)
 ---------
 
-<pre>
-yum -y install hadoop hadoop-libhdfs hadoop-libhdfs.i386 hadoop-native hadoop-native.i386 hadoop-pipes hadoop-pipes.i386 hadoop-sbin.i386
-</pre>
+       yum -y install hadoop hadoop-libhdfs hadoop-libhdfs.i386 hadoop-native hadoop-native.i386 hadoop-pipes hadoop-pipes.i386 hadoop-sbin.i386
 
 
 Install OpenSSL Libraries
 ---------
 
-<pre>
-yum -y install openssl openssl.i386
-</pre>
+       yum -y install openssl openssl.i386
 
 Install Compression Libraries (All Nodes)
 ----------
@@ -54,16 +50,12 @@ Install Compression Libraries (All Nodes)
 
 1. Install Snappy compression/decompression library.
 
-<pre>
-yum -y install snappy snappy.i386
-</pre>
+       yum -y install snappy snappy.i386
 
 2. Create symbolic links.
 
-<pre>
-ln -sf /usr/lib64/libsnappy.so.1 /usr/lib/hadoop/lib/native/Linux-amd64-64/.
-ln -sf /usr/lib/libsnappy.so.1 /usr/lib/hadoop/lib/native/Linux-i386-32/.
-</pre>
+       ln -sf /usr/lib64/libsnappy.so.1 /usr/lib/hadoop/lib/native/Linux-amd64-64/.
+       ln -sf /usr/lib/libsnappy.so.1 /usr/lib/hadoop/lib/native/Linux-i386-32/.
 
 ### Install LZO
 
@@ -71,9 +63,12 @@ ln -sf /usr/lib/libsnappy.so.1 /usr/lib/hadoop/lib/native/Linux-i386-32/.
 
         yum -y install lzo
 
-2. Download Hadoop LZO package to LZO_DIR
+2. Download Hadoop LZO package to '''$LZO_DIR'''
 
-        NEED INSTRUCTIONS
+ * RHEL 5 and CentOS 5
+        http://public-repo-1.hortonworks.com/HDP-1.0.0.12/repos/centos5/tars/hadoop-lzo-0.5.0.tar.gz
+ * RHEL 6 and CentOS 6
+        http://public-repo-1.hortonworks.com/HDP-1.0.0.12/repos/centos6/tars/hadoop-lzo-0.5.0.tar.gz
 
 3. Copy LZO JAR to Hadoop.
 
