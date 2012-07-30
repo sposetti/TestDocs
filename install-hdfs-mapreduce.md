@@ -1,4 +1,4 @@
-[Index](./index.md) / **Prerequisites**
+[Index](./index.md) / [Prerequisites](./prerequisites.md) / **Install HDFS + MapReduce**
 
 ------
 
