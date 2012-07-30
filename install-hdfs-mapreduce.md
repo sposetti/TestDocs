@@ -7,26 +7,26 @@ Install HDFS + MapReduce
 
 The following instructions describe how to install the Hadoop Core components, which include HDFS and MapReduce.
 
-* Set Default File and Directory Permissions
-* Configure HDP Repository
-* Configuring the Local Repository (optional)
-* Install Hadoop RPMs (All Nodes)
-* Install OpenSSL Libraries
+* [Set Default File and Directory Permissions](#set-default-file-and-directory-permissions)
+* [Configure HDP Repository](#configure-hdp-repository)
+* [Install Hadoop RPMs (All Nodes)](#install-hadoop-repms-all-nodes)
+* [Install OpenSSL Libraries](#install-openssl-libraries)
 * Install Compression Libraries (All Nodes)
+* [Create Directories](#create-directories
 
 
 Set Default File and Directory Permissions
 -------
 
 Set the default file and directory permissions to 0022 (022). This is typically the default for most Linux distributions.
-Use the '''umask''' command to confirm and set as necessary. Be sure umask is set for all terminal session that you will use during installation.
+Use the <code>umask</code> command to confirm and set as necessary. Be sure umask is set for all terminal session that you will use during installation.
 
 Configure HDP Repository
 -------
 
-HDP Repository
+### Use HDP Repository
 
-/etc/yum.repos.d/hdp.repo
+<pre>/etc/yum.repos.d/hdp.repo</pre>
 
 <pre>
 [HDP-1.0.0.12]
@@ -37,8 +37,7 @@ enabled=1
 priority=1
 </pre>
 
-Configuring the Local Repository (optional)
----------
+### Use Local Repository (optional)
 TBD – get from existing docs
 http://docs.hortonworks.com/CURRENT/index.htm#Deploying_Hortonworks_Data_Platform/Using_HMC/Getting_Ready_To_Install/Optional_Configure_the_Local_yum_Repository.htm
 
@@ -91,10 +90,10 @@ Install Compression Libraries (All Nodes)
         mv $LZO_DIR/lib/native/Linux-i386-32/libgplcompression* /usr/lib/hadoop/lib/native/Linux-i386-32/.
         mv $LZO_DIR/hadoop-lzo-0.5.0/lib/native/Linux-amd64-64/libgplcompression* /usr/lib/hadoop/lib/native/Linux-amd64-64/.
 
-Directories and Permissions
+Create Directories
 ----------
 
-Create directory and configure ownership and permissions on the appropriate hosts as described below.
+Create directories and configure ownership + permissions on the appropriate hosts as described below.
 
 <pre>
 Note: if any of these directories exist, we recommend deleting and recreating.
