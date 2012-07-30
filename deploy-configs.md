@@ -7,6 +7,7 @@ Deploy Configurations
 
 * [Download Configuration Files](#download-configuration-files)
 * [Modify Configuration Files](#modify-configuration-files)
+* [Copy Configuration Files](#copy-configuration-files)
 
 Download Configuration Files
 -----
@@ -45,10 +46,13 @@ Modify Configuration Files
 | mapred.local.dir	                   | Comma separated list of paths such as /grid1/hadoop/mapred,/grid2/hadoop/mapred, /grid3/hadoop/mapred,/grid4/hadoop/mapred, /grid5/hadoop/mapred,/grid6/hadoop/mapred,
 
 ### hadoop-env.sh
-Parameter	Example
-JAVA_HOME	Point to 1.6.-0_31 java home
-HADOOP_LOG_DIR	<$HADOOP_LOG_DIR>/$USER
-HADOOP_PID_DIR	<$HADOOP_PID_DIR>/$USER
+
+| Parameter                             | Example                                              |
+|---------------------------------------|------------------------------------------------------|
+| JAVA_HOME                             | Point to 1.6.-0_31 java home
+| HADOOP_LOG_DIR                        | $HADOOP_LOG_DIR/$USER
+| HADOOP_PID_DIR                        | $HADOOP_PID_DIR/$USER
+
 
 Copy Configuration Files
 -----
