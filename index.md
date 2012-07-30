@@ -1,6 +1,6 @@
-
 Hortonworks Data Platform
-Manual Installation Instructions
+=====
+**Manual Installation Instructions**
 
 HDP 1.0.0.12
 
