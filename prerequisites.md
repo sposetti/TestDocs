@@ -444,20 +444,66 @@ Directory to store the Pig logs. For example, <code>"/var/log/pig"</code>
 Directory to store the ZooKeeper logs. For example, <code>"/var/log/zookeeper"</code>
 </td>
    </tr>
+   <tr>
+	<td>
+<code>OOZIE_LOG_DIR</code>
+	</td>
+	<td>
+Directory to store the Oozie logs. For example, <code>"/var/log/oozie"</code>
+</td>
+   </tr>
+   <tr>
+	<td>
+<code>HDFS_PID_DIR</code>
+	</td>
+	<td>
+Directory to store the HDFS process ID. For example, <code>"/var/run/hadoop/hdfs"</code>
+</td>
+   </tr>
+   <tr>
+	<td>
+<code>MAPRED_PID_DIR</code>
+	</td>
+	<td>
+Directory to store the MapReduce process ID. For example, <code>"/var/run/hadoop/mapred"</code>
+</td>
+   </tr>
+   <tr>
+	<td>
+<code>HIVE_PID_DIR</code>
+	</td>
+	<td>
+Directory to store the Hive process ID. For example, <code>"/var/run/hive"</code>
+</td>
+   </tr>
+   <tr>
+	<td>
+<code>PIG_PID_DIR</code>
+	</td>
+	<td>
+Directory to store the Pig process ID. For example, <code>"/var/run/pig"</code>
+</td>
+   </tr>
+   <tr>
+	<td>
+<code>ZOOKEEPER_PID_DIR</code>
+	</td>
+	<td>
+Directory to store the ZooKeeper process ID. For example, <code>"/var/run/zookeeper"</code>
+</td>
+   </tr>
+   <tr>
+	<td>
+<code>OOZIE_PID_DIR</code>
+	</td>
+	<td>
+Directory to store the Oozie process ID. For example, <code>"/var/run/oozie"</code>
+</td>
+   </tr>
 
 </table>
 
-	
-	
-	
-	
-OOZIE_LOG_DIR	Directory to store the Oozie logs. For example, /var/log/oozie
-HDFS_PID_DIR	Directory to store the HDFS process ID. For example, /var/run/hadoop/hdfs
-MAPRED_PID_DIR	Directory to store the MapReduce process ID. For example, /var/run/hadoop/mapred
-HIVE_PID_DIR	Directory to store the Hive process ID. For example, /var/run/hive
-PIG_PID_DIR	Directory to store the Pig process ID. For example, /var/run/pig
-ZOOKEEPER_PID_DIR	Directory to store the ZooKeeper process ID. For example, /var/run/zookeeper
-OOZIE_PID_DIR	Directory to store the Oozie process ID. For example, /var/run/oozie
+
 
 
 ------
