@@ -464,5 +464,5 @@ OOZIE_PID_DIR	Directory to store the Oozie process ID. For example, /var/run/ooz
 ------
 
 Back: [Index](./index.md)
--
+/
 Next: [Install HDFS + MapReduce](./install-hdfs-mapreduce.md)
