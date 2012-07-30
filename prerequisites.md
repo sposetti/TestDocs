@@ -47,7 +47,7 @@ Confirm you meet the system requirements and perform the following tasks before 
 <strong>Java Development Kit (JDK):</strong>
 <ul>
 <li>JDK 1.6 update 31</li>
-<li>See Installing the Java Development Kit (JDK)</li>
+<li>See <a href="#installing-the-java-development-kit-jdk">Installing the Java Development Kit (JDK)</a></li>
 </ul>
 
 <strong>Binaries:</strong>
@@ -60,7 +60,7 @@ Confirm you meet the system requirements and perform the following tasks before 
 <strong>MySQL 5:</strong>
 <ul>
 <li>Optional: for use with Hive and HCatalog</li>
-<li>See [Installing MySQL](./prerequisites.md#installing-mysql-optional)</li>
+<li>See <a href="#installing-mysql-optional">Installing MySQL</a></li>
 </ul>
 		</td>
 	</tr>
