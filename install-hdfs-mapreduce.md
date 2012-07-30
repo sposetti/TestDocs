@@ -153,9 +153,9 @@ Execute these commands on all nodes.
 ------
 
 [Index](./index.md)
-/
-[Prerequisites](./prerequisites.md)
-/
+|
+Previous: [Prerequisites](./prerequisites.md)
+|
 **Install HDFS + MapReduce**
-/
-Next Step: [Deploy Configurations](./deploy-configs.md)
+|
+Next: [Deploy Configurations](./deploy-configs.md)
