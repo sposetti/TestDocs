@@ -14,8 +14,8 @@ TBD
 
 [Index](./index.md)
 |
-<< [Install HDFS + MapReduce](./install-hdfs-mapreduce.md)
+Prev: [Install HDFS + MapReduce](./install-hdfs-mapreduce.md)
 |
 **Deploy Configurations**
 |
-[Validate Installation](./validate-installation.md) >>
+Next: [Validate Installation](./validate-installation.md) >>
