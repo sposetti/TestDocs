@@ -1,11 +1,10 @@
-[Index](./index.md) / Prerequisites
-
-This guide is intended for IT Operators and Administrators who need to install the Hortonworks Data Platform.
+[Index](./index.md) / **Prerequisites**
 
 Prerequisites
 -------------
+This guide is intended for IT Operators and Administrators who need to install the Hortonworks Data Platform.
 
-Confirm you meet the system requirements and perform the following tasks before you install the Hortonworks Data Platform.
+Before you install the Hortonworks Data Platform, confirm you meet the system requirements and perform the following tasks.
 
 ### System Requirements
 
@@ -462,5 +461,7 @@ OOZIE_PID_DIR	Directory to store the Oozie process ID. For example, /var/run/ooz
 ------
 
 [Index](./index.md)
+/
+*Prerequisites**
 /
 [Install HDFS + MapReduce](./install-hdfs-mapreduce.md)
