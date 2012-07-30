@@ -8,13 +8,16 @@ Prerequisites
 This guide is intended for IT Operators and Administrators who need to install the Hortonworks Data Platform.
 
 * System Requirements
+* Preparing Your Cluster
+* Collect Cluster Information
 * Installing the Java Development Kit (JDK)
 * Installing MySQL (optional)
 * Set Environment Parameters
 
 Before you install the Hortonworks Data Platform, confirm you meet the system requirements and perform the following tasks.
 
-### System Requirements
+System Requirements
+---
 
 <table>
 	<tr>
@@ -71,17 +74,7 @@ Before you install the Hortonworks Data Platform, confirm you meet the system re
 	</tr>
 </table>
 
-Installing the Java Development Kit (JDK)
-###
-
-TBD – get from existing docs 
-
-Installing MySQL (optional)
-###
-
-TBD – get from existing docs
-
-Preparing
+Preparing Your Cluster
 -----
 
 * Confirm the Fully Qualified Domain Name (FQDN) for each host using the command <code>hostname -f</code>.
@@ -93,13 +86,22 @@ Preparing
 * Enable Network Time Protocol (NTP) for your cluster. In environments with no access to the Internet, ensure that you make one of your master nodes as NTP server.
 
 Collect Cluster Information
-###
-
+-----
 TBD
 http://docs.hortonworks.com/CURRENT/index.htm#Deploying_Hortonworks_Data_Platform/Using_HMC/Getting_Ready_To_Install/Collect_Information.htm
 
+Installing the Java Development Kit (JDK)
+---
+
+TBD – get from existing docs 
+
+Installing MySQL (optional)
+---
+
+TBD – get from existing docs
+
 Create System Users and Groups
-###
+---
 
 It is recommended that Hadoop services be owned by specific users and not by root or application users. In the table below are the typical users for Hadoop services. Identify the users that you want for your Hadoop services and the common group.
 
@@ -217,7 +219,7 @@ hadoop
 </table>
 
 Set Environment Parameters
-###
+---
 
 The following table describes system user account and groups.
 
@@ -297,7 +299,6 @@ A common group shared by services. For example, <code>hadoop</code>.
 		</td>
 	</tr>
 </table>
-
 
 
 The following table describes the directories for install, configuration, data, processes and logs.
