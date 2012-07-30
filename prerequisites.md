@@ -1,4 +1,4 @@
-Back to [Index](./index.md)
+Back: [Index](./index.md)
 
 Introduction
 ============
@@ -421,3 +421,8 @@ HIVE_PID_DIR	Directory to store the Hive process ID. For example, /var/run/hive
 PIG_PID_DIR	Directory to store the Pig process ID. For example, /var/run/pig
 ZOOKEEPER_PID_DIR	Directory to store the ZooKeeper process ID. For example, /var/run/zookeeper
 OOZIE_PID_DIR	Directory to store the Oozie process ID. For example, /var/run/oozie
+
+
+
+Back: [Index](./index.md)
+Next: [Install HDFS + MapReduce](./install-hdfs-mapreduce.md)
