@@ -18,4 +18,4 @@ Prev: [Deploy Configurations](./deploy-configs.md)
 |
 **Validate Installation**
 |
-next: [Install HDFS + MapReduce](./install-hdfs-mapreduce.md)
+next: [Start and Smoke Test](./start-and-smoke-test.md)
