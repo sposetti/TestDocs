@@ -158,4 +158,4 @@ Execute these commands on all nodes.
 /
 **Install HDFS + MapReduce**
 /
-Next Step: [Deploy Configurations](./deploy-configurations.md)
+Next Step: [Deploy Configurations](./deploy-configs.md)
