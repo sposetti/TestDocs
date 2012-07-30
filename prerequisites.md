@@ -405,14 +405,46 @@ Directory to store the Oozie configuration files. For example, <code>"/etc/oozie
 Directory to store the HDFS logs. For example, <code>"/var/log/hadoop/hdfs"</code>
 </td>
    </tr>
+   <tr>
+	<td>
+<code>MAPRED_LOG_DIR</code>
+	</td>
+	<td>
+Directory to store the HDFS logs. For example, <code>"/var/log/hadoop/mapred"</code>
+</td>
+   </tr>
+   <tr>
+	<td>
+<code>HIVE_LOG_DIR</code>
+	</td>
+	<td>
+Directory to store the Hive logs. For example, <code>"/var/log/hive"</code>
+</td>
+   </tr>
+   <tr>
+	<td>
+<code>HBASE_LOG_DIR</code>
+	</td>
+	<td>
+Directory to store the HBase logs. For example, <code>"/var/log/hbase"</code>
+</td>
+   </tr>
+   <tr>
+	<td>
+<code>PIG_LOG_DIR</code>
+	</td>
+	<td>
+Directory to store the Pig logs. For example, <code>"/var/log/pig"</code>
+</td>
+   </tr>
 
 </table>
 
 	
-MAPRED_LOG_DIR	Directory to store the HDFS logs. For example, /var/log/hadoop/mapred
-HIVE_LOG_DIR	Directory to store the Hive logs. For example, /var/log/hive
-HBASE_LOG_DIR	Directory to store the HBase logs. For example, /var/log/hbase
-PIG_LOG_DIR	Directory to store the Pig logs. For example, /var/log/pig
+	
+	
+	
+	
 ZOOKEEPER_LOG_DIR	Directory to store the ZooKeeper logs. For example, /var/log/zookeeper
 OOZIE_LOG_DIR	Directory to store the Oozie logs. For example, /var/log/oozie
 HDFS_PID_DIR	Directory to store the HDFS process ID. For example, /var/run/hadoop/hdfs
@@ -423,6 +455,7 @@ ZOOKEEPER_PID_DIR	Directory to store the ZooKeeper process ID. For example, /var
 OOZIE_PID_DIR	Directory to store the Oozie process ID. For example, /var/run/oozie
 
 
+------
 
 Back: [Index](./index.md)
 Next: [Install HDFS + MapReduce](./install-hdfs-mapreduce.md)
