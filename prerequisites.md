@@ -104,25 +104,18 @@ Follow the instructions listed below to manually deploy JDK:
 
 4. Download Oracle JDK.
 
-Browse to the following location: Download JDK 1.6 update 31 and accept the license agreement.
+    For Red Hat and CentOS compatible systems, download the 64-bit JDK (jdk-6u31-linux-x64.bin). Optionally, download the 32-bit JDK (jdk-6u31-linux-i586.bin).Note that you can install 32-bit JDK only on the DataNodes and the TaskTrackers.
+    For SUSE systems, download the 64-bit JDK (jdk-6u31-linux-x64.bin).
 
-• For Red Hat compatible systems, download the 64-bit JDK (jdk-6u31-linux-x64.bin). Optionally, download the 32-bit JDK (jdk-6u31-linux-i586.bin).Note that you can install 32-bit JDK only on the DataNodes and the TaskTrackers.
-
-• For SUSE systems, download the 64-bit JDK (jdk-6u31-linux-x64.bin).
-
-5. Install the JDK.
-
-• Change directory to the location where you have copied the JDK installer binary (for exam­ple: /usr/jdk1.6.0.31).
-
-• Install JDK.
+5. Change directory to the location where you have copied the JDK installer binary (for exam­ple: /usr/jdk1.6.0.31).
 
         ./jdk-6u31-linux-x64.bin -noregister
 
-• Optionally, to install 32-bit JDK on DataNodes and TaskTrackers, execute the following com­mand:
+6. Optionally, to install 32-bit JDK on DataNodes and TaskTrackers, execute the following com­mand:
 
         ./jdk-6u31-linux-i586.bin -noregister
 
-• Create the symbolic links (symlinks).
+7. Create the symbolic links (symlinks).
 
         mkdir /usr/java
         ln -s /usr/jdk1.6.0_31/jdk1.6.0_31 /usr/java/default
