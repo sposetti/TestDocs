@@ -77,7 +77,7 @@ TBD – get from existing docs
 Preparing
 ======
 
-* Confirm the Fully Qualified Domain Name (FQDN) for each host using the command '''hostname -f'''.
+* Confirm the Fully Qualified Domain Name (FQDN) for each host using the command <code>hostname -f</code>.
 <pre>
 	Note: if deploying your cluster to Amazon EC2, be sure to use the Private DNS host name.
 </pre>
