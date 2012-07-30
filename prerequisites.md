@@ -437,6 +437,14 @@ Directory to store the HBase logs. For example, <code>"/var/log/hbase"</code>
 Directory to store the Pig logs. For example, <code>"/var/log/pig"</code>
 </td>
    </tr>
+   <tr>
+	<td>
+<code>ZOOKEEPER_LOG_DIR</code>
+	</td>
+	<td>
+Directory to store the ZooKeeper logs. For example, <code>"/var/log/zookeeper"</code>
+</td>
+   </tr>
 
 </table>
 
@@ -444,8 +452,6 @@ Directory to store the Pig logs. For example, <code>"/var/log/pig"</code>
 	
 	
 	
-	
-ZOOKEEPER_LOG_DIR	Directory to store the ZooKeeper logs. For example, /var/log/zookeeper
 OOZIE_LOG_DIR	Directory to store the Oozie logs. For example, /var/log/oozie
 HDFS_PID_DIR	Directory to store the HDFS process ID. For example, /var/run/hadoop/hdfs
 MAPRED_PID_DIR	Directory to store the MapReduce process ID. For example, /var/run/hadoop/mapred
@@ -458,4 +464,5 @@ OOZIE_PID_DIR	Directory to store the Oozie process ID. For example, /var/run/ooz
 ------
 
 Back: [Index](./index.md)
+-
 Next: [Install HDFS + MapReduce](./install-hdfs-mapreduce.md)
