@@ -90,7 +90,7 @@ TBD – get from existing docs
 Installing MySQL (optional)
 ---
 
-If you will install Hive and HCatalog, you need a MySQL database instance to store metadata information. You can either use an existing MySQL instance or install a new instance of MySQL
+If you will install Hive and HCatalog, you need a MySQL database instance to store metadata information. You can either use an existing MySQL instance or install a new instance of MySQL manually.
 
 <pre>
 NOTE: If you are using an existing MySQL instance, the database user you create for HDP must have adequate privileges to create a database and tables in that database.
@@ -102,26 +102,25 @@ To install the instance manually, use the following instructions:
 
 2. Install MySQL server.
 
-    yum install mysql-server [for RHEL and CentOS]
+        yum install mysql-server [for RHEL and CentOS]
 
-    zypper install mysql [for SLES]
+        zypper install mysql [for SLES]
 
 3. Start the instance.
 
-    /etc/init.d/mysqld start [for RHEL and CentOS]
+        /etc/init.d/mysqld start [for RHEL and CentOS]
 
-    /etc/init.d/mysql start [for SLES]
+        /etc/init.d/mysql start [for SLES]
 
 4. Remove unnecessary information from log and STDOUT.
 
-    mysqladmin -u root 2>&1 >/dev/null
+        mysqladmin -u root 2>&1 >/dev/null
 
 5. As root, use mysql or other client tool to create the “hive” user and grant it all the privi­leges.
 
-
-    CREATE USER 'hcat'@'%' IDENTIFIED BY 'hive';
-    GRANT ALL PRIVILEGES ON *.* TO 'hive'@'%';
-    flush privileges;
+        CREATE USER 'hcat'@'%' IDENTIFIED BY 'hive';
+        GRANT ALL PRIVILEGES ON *.* TO 'hive'@'%';
+        flush privileges;
 
 Create System Users and Groups
 ---
