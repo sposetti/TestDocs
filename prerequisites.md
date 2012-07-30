@@ -309,25 +309,106 @@ Parameter
    </tr>
    <tr>
 	<td>
-DFS_NAME_DIR
+<code>DFS_NAME_DIR</code>
 	</td>
 	<td>
 Space separated list of directories where NameNode will store file system image.
 For example, <code>"/grid/hadoop/hdfs/nn /grid1/hadoop/hdfs/nn"</code>
+	</td>
+   </tr>
+   <tr>
+	<td>
+<code>DFS_DATA_DIR</code>
+	</td>
+	<td>
+Space separated list of directories where DataNodes will store the blocks.
+For example, <code>"/grid/hadoop/hdfs/dn /grid1/hadoop/hdfs/dn /grid2/hadoop/hdfs/dn"</code>
+       </td>
+   </tr>
+   <tr>
+	<td>
+<code>ZOOKEEPER_DATA_DIR</code>
+	</td>
+	<td>
+Directory where ZooKeeper will store data. For example, <code>/grid1/hadoop/zookeeper/data</code>
 </td>
    </tr>
+   <tr>
+	<td>
+<code>FS_CHECKPOINT_DIR</code>
+	</td>
+	<td>
+Space separated list of directories where SecondaryNameNode will store checkpoint image. For example, <code>"/grid/hadoop/hdfs/snn /grid1/hadoop/hdfs/snn /grid2/hadoop/hdfs/snn"</code>
+</td>
+   </tr>
+   <tr>
+	<td>
+<code>MAPREDUCE_LOCAL_DIR</code>
+	</td>
+	<td>
+Space separated list of directories where MapReduce will store temporary data. For example, <code>"/grid/hadoop/hdfs/mapred /grid1/hadoop/hdfs/mapred /grid2/hadoop/hdfs/mapred"</code>
+</td>
+   </tr>
+   <tr>
+	<td>
+<code>HADOOP_CONF_DIR</code>
+	</td>
+	<td>
+Directory to store the Hadoop configuration files. For example, <code>"/etc/hadoop/conf"</code>
+</td>
+   </tr>
+   <tr>
+	<td>
+<code>HIVE_CONF_DIR</code>
+	</td>
+	<td>
+Directory to store the Hive configuration files. For example, <code>"/etc/hive/conf"</code>
+</td>
+   </tr>
+   <tr>
+	<td>
+<code>HBASE_CONF_DIR</code>
+	</td>
+	<td>
+Directory to store the HBase configuration files. For example, <code>"/etc/hbase/conf"</code>
+</td>
+   </tr>
+   <tr>
+	<td>
+<code>PIG_CONF_DIR</code>
+	</td>
+	<td>
+Directory to store the Pig configuration files. For example, <code>"/etc/pig/conf"</code>
+</td>
+   </tr>
+   <tr>
+	<td>
+<code>ZOOKEEPER_CONF_DIR</code>
+	</td>
+	<td>
+Directory to store the Zookeeper configuration files. For example, <code>"/etc/zookeeper/conf"</code>
+</td>
+   </tr>
+   <tr>
+	<td>
+<code>OOZIE_CONF_DIR</code>
+	</td>
+	<td>
+Directory to store the Oozie configuration files. For example, <code>"/etc/oozie/conf"</code>
+</td>
+   </tr>
+   <tr>
+	<td>
+<code>HDFS_LOG_DIR</code>
+	</td>
+	<td>
+Directory to store the HDFS logs. For example, <code>"/var/log/hadoop/hdfs"</code>
+</td>
+   </tr>
+
 </table>
-DFS_DATA_DIR	Space separated list of directories where DataNodes will store the blocks. For example, "/grid/hadoop/hdfs/dn /grid1/hadoop/hdfs/dn /grid2/hadoop/hdfs/dn "
-ZOOKEEPER_DATA_DIR	Directory where ZooKeeper will store data. For example, /grid1/hadoop/zookeeper/data
-FS_CHECKPOINT_DIR	Space separated list of directories where SecondaryNameNode will store checkpoint image. For example, "/grid/hadoop/hdfs/snn /grid1/hadoop/hdfs/snn /grid2/hadoop/hdfs/snn "
-MAPREDUCE_LOCAL_DIR	Space separated list of directories where MapReduce will store temporary data. For example, "/grid/hadoop/hdfs/mapred /grid1/hadoop/hdfs/mapred /grid2/hadoop/hdfs/mapred "
-HADOOP_CONF_DIR	Directory to store the Hadoop configuration files. For example, /etc/hadoop/conf
-HIVE_CONF_DIR	Directory to store the Hive configuration files. For example, /etc/hive/conf
-HBASE_CONF_DIR	Directory to store the HBase configuration files. For example, /etc/hbase/conf
-PIG_CONF_DIR	Directory to store the Pig configuration files. For example, /etc/pig/conf
-ZOOKEEPER_CONF_DIR	Directory to store the ZooKeeper configuration files. For example, /etc/zookeeper/conf
-OOZIE_CONF_DIR	Directory to store the Oozie configuration files. For example, /etc/oozie/conf
-HDFS_LOG_DIR	Directory to store the HDFS logs. For example, /var/log/hadoop/hdfs
+
+	
 MAPRED_LOG_DIR	Directory to store the HDFS logs. For example, /var/log/hadoop/mapred
 HIVE_LOG_DIR	Directory to store the Hive logs. For example, /var/log/hive
 HBASE_LOG_DIR	Directory to store the HBase logs. For example, /var/log/hbase
