@@ -69,28 +69,22 @@ ln -sf /usr/lib/libsnappy.so.1 /usr/lib/hadoop/lib/native/Linux-i386-32/.
 
 1. Install LZO compression library.
 
-<pre>
-yum -y install lzo
-</pre>
+        yum -y install lzo
 
 2. Download Hadoop LZO package to LZO_DIR
 
-NEED INSTRUCTIONS
+        NEED INSTRUCTIONS
 
 3. Copy LZO JAR to Hadoop.
 
-<pre>
-cp -f $LZO_DIR/hadoop-lzo-0.5.0.jar /usr/lib/hadoop/lib/.
-</pre>
+        cp -f $LZO_DIR/hadoop-lzo-0.5.0.jar /usr/lib/hadoop/lib/.
 
 4. Replace Hadoop GPL compression with LZO library.
 
-<pre>
-rm –f /usr/lib/hadoop/lib/native/Linux-i386-32/libgplcompression*
-rm –f /usr/lib/hadoop/lib/native/ Linux-amd64-64/libgplcompression*
-mv $LZO_DIR/lib/native/Linux-i386-32/libgplcompression* /usr/lib/hadoop/lib/native/Linux-i386-32/.
-mv $LZO_DIR/hadoop-lzo-0.5.0/lib/native/Linux-amd64-64/libgplcompression* /usr/lib/hadoop/lib/native/Linux-amd64-64/.
-</pre>
+        rm –f /usr/lib/hadoop/lib/native/Linux-i386-32/libgplcompression*
+        rm –f /usr/lib/hadoop/lib/native/ Linux-amd64-64/libgplcompression*
+        mv $LZO_DIR/lib/native/Linux-i386-32/libgplcompression* /usr/lib/hadoop/lib/native/Linux-i386-32/.
+        mv $LZO_DIR/hadoop-lzo-0.5.0/lib/native/Linux-amd64-64/libgplcompression* /usr/lib/hadoop/lib/native/Linux-amd64-64/.
 
 Directories and Permissions
 ----------
@@ -105,54 +99,46 @@ Note: if any of these directories exist, we recommend deleting and recreating.
 
 Execute these commands the Master Node host that will run the NameNode service.
 
-<pre>
-mkdir -p $DFS_NAME_DIR
-chown -R $HDFS_USER:$HADOOP_GROUP $DFS_NAME_DIR
-chmod -R 755 $DFS_NAME_DIR
-</pre>
+        mkdir -p $DFS_NAME_DIR
+        chown -R $HDFS_USER:$HADOOP_GROUP $DFS_NAME_DIR
+        chmod -R 755 $DFS_NAME_DIR
 
 ### Create SecondaryNameNode directories
 
 Execute these commands on all nodes, which potentially can run the secondary name node service (Typically all master nodes)
 
-<pre>
-mkdir -p $FS_CHECKPOINT_DIR ;
-chown -R $HDFS_USER:$HADOOP_GROUP $FS_CHECKPOINT_DIR;
-chmod -R 755 $FS_CHECKPOINT_DIR
-</pre>
+        mkdir -p $FS_CHECKPOINT_DIR
+        chown -R $HDFS_USER:$HADOOP_GROUP $FS_CHECKPOINT_DIR
+        chmod -R 755 $FS_CHECKPOINT_DIR
 
 ### Create DataNode and MapReduce local directories
 
 Execute these commands on all data nodes.
 
-<pre>
-mkdir -p $DFS_DATA_DIR ;
-chown -R $HDFS_USER:$HADOOP_GROUP $DFS_DATA_DIR;
-chmod -R 755 $DFS_DATA_DIR
+        mkdir -p $DFS_DATA_DIR;
+        chown -R $HDFS_USER:$HADOOP_GROUP $DFS_DATA_DIR;
+        chmod -R 755 $DFS_DATA_DIR;
 
-mkdir -p $MAPREDUCE_LOCAL_DIR
-chown -R $MAPRED_USER:$HADOOP_GROUP $MAPREDUCE_LOCAL_DIR
-chmod -R 755 $MAPREDUCE_LOCAL_DIR
-</pre>
+        mkdir -p $MAPREDUCE_LOCAL_DIR;
+        chown -R $MAPRED_USER:$HADOOP_GROUP $MAPREDUCE_LOCAL_DIR;
+        chmod -R 755 $MAPREDUCE_LOCAL_DIR;
 
 ### Create log and pid directories
 
 Execute these commands on all nodes.
 
-<pre>
-mkdir -p $HDFS_LOG_DIR;
-chown -R $HDFS_USER:$HADOOP_GROUP $HDFS_LOG_DIR;
-chmod 755 -R $HDFS_LOG_DIR;
+        mkdir -p $HDFS_LOG_DIR;
+        chown -R $HDFS_USER:$HADOOP_GROUP $HDFS_LOG_DIR;
+        chmod 755 -R $HDFS_LOG_DIR;
 
-mkdir -p $MAPRED_LOG_DIR;
-chown -R $MAPRED_USER:$HADOOP_GROUP $MAPRED_LOG_DIR;
-chmod 755 -R $MAPRED_LOG_DIR;
+        mkdir -p $MAPRED_LOG_DIR;
+        chown -R $MAPRED_USER:$HADOOP_GROUP $MAPRED_LOG_DIR;
+        chmod 755 -R $MAPRED_LOG_DIR;
 
-mkdir -p $HDFS_PID_DIR ;
-chown -R $HDFS_USER:$HADOOP_GROUP $HDFS_PID_DIR;
-chmod 755 -R $HDFS_PID_DIR
+        mkdir -p $HDFS_PID_DIR;
+        chown -R $HDFS_USER:$HADOOP_GROUP $HDFS_PID_DIR;
+        chmod 755 -R $HDFS_PID_DIR
 
-mkdir -p $MAPRED_PID_DIR ;
-chown -R $MAPRED_USER:$HADOOP_GROUP $MAPRED_PID_DIR;
-chmod 755 -R $MAPRED_PID_DIR
-</pre>
+        mkdir -p $MAPRED_PID_DIR;
+        chown -R $MAPRED_USER:$HADOOP_GROUP $MAPRED_PID_DIR;
+        chmod 755 -R $MAPRED_PID_DIR;
