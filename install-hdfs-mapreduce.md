@@ -100,8 +100,7 @@ Create directory and configure ownership and permissions on the appropriate host
 Note: if any of these directories exist, we recommend deleting and recreating.
 </pre>
 
-Create NameNode directories
-##########
+### Create NameNode directories
 
 Execute these commands the Master Node host that will run the NameNode service.
 
@@ -109,8 +108,7 @@ Execute these commands the Master Node host that will run the NameNode service.
         chown -R $HDFS_USER:$HADOOP_GROUP $DFS_NAME_DIR
         chmod -R 755 $DFS_NAME_DIR
 
-Create SecondaryNameNode directories
-##########
+### Create SecondaryNameNode directories
 
 Execute these commands on all nodes, which potentially can run the secondary name node service (Typically all master nodes)
 
@@ -161,4 +159,4 @@ Execute these commands on all nodes.
 /
 **Install HDFS + MapReduce**
 /
-Next Step: [Deploy Cluster](./deploy-cluster.md)
+Next Step: [Deploy Configurations](./deploy-configurations.md)
