@@ -1,16 +1,16 @@
 back to Index
 
-h1. Introduction
+Introduction
 
 This guide is intended for IT Operators and Administrators who need to install the Hortonworks Data Platform.
 
--------
-
-h1. Prerequisites
+Prerequisites
+-------------
 
 Confirm you meet the system requirements and perform the following tasks before you install the Hortonworks Data Platform.
 
-h2. System Requirements
+### System Requirements
+
 <table>
 	<tr>
 		<td>
