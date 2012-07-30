@@ -31,10 +31,12 @@ Confirm you meet the system requirements and perform the following tasks before 
 		Hardware
 		</td>
 		<td>
-* 64-bit hardware
-* Note: DataNodes and TaskTrackers are configured to run 32-bit JVM to conserve memory
-* For a Single Node Cluster, refer to the Hortonworks Documentation.
-* For a Multi-Node Cluster, refer to the Hortonworks Documentation.
+<ul>
+<li>64-bit hardware</li>
+<li>Note: DataNodes and TaskTrackers are configured to run 32-bit JVM to conserve memory</li>
+<li>For a Single Node Cluster, refer to the Hortonworks Documentation.</li>
+<li>For a Multi-Node Cluster, refer to the Hortonworks Documentation.</li>
+</ul>
 		</td>
 	</tr>
 	<tr>
@@ -42,19 +44,24 @@ Confirm you meet the system requirements and perform the following tasks before 
 		Software
 		</td>
 		<td>
-Java Development Kit (JDK):
-* 1.6 update 31
-* See Installing the Java Development Kit (JDK)
+**Java Development Kit (JDK):**
+<ul>
+<li>JDK 1.6 update 31</li>
+<li>See Installing the Java Development Kit (JDK)</li>
+</ul>
 
-Binaries:
-* yum (on RHEL and CentOS)
-* zypper (on SLES)
-* rpm, scp, curl, wget, unzip, tar, pdsh
+**Binaries:**
+<ul>
+<li><code>yum</code> (on RHEL and CentOS)</li>
+<li><code>zypper</code> (on SLES)
+<li><code>rpm, scp, curl, wget, unzip, tar, pdsh</code></li>
+</ul>
 
-MySQL 5:
-* Optional: for use with Hive and HCatalog
-* See Installing MySQL
-
+**MySQL 5:**
+<ul>
+<li>Optional: for use with Hive and HCatalog</li>
+<li>See Installing MySQL</li>
+</ul>
 		</td>
 	</tr>
 </table>
