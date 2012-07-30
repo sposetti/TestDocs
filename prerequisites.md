@@ -3,7 +3,8 @@
 ------
 
 Prerequisites
--------------
+====
+
 This guide is intended for IT Operators and Administrators who need to install the Hortonworks Data Platform.
 
 Before you install the Hortonworks Data Platform, confirm you meet the system requirements and perform the following tasks.
