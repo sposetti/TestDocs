@@ -1,7 +1,7 @@
-back to Index
+back to [Index](./index.md)
 
 Introduction
-
+============
 This guide is intended for IT Operators and Administrators who need to install the Hortonworks Data Platform.
 
 Prerequisites
@@ -57,13 +57,16 @@ MySQL 5:
 	</tr>
 </table>
 
-h2. Installing the Java Development Kit (JDK)
+Installing the Java Development Kit (JDK)
+------
 TBD – get from existing docs 
 
-h2. Installing MySQL (optional)
+Installing MySQL (optional)
+------
 TBD – get from existing docs
 
-h1. Preparing
+Preparing
+======
 
 * Confirm the Fully Qualified Domain Name (FQDN) for each host using the command hostname -f.
 <pre>
