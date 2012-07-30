@@ -18,4 +18,4 @@ Prev: [Install HDFS + MapReduce](./install-hdfs-mapreduce.md)
 |
 **Deploy Configurations**
 |
-Next: [Validate Installation](./validate-installation.md) >>
+Next: [Validate Installation](./validate-installation.md)
