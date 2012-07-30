@@ -1,3 +1,10 @@
+
+Hortonworks Data Platform
+Manual Installation Instructions
+
+HDP 1.0.0.12
+
+
 * **Introduction**
  * [Prerequisites](./prerequisites.md)
 
