@@ -116,7 +116,7 @@ To install the instance manually, use the following instructions:
 
         mysqladmin -u root 2>&1 >/dev/null
 
-5. As root, use mysql or other client tool to create the “hive” user and grant it all the privi­leges.
+5. As <code>root</code>, use mysql (or other client tool) to create the “hive” user and grant it all the privi­leges.
 
         CREATE USER 'hcat'@'%' IDENTIFIED BY 'hive';
         GRANT ALL PRIVILEGES ON *.* TO 'hive'@'%';
