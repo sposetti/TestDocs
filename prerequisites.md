@@ -224,8 +224,8 @@ Set Environment Parameters
 The following table describes system user account and groups.
 
 <pre>
-For your conveinence, we are providing [usersAndGroups.sh](./scripts/usersAndGroups.sh) script for user and group creation.
-Edit and execute as necessary to fit your environment.
+For your conveinence, we are providing <a href="./scripts/usersAndGroups.sh">usersAndGroups.sh</a> script for setting
+user and group parameters. Edit and execute as necessary to fit your environment.
 </pre>
 
 <table>
@@ -306,7 +306,10 @@ A common group shared by services. For example, <code>hadoop</code>.
 
 The following table describes the directories for install, configuration, data, processes and logs.
 
-Link to [directories.sh](./scripts/directories.sh) script
+<pre>
+For your conveinence, we are providing <a href="./scripts/directories.sh">directories.sh</a> script for setting
+directory parameters. Edit and execute as necessary to fit your environment.
+</pre>
 
 <table>
    <tr>
