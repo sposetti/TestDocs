@@ -18,4 +18,4 @@ Prev: [Deploy Configurations](./deploy-configs.md)
 |
 **Validate Installation**
 |
-next: [Start and Smoke Test](./start-and-smoke-test.md)
+next: [Essential Hadoop Projects](./essential-hadoop-projects.md)
