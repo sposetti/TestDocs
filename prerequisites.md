@@ -86,12 +86,13 @@ Preparing
 * Enable Network Time Protocol (NTP) for your cluster. In environments with no access to the Internet, ensure that you make one of your master nodes as NTP server.
 
 Collect Cluster Information
-======
+------
+
 TBD
 http://docs.hortonworks.com/CURRENT/index.htm#Deploying_Hortonworks_Data_Platform/Using_HMC/Getting_Ready_To_Install/Collect_Information.htm
 
 Create System Users and Groups
-======
+------
 It is recommended that Hadoop services be owned by specific users and not by root or application users. In the table below are the typical users for Hadoop services. Identify the users that you want for your Hadoop services and the common group.
 
 <table>
@@ -208,7 +209,7 @@ hadoop
 </table>
 
 Environment Parameters
-======
+------
 The following table describes system user account and groups.
 
 Link to [usersAndGroups.sh](./scripts/usersAndGroups.sh) script
@@ -295,9 +296,27 @@ The following table describes the directories for install, configuration, data, 
 Link to [directories.sh](./scripts/directories.sh) script
 
 
-
-Parameter	Definition
-DFS_NAME_DIR	Space separated list of directories where NameNode will store file system image. For example, “/grid/hadoop/hdfs/nn /grid1/hadoop/hdfs/nn”
+<table>
+   <tr>
+	<th>
+Parameter
+	</th>
+   </tr>
+   <tr>
+	<th>
+   Definition
+	</th>
+   </tr>
+   <tr>
+	<td>
+DFS_NAME_DIR
+	</td>
+	<td>
+Space separated list of directories where NameNode will store file system image.
+For example, <code>"/grid/hadoop/hdfs/nn /grid1/hadoop/hdfs/nn"</code>
+</td>
+   </tr>
+</table>
 DFS_DATA_DIR	Space separated list of directories where DataNodes will store the blocks. For example, "/grid/hadoop/hdfs/dn /grid1/hadoop/hdfs/dn /grid2/hadoop/hdfs/dn "
 ZOOKEEPER_DATA_DIR	Directory where ZooKeeper will store data. For example, /grid1/hadoop/zookeeper/data
 FS_CHECKPOINT_DIR	Space separated list of directories where SecondaryNameNode will store checkpoint image. For example, "/grid/hadoop/hdfs/snn /grid1/hadoop/hdfs/snn /grid2/hadoop/hdfs/snn "
