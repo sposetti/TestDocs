@@ -137,3 +137,16 @@ Execute these commands on all nodes.
         mkdir -p $MAPRED_PID_DIR;
         chown -R $MAPRED_USER:$HADOOP_GROUP $MAPRED_PID_DIR;
         chmod 755 -R $MAPRED_PID_DIR;
+
+
+
+
+------
+
+[Index](./index.md)
+/
+[Prerequisites](./prerequisites.md)
+/
+[Install HDFS + MapReduce](./install-hdfs-mapreduce.md)
+/
+Next Step: [Install HDFS + MapReduce](./install-hdfs-mapreduce.md)
