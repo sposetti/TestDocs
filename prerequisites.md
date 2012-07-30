@@ -14,7 +14,7 @@ Confirm you meet the system requirements and perform the following tasks before 
 <table>
 	<tr>
 		<td>
-		Operating System
+		<strong>Operating System</strong>
 		</td>
 		<td>
 <ul>
@@ -28,7 +28,7 @@ Confirm you meet the system requirements and perform the following tasks before 
 	</tr>
 	<tr>
 		<td>
-		Hardware
+		<strong>Hardware</strong>
 		</td>
 		<td>
 <ul>
@@ -44,23 +44,23 @@ Confirm you meet the system requirements and perform the following tasks before 
 		Software
 		</td>
 		<td>
-**Java Development Kit (JDK):**
+<strong>Java Development Kit (JDK):</strong>
 <ul>
 <li>JDK 1.6 update 31</li>
 <li>See Installing the Java Development Kit (JDK)</li>
 </ul>
 
-**Binaries:**
+<strong>Binaries:</strong>
 <ul>
 <li><code>yum</code> (on RHEL and CentOS)</li>
 <li><code>zypper</code> (on SLES)
 <li><code>rpm, scp, curl, wget, unzip, tar, pdsh</code></li>
 </ul>
 
-**MySQL 5:**
+<strong>MySQL 5:</strong>
 <ul>
 <li>Optional: for use with Hive and HCatalog</li>
-<li>See Installing MySQL</li>
+<li>See [Installing MySQL](./prerequisites.md#installing-mysql-optional)</li>
 </ul>
 		</td>
 	</tr>
