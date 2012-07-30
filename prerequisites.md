@@ -67,15 +67,17 @@ Before you install the Hortonworks Data Platform, confirm you meet the system re
 </table>
 
 Installing the Java Development Kit (JDK)
-------
+###
+
 TBD – get from existing docs 
 
 Installing MySQL (optional)
-------
+###
+
 TBD – get from existing docs
 
 Preparing
-======
+-----
 
 * Confirm the Fully Qualified Domain Name (FQDN) for each host using the command <code>hostname -f</code>.
 <pre>
@@ -86,13 +88,14 @@ Preparing
 * Enable Network Time Protocol (NTP) for your cluster. In environments with no access to the Internet, ensure that you make one of your master nodes as NTP server.
 
 Collect Cluster Information
-------
+###
 
 TBD
 http://docs.hortonworks.com/CURRENT/index.htm#Deploying_Hortonworks_Data_Platform/Using_HMC/Getting_Ready_To_Install/Collect_Information.htm
 
 Create System Users and Groups
-------
+###
+
 It is recommended that Hadoop services be owned by specific users and not by root or application users. In the table below are the typical users for Hadoop services. Identify the users that you want for your Hadoop services and the common group.
 
 <table>
@@ -209,7 +212,8 @@ hadoop
 </table>
 
 Environment Parameters
-------
+###
+
 The following table describes system user account and groups.
 
 Link to [usersAndGroups.sh](./scripts/usersAndGroups.sh) script
@@ -294,7 +298,6 @@ A common group shared by services. For example, <code>hadoop</code>.
 The following table describes the directories for install, configuration, data, processes and logs.
 
 Link to [directories.sh](./scripts/directories.sh) script
-
 
 <table>
    <tr>
@@ -503,7 +506,6 @@ Directory to store the Oozie process ID. For example, <code>"/var/run/oozie"</co
    </tr>
 
 </table>
-
 
 
 
