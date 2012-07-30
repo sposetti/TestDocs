@@ -223,7 +223,10 @@ Set Environment Parameters
 
 The following table describes system user account and groups.
 
-Link to [usersAndGroups.sh](./scripts/usersAndGroups.sh) script
+<pre>
+For your conveinence, we are providing [usersAndGroups.sh](./scripts/usersAndGroups.sh) script for user and group creation.
+Edit and execute as necessary to fit your environment.
+</pre>
 
 <table>
 	<tr>
