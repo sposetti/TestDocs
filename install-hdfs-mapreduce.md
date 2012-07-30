@@ -151,4 +151,4 @@ Execute these commands on all nodes.
 /
 **Install HDFS + MapReduce**
 /
-Next Step: [Install HDFS + MapReduce](./install-hdfs-mapreduce.md)
+Next Step: [Deploy Cluster](./deploy-cluster.md)
