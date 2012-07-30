@@ -1,13 +1,12 @@
-
 * **Introduction**
  * [Prerequisites](./prerequisites.md)
 
 * **Core Hadoop**
 
- * Install HDFS + MapReduce
- * Deploy Configurations
- * Validate Installation
- * Start and Smoke Test
+ * [Install HDFS + MapReduce](./install-hdfs-mapreduce.md)
+ * [Deploy Configurations](./deploy-configs.md)
+ * [Validate Installation](./validate-installation.md)
+ * [Start and Smoke Test](./start-and-smoke-test.md)
 
 * **Essential Hadoop Services**
 
