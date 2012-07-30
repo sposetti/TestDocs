@@ -8,7 +8,6 @@ Prerequisites
 Before you install the Hortonworks Data Platform, confirm you meet the system requirements and perform the following tasks.
 
 * [System Requirements](#system-requirements)
-* [Preparing Your Cluster](#[preparing-your-cluster)
 * [Collect Cluster Information](#collect-cluster-information)
 * [Installing the Java Development Kit (JDK)](#installing-the-java-development-kit)
 * [Installing MySQL (optional)](#installing-mysql-optional)
@@ -72,7 +71,7 @@ System Requirements
 	</tr>
 </table>
 
-Preparing Your Cluster
+Collect Cluster Information
 -----
 
 * Confirm the Fully Qualified Domain Name (FQDN) for each host using the command <code>hostname -f</code>.
@@ -83,11 +82,6 @@ Preparing Your Cluster
 * Disable SELinux.
 * Enable Network Time Protocol (NTP) for your cluster. In environments with no access to the Internet, ensure that you make one of your master nodes as NTP server.
 
-Collect Cluster Information
------
-TBD
-http://docs.hortonworks.com/CURRENT/index.htm#Deploying_Hortonworks_Data_Platform/Using_HMC/Getting_Ready_To_Install/Collect_Information.htm
-
 Installing the Java Development Kit (JDK)
 ---
 
@@ -96,7 +90,38 @@ TBD – get from existing docs
 Installing MySQL (optional)
 ---
 
-TBD – get from existing docs
+If you will install Hive and HCatalog, you need a MySQL database instance to store metadata information. You can either use an existing MySQL instance or install a new instance of MySQL
+
+<pre>
+NOTE: If you are using an existing MySQL instance, the database user you create for HDP must have adequate privileges to create a database and tables in that database.
+</pre>
+
+To install the instance manually, use the following instructions:
+
+1. Connect to the host machine you plan to use for Hive and HCatalog.
+
+2. Install MySQL server.
+
+    yum install mysql-server [for RHEL and CentOS]
+
+    zypper install mysql [for SLES]
+
+3. Start the instance.
+
+    /etc/init.d/mysqld start [for RHEL and CentOS]
+
+    /etc/init.d/mysql start [for SLES]
+
+4. Remove unnecessary information from log and STDOUT.
+
+    mysqladmin -u root 2>&1 >/dev/null
+
+5. As root, use mysql or other client tool to create the “hive” user and grant it all the privi­leges.
+
+
+    CREATE USER 'hcat'@'%' IDENTIFIED BY 'hive';
+    GRANT ALL PRIVILEGES ON *.* TO 'hive'@'%';
+    flush privileges;
 
 Create System Users and Groups
 ---
