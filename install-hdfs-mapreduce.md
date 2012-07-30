@@ -76,10 +76,8 @@ Install Compression Libraries (All Nodes)
 
 2. Download Hadoop LZO package to <code>$LZO_DIR</code>
 
-   * RHEL 5 and CentOS 5
-        <code>http://public-repo-1.hortonworks.com/HDP-1.0.0.12/repos/centos5/tars/hadoop-lzo-0.5.0.tar.gz</code>
-   * RHEL 6 and CentOS 6
-        <code>http://public-repo-1.hortonworks.com/HDP-1.0.0.12/repos/centos6/tars/hadoop-lzo-0.5.0.tar.gz</code>
+    | RHEL 5 and CentOS 5 | <code>http://public-repo-1.hortonworks.com/HDP-1.0.0.12/repos/centos5/tars/hadoop-lzo-0.5.0.tar.gz</code> |
+    | RHEL 6 and CentOS 6 | <code>http://public-repo-1.hortonworks.com/HDP-1.0.0.12/repos/centos6/tars/hadoop-lzo-0.5.0.tar.gz</code> |
 
 3. Copy LZO JAR to Hadoop.
 
