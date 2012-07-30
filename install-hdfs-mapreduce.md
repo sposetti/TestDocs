@@ -7,13 +7,21 @@ Install HDFS + MapReduce
 
 The following instructions describe how to install the Hadoop Core components, which include HDFS and MapReduce.
 
+* Set Default File and Directory Permissions
+* Configure HDP Repository
+* Configuring the Local Repository (optional)
+* Install Hadoop RPMs (All Nodes)
+* Install OpenSSL Libraries
+* Install Compression Libraries (All Nodes)
+
+
 Set Default File and Directory Permissions
 -------
 
 Set the default file and directory permissions to 0022 (022). This is typically the default for most Linux distributions.
 Use the '''umask''' command to confirm and set as necessary. Be sure umask is set for all terminal session that you will use during installation.
 
-Configure Repository
+Configure HDP Repository
 -------
 
 HDP Repository
@@ -93,7 +101,7 @@ Note: if any of these directories exist, we recommend deleting and recreating.
 </pre>
 
 Create NameNode directories
-###
+##########
 
 Execute these commands the Master Node host that will run the NameNode service.
 
@@ -102,7 +110,7 @@ Execute these commands the Master Node host that will run the NameNode service.
         chmod -R 755 $DFS_NAME_DIR
 
 Create SecondaryNameNode directories
-###
+##########
 
 Execute these commands on all nodes, which potentially can run the secondary name node service (Typically all master nodes)
 
