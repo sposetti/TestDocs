@@ -5,7 +5,7 @@
 Prerequisites
 ====
 
-This guide is intended for IT Operators and Administrators who need to install the Hortonworks Data Platform.
+Before you install the Hortonworks Data Platform, confirm you meet the system requirements and perform the following tasks.
 
 * [System Requirements](#system-requirements)
 * [Preparing Your Cluster](#[preparing-your-cluster)
@@ -13,8 +13,6 @@ This guide is intended for IT Operators and Administrators who need to install t
 * [Installing the Java Development Kit (JDK)](#installing-the-java-development-kit)
 * [Installing MySQL (optional)](#installing-mysql-optional)
 * [Set Environment Parameters](#set-environment-parameters)
-
-Before you install the Hortonworks Data Platform, confirm you meet the system requirements and perform the following tasks.
 
 System Requirements
 ---
