@@ -11,8 +11,8 @@ The following instructions describe how to install the Hadoop Core components, w
 * [Configure HDP Repository](#configure-hdp-repository)
 * [Install Hadoop RPMs (All Nodes)](#install-hadoop-repms-all-nodes)
 * [Install OpenSSL Libraries](#install-openssl-libraries)
-* Install Compression Libraries (All Nodes)
-* [Create Directories](#create-directories
+* [Install Compression Libraries (All Nodes)](#install-compression-libraries-all-nodes)
+* [Create Directories](#create-directories)
 
 
 Set Default File and Directory Permissions
@@ -24,7 +24,7 @@ Use the <code>umask</code> command to confirm and set as necessary. Be sure umas
 Configure HDP Repository
 -------
 
-### Use HDP Repository
+### Use Hosted HDP Repository
 
 <pre>/etc/yum.repos.d/hdp.repo</pre>
 
@@ -37,7 +37,7 @@ enabled=1
 priority=1
 </pre>
 
-### Use Local Repository (optional)
+### Use Local HDP Repository (optional)
 TBD – get from existing docs
 http://docs.hortonworks.com/CURRENT/index.htm#Deploying_Hortonworks_Data_Platform/Using_HMC/Getting_Ready_To_Install/Optional_Configure_the_Local_yum_Repository.htm
 
