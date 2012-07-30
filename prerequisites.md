@@ -1,7 +1,5 @@
-Back: [Index](./index.md)
+[Index](./index.md) / Prerequisites
 
-Introduction
-============
 This guide is intended for IT Operators and Administrators who need to install the Hortonworks Data Platform.
 
 Prerequisites
@@ -463,6 +461,6 @@ OOZIE_PID_DIR	Directory to store the Oozie process ID. For example, /var/run/ooz
 
 ------
 
-Back: [Index](./index.md)
+[Index](./index.md)
 /
-Next: [Install HDFS + MapReduce](./install-hdfs-mapreduce.md)
+[Install HDFS + MapReduce](./install-hdfs-mapreduce.md)
