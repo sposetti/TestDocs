@@ -82,10 +82,57 @@ Collect Cluster Information
 * Disable SELinux.
 * Enable Network Time Protocol (NTP) for your cluster. In environments with no access to the Internet, ensure that you make one of your master nodes as NTP server.
 
+
 Installing the Java Development Kit (JDK)
 ---
 
-TBD – get from existing docs 
+The Java Development Kit (JDK) must be installed on all the nodes in your cluster.
+Follow the instructions listed below to manually deploy JDK:
+
+1. Verify the existing version of Java.
+
+        java -version
+
+2. (Optional) Uninstall the Java package if JDK version is less than v1.6 update 31.
+
+        rpm -qa | grep java
+        yum remove java-x.xx-gcj-compat-x.x.x.x-xxjpp_xxrh
+
+3. (Optional) Verify that the default Java package is uninstalled.
+
+        which java
+
+4. Download Oracle JDK.
+
+Browse to the following location: Download JDK 1.6 update 31 and accept the license agreement.
+
+• For Red Hat compatible systems, download the 64-bit JDK (jdk-6u31-linux-x64.bin). Optionally, download the 32-bit JDK (jdk-6u31-linux-i586.bin).Note that you can install 32-bit JDK only on the DataNodes and the TaskTrackers.
+
+• For SUSE systems, download the 64-bit JDK (jdk-6u31-linux-x64.bin).
+
+5. Install the JDK.
+
+• Change directory to the location where you have copied the JDK installer binary (for exam­ple: /usr/jdk1.6.0.31).
+
+• Install JDK.
+
+        ./jdk-6u31-linux-x64.bin -noregister
+
+• Optionally, to install 32-bit JDK on DataNodes and TaskTrackers, execute the following com­mand:
+
+        ./jdk-6u31-linux-i586.bin -noregister
+
+• Create the symbolic links (symlinks).
+
+        mkdir /usr/java
+        ln -s /usr/jdk1.6.0_31/jdk1.6.0_31 /usr/java/default
+        ln -s /usr/java/default/bin/java /usr/bin/java
+
+6. Set up your environment to define JAVA_HOME and to put the Java Virtual Machine and the Java compiler on your path:
+
+        export JAVA_HOME=/usr/java/default
+        export PATH=$JAVA_HOME/bin:$PATH
+
 
 Installing MySQL (optional)
 ---
