@@ -1,8 +1,8 @@
-[Index](./index.md) / **Deploy asdsad**
+[Index](./index.md) / **Validate Installation**
 
 ------
 
-Deploy Configurations
+Validate Installation
 ==========
 
 
@@ -14,8 +14,8 @@ TBD
 
 [Index](./index.md)
 |
-Prev: [Validate Installation](./validate-installation.md)
+Prev: [Deploy Configurations](./deploy-configs.md)
 |
-**Deploy Configurations**
+**Validate Installation**
 |
 next: [Install HDFS + MapReduce](./install-hdfs-mapreduce.md)
