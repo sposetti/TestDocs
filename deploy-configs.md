@@ -14,7 +14,7 @@ Download Configuration Files
 
 1. Download the Hadoop configuration files from [here](./conf) to a temporary directory.
 
-2. Modify the following parameters per your environment.
+2. Modify the following parameters per your environment. You can search for *TODO* in the configuration files for the properties to replace.
 
 
 Modify Configuration Files
@@ -22,19 +22,19 @@ Modify Configuration Files
 
 ### core-site.xml
 
-| Parameter          | Example                                              |
-|--------------------|------------------------------------------------------|
-| fs.default.name    | hdfs://{namenode.full.hostname}:8020                 |
-| fs.checkpoint.dir  | /grid/hadoop/hdfs/snn (per your partition layout)    |
+| Parameter          | Example       | Comments                                       |
+|--------------------|---------------|-----------------------------|
+| fs.default.name    | <code>hdfs://{namenode.full.hostname}:8020</code>  | Enter your NameNode hostname
+| fs.checkpoint.dir  | <code>/grid/hadoop/hdfs/snn</code>  | this is <code>$FS_CHECKPOINT_DIR</code>
 
 ### hdfs-site.xml
 
 | Parameter                          | Example                                              |
 |------------------------------------|------------------------------------------------------|
+| dfs.name.dir                       | Comma separated list of paths such as <code>/grid/hadoop/hdfs/nn</code>, <code>/grid1/hadoop/hdfs/nn</code>
 | dfs.http.address	                | {namenode.full.hostname}:50070                       |
 | dfs.secondary.http.address         | {secondary.namenode.full.hostname}:50090             |
 | dfs.https.address                  | {namenode.full.hostname}:50470                       |
-| dfs.name.dir                       | Comma separated list of paths such as /grid/hadoop/hdfs/nn,/grid1/hadoop/hdfs/nn
 | dfs.data.dir                       | Comma separated list of paths such as /grid1/hadoop/hdfs/dn,/grid2/hadoop/hdfs/dn,/grid3/hadoop/hdfs/dn,/grid4/hadoop/hdfs/dn,/grid5/hadoop/hdfs/dn,/grid6/hadoop/hdfs/dn
 
 ### mapred-site.xml
