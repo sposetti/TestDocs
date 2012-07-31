@@ -92,7 +92,7 @@ Install Compression Libraries (All Nodes)
         rm -f /usr/lib/hadoop/lib/native/Linux-i386-32/libgplcompression*
         rm -f /usr/lib/hadoop/lib/native/Linux-amd64-64/libgplcompression*
         mv $LZO_DIR/lib/native/Linux-i386-32/libgplcompression* /usr/lib/hadoop/lib/native/Linux-i386-32/.
-        mv $LZO_DIR/hadoop-lzo-0.5.0/lib/native/Linux-amd64-64/libgplcompression* /usr/lib/hadoop/lib/native/Linux-amd64-64/.
+        mv $LZO_DIR/lib/native/Linux-amd64-64/libgplcompression* /usr/lib/hadoop/lib/native/Linux-amd64-64/.
 
 Create Directories
 ----------
