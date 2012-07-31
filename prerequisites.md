@@ -187,6 +187,8 @@ It is recommended that Hadoop services be owned by specific users and not by roo
 Set Environment Parameters
 ---
 
+### Users and Groups
+
 The following table describes system user account and groups.
 
 <pre>
@@ -205,6 +207,7 @@ user and group parameters. Edit and execute as necessary to fit your environment
 | <code>PIG_USER</code> | User which will own the Pig services. For example, <code>pig</code>.
 | <code>HADOOP_GROUP</code> | A common group shared by services. For example, <code>hadoop</code>.
 
+### Directories
 
 The following table describes the directories for install, configuration, data, process IDs and logs based on the Hadoop Services you plan to install.
 
