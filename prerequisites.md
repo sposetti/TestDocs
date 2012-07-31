@@ -102,24 +102,22 @@ Follow the instructions listed below to manually deploy JDK:
 
         which java
 
-4. Download Oracle JDK.
-
-    Download the 64-bit JDK [jdk-6u31-linux-x64.bin](http://www.oracle.com/technetwork/java/javase/downloads/jdk-6u31-download-1501634.html) from the Oracle download site.
+4. Download the Oracle 64-bit JDK [jdk-6u31-linux-x64.bin](http://www.oracle.com/technetwork/java/javase/downloads/jdk-6u31-download-1501634.html) from the Oracle download site.
 
     <pre>
-    Note: Optionally, download the 32-bit JDK (<code>jdk-6u31-linux-i586.bin</code>). You can install 32-bit JDK only on DataNodes and TaskTrackers.
+    Optional: Download the Oracle 32-bit JDK (<code>jdk-6u31-linux-i586.bin</code>). You can install 32-bit JDK only on DataNodes and TaskTrackers.
     </pre>
     
-5. Change directory to the location where you have downloaded the 64-bit JDK and run the install.
+5. Change directory to the location where you downloaded the 64-bit JDK and run the install.
 
         cd /usr/jdk1.6.0_31
         ./jdk-6u31-linux-x64.bin -noregister
 
-6. (Optional) install 32-bit JDK on DataNodes and TaskTrackers by executing the following com­mand:
+6. (Optional) Install 32-bit JDK on DataNodes and TaskTrackers by executing the following com­mand:
 
         ./jdk-6u31-linux-i586.bin -noregister
 
-7. Create the symbolic links (symlinks) to the JDK.
+7. Create symbolic links (symlinks) to the JDK.
 
         mkdir /usr/java
         ln -s /usr/jdk1.6.0_31/jdk1.6.0_31 /usr/java/default
@@ -134,7 +132,7 @@ Follow the instructions listed below to manually deploy JDK:
 Installing MySQL (optional)
 ---
 
-If you will install Hive and HCatalog, you need a MySQL database instance to store metadata information. You can either use an existing MySQL instance or install a new instance of MySQL manually.
+If you will install Hive and HCatalog services, you need a MySQL database instance to store metadata information. You can either use an existing MySQL instance or install a new instance of MySQL manually.
 
 <pre>
 NOTE: If you are using an existing MySQL instance, the database user you create for HDP must have adequate privileges to create a database and tables in that database.
