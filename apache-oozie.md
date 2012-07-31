@@ -41,8 +41,9 @@ oozie-site.xml
 
 | Parameter         | Example        |
 |-------------------|----------------|
-| oozie.base.url    | http://<oozie server host name>:11000/oozie
+| oozie.base.url    | http://{oozie.server.host.name}:11000/oozie
 | oozie.service.StoreService.jdbc.url | jdbc:derby:<$OOZIE_DB_DIR>/${oozie.db.schema.name}-db;create=true
+
 
 oozie-env.sh
 
