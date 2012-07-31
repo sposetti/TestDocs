@@ -7,19 +7,19 @@
 Install Apache Oozie
 =====
 
-Apache Pig is a scripting platform for writing MapReduce applications.
+Apache Oozie is workflow scheduler.
 
-* [Install Pig RPMs](#install-pig-rpms)
+* [Install Oozie RPMs](#install-oozie-rpms)
 * [Set Directories and Permissions](#set-directories-and-permissions)
 * [Validate Installation](#validate-installation)
 
 
-Install Pig RPMs
+Install Oozie RPMs
 ----
 
-On all client/gateway nodes from where pig programs will be executed, install pig RPMs.
+On all Oozie servers, install Oozie RPMs.
 
-    yum -y install pig
+    yum -y install oozie
 
 Set Directories and Permissions
 ----
@@ -28,40 +28,38 @@ Set Directories and Permissions
 
 Execute these commands on all nodes
 
-    mkdir -p $PIG_LOG_DIR;
-    chown -R $PIG_USER:$HADOOP_GROUP $PIG_LOG_DIR;
-    chmod 755 -R $PIG_LOG_DIR;
+    mkdir -p $OOZIE_LOG_DIR;
+    chown -R $OOZIE_USER:$HADOOP_GROUP $OOZIE_LOG_DIR;
+    chmod 755 -R $OOZIE_LOG_DIR;
 
 #### Deploy the configurations
 
-Download the pig configuration files from xxxx and change following parameters per your environment.
-Look for all TODO’s in these files and change them to suit the environment pig-env.sh
+Download the Oozie configuration files from xxxx and change following parameters per your environment.
+Look for all TODO’s in these files and change them to suit the environment
+
+oozie-site.xml
 
 | Parameter         | Example        |
 |-------------------|----------------|
-| JAVA_HOME         | Point to 1.6.-0_31 Java Home
+| oozie.base.url    | http://<oozie server host name>:11000/oozie
+| oozie.service.StoreService.jdbc.url | jdbc:derby:<$OOZIE_DB_DIR>/${oozie.db.schema.name}-db;create=true
 
-On all pig hosts create the config directory, copy the config files and set the permissions
-    mkdir -p $PIG_CONF_DIR ;
-    <copy the config files to $PIG_CONF_DIR > 
-    chown -R $PIG_USER:$HADOOP_GROUP $PIG_CONF_DIR/../  ;
-    chmod -R 755 $PIG_CONF_DIR/../
+oozie-env.sh
+
+| Parameter         | Example        |
+|-------------------|----------------|
+| JAVA_HOME	        | Point to 1.6.0_31 Java Home
+| OOZIE_LOG         | $OOZIE_LOG_DIR
+| OOZIE_DATA	    | $OOZIE_DATA_DIR
+
    
 
 Validate Installation
 ----
 
-### Smoke test Pig
+### Smoke Test Oozie
 
-    hadoop dfs -rmr passwd /tmp/id.out
-    hadoop dfs -copyFromLocal /etc/passwd passwd 
-    hadoop dfs -ls 
-
-    echo "A = load '\''passwd'\'' using PigStorage('\'':'\''); " > /tmp/id.pig
-    echo "B = foreach A generate \$0 as id; store B into '\''/tmp/id.out'\''; " >> /tmp/id.pig
-
-    pig -l /tmp/pig.log /tmp/id.pig
-
+TBD
 
 
 ------
