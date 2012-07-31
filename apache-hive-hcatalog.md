@@ -33,12 +33,12 @@ Execute these commands on all nodes
     chown -R $HIVE_USER:$HADOOP_GROUP $HIVE_LOG_DIR;
     chmod 755 -R $HIVE_LOG_DIR;
 
-#### Deploy the Configurations
+### Deploy the Configurations
 
 Download the Hive configuration files from xxxx and change following parameters per your environment.
-Look for all TODO’s in these files and change them to suit the environment
+Look for all TODO’s in these files and change them to suit the environment.
 
-hive-site.xml
+#### hive-site.xml
 
 | Parameter         | Example        |
 |-------------------|----------------|
