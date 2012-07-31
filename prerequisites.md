@@ -171,118 +171,18 @@ Create System Users and Groups
 
 It is recommended that Hadoop services be owned by specific users and not by root or application users. In the table below are the typical users for Hadoop services. Identify the users that you want for your Hadoop services and the common group.
 
-<table>
-	<tr>
-		<th>
-Hadoop Service
-		</th>
-		<th>
-User
-		</th>
-		<th>
-Group
-		</th>
-	</tr>
-	<tr>
-		<td>
-HDFS
-		</td>
-		<td>
-hdfs
-		</td>
-		<td>
-hadoop
-		</td>
-	</tr>
-	<tr>
-		<td>
-MapReduce
-		</td>
-		<td>
-mapred
-		</td>
-		<td>
-hadoop
-		</td>
-	</tr>
-	<tr>
-		<td>
-Hive
-		</td>
-		<td>
-hive
-		</td>
-		<td>
-hadoop
-		</td>
-	</tr>
-	<tr>
-		<td>
-Pig
-		</td>
-		<td>
-pig
-		</td>
-		<td>
-hadoop
-		</td>
-	</tr>
-	<tr>
-		<td>
-HCatalog
-		</td>
-		<td>
-hcat
-		</td>
-		<td>
-hadoop
-		</td>
-	</tr>
-	<tr>
-		<td>
-Templeton
-		</td>
-		<td>
-templeton
-		</td>
-		<td>
-hadoop
-		</td>
-	</tr>
-	<tr>
-		<td>
-HBase
-		</td>
-		<td>
-hbase
-		</td>
-		<td>
-hadoop
-		</td>
-	</tr>
-	<tr>
-		<td>
-Zookeeper
-		</td>
-		<td>
-zookeeper
-		</td>
-		<td>
-hadoop
-		</td>
-	</tr>
-	<tr>
-		<td>
-Oozie
-		</td>
-		<td>
-oozie
-		</td>
-		<td>
-hadoop
-		</td>
-	</tr>
-</table>
+| Hadoop Service | User | Group |
+|----------------|------|-------|
+| HDFS | hdfs | hadoop |
+| MapReduce | mapred | hadoop |
+| Hive | hive | hadoop |
+| Pig | pig | hadoop |
+| HCatalog | hcat | hadoop |
+| Templeton | templeton | hadoop |
+| HBase | hbase | hadoop |
+| Zookeeper | zookeeper | hadoop |
+| Oozie | oozie | hadoop |
+
 
 Set Environment Parameters
 ---
