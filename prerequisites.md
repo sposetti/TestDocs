@@ -169,7 +169,7 @@ To install the instance manually, use the following instructions:
 Create System Users and Groups
 ---
 
-It is recommended that Hadoop services be owned by specific users and not by root or application users. In the table below are the typical users for Hadoop services. Identify the users that you want for your Hadoop services and the common group.
+It is recommended that Hadoop services be owned by specific users and not by <code>root</code> or application users. In the table below are the typical users for Hadoop services. Identify the users that you want for your Hadoop services and the common group and create these accounts on your system.
 
 | Hadoop Service | User | Group |
 |----------------|------|-------|
@@ -189,7 +189,7 @@ Set Environment Parameters
 
 ### Users and Groups
 
-The following table describes system user account and groups.
+The following table describes system user account and groups. These users and groups should reflect the accounts you created in [Create System Users and Groups](#create-system-users-and-groups)
 
 <pre>
 For your conveinence, we are providing <a href="./scripts/usersAndGroups.sh">usersAndGroups.sh</a> script for setting
