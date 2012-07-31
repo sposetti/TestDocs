@@ -197,7 +197,7 @@ user and group parameters. Edit and execute as necessary to fit your environment
 | Parameter | Definition |
 |----------------|------|
 | <code>HDFS_USER</code> | User which will own the HDFS services. For example, <code>hdfs</code>.
-| code>MAPRED_USER</code> | User which will own the MapReduce services. For example, <code>mapred</code>.
+| <code>MAPRED_USER</code> | User which will own the MapReduce services. For example, <code>mapred</code>.
 | <code>ZOOKEEPER_USER</code> | User which will own the ZooKeeper services. For example, <code>zookeeper</code>.
 | <code>HIVE_USER</code> | User which will own the Hive services. For example, <code>hive</code>.
 | <code>HBASE_USER</code> | User which will own the HBase services. For example, <code>hbase</code>.
@@ -206,218 +206,39 @@ user and group parameters. Edit and execute as necessary to fit your environment
 | <code>HADOOP_GROUP</code> | A common group shared by services. For example, <code>hadoop</code>.
 
 
-The following table describes the directories for install, configuration, data, processes and logs.
+The following table describes the directories for install, configuration, data, processes and logs based on the Hadoop Services you plan to install.
 
 <pre>
 For your conveinence, we are providing <a href="./scripts/directories.sh">directories.sh</a> script for setting
 directory parameters. Edit and execute as necessary to fit your environment.
 </pre>
 
-<table>
-   <tr>
-	<th>
-Parameter
-	</th>
-	<th>
-   Definition
-	</th>
-   </tr>
-   <tr>
-	<td>
-<code>DFS_NAME_DIR</code>
-	</td>
-	<td>
-Space separated list of directories where NameNode will store file system image.
-For example, <code>"/grid/hadoop/hdfs/nn /grid1/hadoop/hdfs/nn"</code>
-	</td>
-   </tr>
-   <tr>
-	<td>
-<code>DFS_DATA_DIR</code>
-	</td>
-	<td>
-Space separated list of directories where DataNodes will store the blocks.
-For example, <code>"/grid/hadoop/hdfs/dn /grid1/hadoop/hdfs/dn /grid2/hadoop/hdfs/dn"</code>
-       </td>
-   </tr>
-   <tr>
-	<td>
-<code>ZOOKEEPER_DATA_DIR</code>
-	</td>
-	<td>
-Directory where ZooKeeper will store data. For example, <code>/grid1/hadoop/zookeeper/data</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>FS_CHECKPOINT_DIR</code>
-	</td>
-	<td>
-Space separated list of directories where SecondaryNameNode will store checkpoint image. For example, <code>"/grid/hadoop/hdfs/snn /grid1/hadoop/hdfs/snn /grid2/hadoop/hdfs/snn"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>MAPREDUCE_LOCAL_DIR</code>
-	</td>
-	<td>
-Space separated list of directories where MapReduce will store temporary data. For example, <code>"/grid/hadoop/hdfs/mapred /grid1/hadoop/hdfs/mapred /grid2/hadoop/hdfs/mapred"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>HADOOP_CONF_DIR</code>
-	</td>
-	<td>
-Directory to store the Hadoop configuration files. For example, <code>"/etc/hadoop/conf"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>HIVE_CONF_DIR</code>
-	</td>
-	<td>
-Directory to store the Hive configuration files. For example, <code>"/etc/hive/conf"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>HBASE_CONF_DIR</code>
-	</td>
-	<td>
-Directory to store the HBase configuration files. For example, <code>"/etc/hbase/conf"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>PIG_CONF_DIR</code>
-	</td>
-	<td>
-Directory to store the Pig configuration files. For example, <code>"/etc/pig/conf"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>ZOOKEEPER_CONF_DIR</code>
-	</td>
-	<td>
-Directory to store the Zookeeper configuration files. For example, <code>"/etc/zookeeper/conf"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>OOZIE_CONF_DIR</code>
-	</td>
-	<td>
-Directory to store the Oozie configuration files. For example, <code>"/etc/oozie/conf"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>HDFS_LOG_DIR</code>
-	</td>
-	<td>
-Directory to store the HDFS logs. For example, <code>"/var/log/hadoop/hdfs"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>MAPRED_LOG_DIR</code>
-	</td>
-	<td>
-Directory to store the HDFS logs. For example, <code>"/var/log/hadoop/mapred"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>HIVE_LOG_DIR</code>
-	</td>
-	<td>
-Directory to store the Hive logs. For example, <code>"/var/log/hive"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>HBASE_LOG_DIR</code>
-	</td>
-	<td>
-Directory to store the HBase logs. For example, <code>"/var/log/hbase"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>PIG_LOG_DIR</code>
-	</td>
-	<td>
-Directory to store the Pig logs. For example, <code>"/var/log/pig"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>ZOOKEEPER_LOG_DIR</code>
-	</td>
-	<td>
-Directory to store the ZooKeeper logs. For example, <code>"/var/log/zookeeper"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>OOZIE_LOG_DIR</code>
-	</td>
-	<td>
-Directory to store the Oozie logs. For example, <code>"/var/log/oozie"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>HDFS_PID_DIR</code>
-	</td>
-	<td>
-Directory to store the HDFS process ID. For example, <code>"/var/run/hadoop/hdfs"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>MAPRED_PID_DIR</code>
-	</td>
-	<td>
-Directory to store the MapReduce process ID. For example, <code>"/var/run/hadoop/mapred"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>HIVE_PID_DIR</code>
-	</td>
-	<td>
-Directory to store the Hive process ID. For example, <code>"/var/run/hive"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>PIG_PID_DIR</code>
-	</td>
-	<td>
-Directory to store the Pig process ID. For example, <code>"/var/run/pig"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>ZOOKEEPER_PID_DIR</code>
-	</td>
-	<td>
-Directory to store the ZooKeeper process ID. For example, <code>"/var/run/zookeeper"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>OOZIE_PID_DIR</code>
-	</td>
-	<td>
-Directory to store the Oozie process ID. For example, <code>"/var/run/oozie"</code>
-</td>
-   </tr>
-
-</table>
+| Hadoop Serivce | Parameter | Definition |
+|----------------|------|
+| HDFS | <code>DFS_NAME_DIR</code> | Space separated list of directories where NameNode will store file system image. For example, <code>"/grid/hadoop/hdfs/nn /grid1/hadoop/hdfs/nn"</code>
+| HDFS | <code>DFS_DATA_DIR</code> | Space separated list of directories where DataNodes will store the blocks. For example, <code>"/grid/hadoop/hdfs/dn /grid1/hadoop/hdfs/dn /grid2/hadoop/hdfs/dn"</code>
+| HDFS | <code>FS_CHECKPOINT_DIR</code> | Space separated list of directories where SecondaryNameNode will store checkpoint image. For example, <code>"/grid/hadoop/hdfs/snn /grid1/hadoop/hdfs/snn /grid2/hadoop/hdfs/snn"</code>
+| HDFS | <code>HADOOP_CONF_DIR</code> | Directory to store the Hadoop configuration files. For example, <code>"/etc/hadoop/conf"</code>
+| HDFS | <code>HDFS_LOG_DIR</code> | Directory to store the HDFS logs. For example, <code>"/var/log/hadoop/hdfs"</code>
+| HDFS | <code>HDFS_PID_DIR</code> | Directory to store the HDFS process ID. For example, <code>"/var/run/hadoop/hdfs"</code>
+| MapReduce | <code>MAPREDUCE_LOCAL_DIR</code> | Space separated list of directories where MapReduce will store temporary data. For example, <code>"/grid/hadoop/hdfs/mapred /grid1/hadoop/hdfs/mapred /grid2/hadoop/hdfs/mapred"</code>
+| MapReduce | <code>MAPRED_LOG_DIR</code> | Directory to store the HDFS logs. For example, <code>"/var/log/hadoop/mapred"</code>
+| Pig | <code>PIG_CONF_DIR</code> | Directory to store the Pig configuration files. For example, <code>"/etc/pig/conf"</code>
+| Pig | <code>PIG_LOG_DIR</code> | Directory to store the Pig logs. For example, <code>"/var/log/pig"</code>
+| Pig | <code>PIG_PID_DIR</code> | Directory to store the Pig process ID. For example, <code>"/var/run/pig"</code>
+| Hive | <code>HIVE_CONF_DIR</code> | Directory to store the Hive configuration files. For example, <code>"/etc/hive/conf"</code>
+| Hive | <code>HIVE_LOG_DIR</code> | Directory to store the Hive logs. For example, <code>"/var/log/hive"</code>
+| Hive | <code>HIVE_PID_DIR</code> | Directory to store the Hive process ID. For example, <code>"/var/run/hive"</code>
+| HBase | <code>HBASE_CONF_DIR</code> | Directory to store the HBase configuration files. For example, <code>"/etc/hbase/conf"</code>
+| HBase | <code>HBASE_LOG_DIR</code> | Directory to store the HBase logs. For example, <code>"/var/log/hbase"</code>
+| Zookeeper | <code>ZOOKEEPER_DATA_DIR</code> | Directory where ZooKeeper will store data. For example, <code>/grid1/hadoop/zookeeper/data</code>
+| Zookeeper | <code>ZOOKEEPER_CONF_DIR</code> | Directory to store the Zookeeper configuration files. For example, <code>"/etc/zookeeper/conf"</code>
+| Zookeeper | <code>ZOOKEEPER_LOG_DIR</code> | Directory to store the ZooKeeper logs. For example, <code>"/var/log/zookeeper"</code>
+| Zookepper | <code>ZOOKEEPER_PID_DIR</code> | Directory to store the ZooKeeper process ID. For example, <code>"/var/run/zookeeper"</code>
+| Oozie | <code>OOZIE_CONF_DIR</code> | Directory to store the Oozie configuration files. For example, <code>"/etc/oozie/conf"</code>
+| Oozie | <code>OOZIE_LOG_DIR</code> | Directory to store the Oozie logs. For example, <code>"/var/log/oozie"</code>
+| MapReduce | <code>MAPRED_PID_DIR</code> | Directory to store the MapReduce process ID. For example, <code>"/var/run/hadoop/mapred"</code>
+| Oozie | <code>OOZIE_PID_DIR</code> | Directory to store the Oozie process ID. For example, <code>"/var/run/oozie"</code>
 
 
 
