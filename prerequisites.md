@@ -112,7 +112,7 @@ Follow the instructions listed below to manually deploy JDK:
     
 5. Change directory to the location where you have downloaded the 64-bit JDK and run the install.
 
-        cd /usr/jdk1.6.0.31
+        cd /usr/jdk1.6.0_31
         ./jdk-6u31-linux-x64.bin -noregister
 
 6. (Optional) install 32-bit JDK on DataNodes and TaskTrackers by executing the following com­mand:
