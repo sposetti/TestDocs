@@ -8,7 +8,7 @@ Prerequisites
 Before you install the Hortonworks Data Platform, confirm you meet the system requirements and perform the following tasks.
 
 * [System Requirements](#system-requirements)
-* [Collect Cluster Information](#collect-cluster-information)
+* [Preparing Your Cluster](#preparing-your-cluster)
 * [Installing the Java Development Kit (JDK)](#installing-the-java-development-kit)
 * [Installing MySQL (optional)](#installing-mysql-optional)
 * [Set Environment Parameters](#set-environment-parameters)
@@ -71,7 +71,7 @@ System Requirements
 	</tr>
 </table>
 
-Collect Cluster Information
+Preparing Your Cluster
 -----
 
 * Confirm the Fully Qualified Domain Name (FQDN) for each host using the command <code>hostname -f</code>.
