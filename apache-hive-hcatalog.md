@@ -80,9 +80,9 @@ Validate Installation
 
 ### Smoke Test Hive
 
-    hive -e “show databases”
-    hive -e “create table test(col1 int, col2 string)”
-    hive -e “drop table test”
+    hive -e "show databases"
+    hive -e "create table test(col1 int, col2 string)"
+    hive -e "drop table test"
 
 
 ------
