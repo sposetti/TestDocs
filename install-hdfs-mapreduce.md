@@ -52,7 +52,7 @@ Install Hadoop RPMs (All Nodes)
 Install OpenSSL Libraries
 ---------
 
-       yum -y install openssl openssl.i386
+       yum -y install openssl
 
 Install Compression Libraries (All Nodes)
 ----------
