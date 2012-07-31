@@ -93,4 +93,4 @@ Prev: [Install Apache Pig](./apache-pig.md)
 |
 **Install Apache Hive and Apache HCatalog**
 |
-Next: [Install Apache Oozie](./apache-hive-oozie.md)
+Next: [Install Apache Oozie](./apache-oozie.md)
