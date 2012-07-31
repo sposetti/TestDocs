@@ -32,12 +32,12 @@ In some cases, adequate bandwidth is not available and you want to prevent downl
 
 ### Use Remote Repository
 
-1. Download the yum repo configuration file (<code>hdp.repo</code>).
+1. Download the yum repo configuration file <code>hdp.repo</code>.
 
-        http://public-repo-1.hortonworks.com/HDP-1.0.1.14/repos/centos5/hdp.repo [For RHEL and CentOS 5]
-        http://public-repo-1.hortonworks.com/HDP-1.0.1.14/repos/centos6/hdp.repo [For RHEL and CentOS 6]
+        wget http://public-repo-1.hortonworks.com/HDP-1.0.1.14/repos/centos5/hdp.repo [For RHEL and CentOS 5]
+        wget http://public-repo-1.hortonworks.com/HDP-1.0.1.14/repos/centos6/hdp.repo [For RHEL and CentOS 6]
 
-2. On all hosts, copying the <code>hdp.repo</code> file to your yum repo list:
+2. On all hosts, copy the <code>hdp.repo</code> file to your yum repo list:
 
         cp ~/hdp.repo /etc/yum.repos.d/hdp.repo
 
