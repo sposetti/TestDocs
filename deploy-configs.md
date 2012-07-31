@@ -12,7 +12,10 @@ Deploy Configurations
 Download Configuration Files
 -----
 
-Download the Hadoop configuration files from [here](./conf) and change following parameters per your environment.
+1. Download the Hadoop configuration files from [here](./conf) to a temporary directory.
+
+2. Modify the following parameters per your environment.
+
 
 Modify Configuration Files
 -----
