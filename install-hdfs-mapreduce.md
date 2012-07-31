@@ -46,7 +46,7 @@ In some cases, adequate bandwidth is not available and you want to prevent downl
 Information on setting up the Local Yum Repository can be found in the [Hortonworks Documentaiton](http://docs.hortonworks.com/CURRENT/index.htm#Deploying_Hortonworks_Data_Platform/Using_HMC/Configuring_Local_Mirror_Repository/Configuring_a_Local_Mirror.htm).
 
 
-Install Hadoop RPMs (All Nodes)
+Install Hadoop RPMs
 ---------
 
        yum -y install hadoop hadoop-libhdfs hadoop-libhdfs.i386 hadoop-native hadoop-native.i386 hadoop-pipes hadoop-pipes.i386 hadoop-sbin.i386
@@ -57,7 +57,7 @@ Install OpenSSL Libraries
 
        yum -y install openssl
 
-Install Compression Libraries (All Nodes)
+Install Compression Libraries
 ----------
 
 ### Install Snappy
