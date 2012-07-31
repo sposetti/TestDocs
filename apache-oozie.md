@@ -1,10 +1,10 @@
 [Index](./index.md)
 /
-**Install Apache Pig**
+**Install Apache Oozie**
 
 ------
 
-Install Apache Pig
+Install Apache Oozie
 =====
 
 Apache Pig is a scripting platform for writing MapReduce applications.
@@ -68,6 +68,8 @@ Validate Installation
 
 [Index](./index.md)
 |
-**Install Apache Pig**
-|
 Next: [Install Apache Hive and Apache HCatalog](./apache-hive-hcatalog.md)
+|
+**Install Apache Oozie**
+|
+Next: [Install Apache HBase and Apache Zookeeper](./apache-hbase-zookeeper.md)
