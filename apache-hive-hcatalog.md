@@ -7,61 +7,82 @@
 Install Apache Hive and Apache HCatalog
 =====
 
-Apache Pig is a scripting platform for writing MapReduce applications.
+Apache Hive and Apache HCatalog include a Metadata service and query platform.
 
-* [Install Pig RPMs](#install-pig-rpms)
+* [Install Hive and HCatalog RPMs](#install-hive-hcatalog-rpms)
 * [Set Directories and Permissions](#set-directories-and-permissions)
+* [Download MySQL Connector](#download-mysql-connector)
 * [Validate Installation](#validate-installation)
 
 
-Install Pig RPMs
+Install Hive and HCatalog RPMs
 ----
 
-On all client/gateway nodes from where pig programs will be executed, install pig RPMs.
+On all client/gateway nodes from where Hive programs will be executed, install Hive RPMs.
 
-    yum -y install pig
+    yum -y install hive hcatalog
 
 Set Directories and Permissions
 ----
 
-### Create log directories
+### Create Log Directories
 
 Execute these commands on all nodes
 
-    mkdir -p $PIG_LOG_DIR;
-    chown -R $PIG_USER:$HADOOP_GROUP $PIG_LOG_DIR;
-    chmod 755 -R $PIG_LOG_DIR;
+    mkdir -p $HIVE_LOG_DIR;
+    chown -R $HIVE_USER:$HADOOP_GROUP $HIVE_LOG_DIR;
+    chmod 755 -R $HIVE_LOG_DIR;
 
-#### Deploy the configurations
+#### Deploy the Configurations
 
-Download the pig configuration files from xxxx and change following parameters per your environment.
-Look for all TODO’s in these files and change them to suit the environment pig-env.sh
+Download the Hive configuration files from xxxx and change following parameters per your environment.
+Look for all TODO’s in these files and change them to suit the environment
+
+hive-site.xml
 
 | Parameter         | Example        |
 |-------------------|----------------|
-| JAVA_HOME         | Point to 1.6.-0_31 Java Home
+| javax.jdo.option.ConnectionURL        | jdbc:mysql://<mysql host name>:<port>/<database name>?createDatabaseIfNotExist=true
+| javax.jdo.option.ConnectionUserName	| MySQL username
+| javax.jdo.option.ConnectionPassword   | MySQL password
+| hive.metastore.uris               | thrift://<metastore server full hostname>:9083
+
 
 On all pig hosts create the config directory, copy the config files and set the permissions
-    mkdir -p $PIG_CONF_DIR ;
-    <copy the config files to $PIG_CONF_DIR > 
-    chown -R $PIG_USER:$HADOOP_GROUP $PIG_CONF_DIR/../  ;
-    chmod -R 755 $PIG_CONF_DIR/../
+
+    mkdir -p $HIVE_CONF_DIR ;
+    <copy the config files to $HIVE_CONF_DIR > 
+    chown -R $HIVE_USER:$HADOOP_GROUP $HIVE_CONF_DIR/../  ;
+    chmod -R 755 $HIVE_CONF_DIR/../
    
+Download MySQL Connector
+---
+
+1. Download MySQL connector JAR.
+
+    http://public-repo-1.hortonworks.com/HDP-1.0.0.12/repos/centos5/tars/mysql-connector-java-5.1.18.zip (for RHEL and CentOS 5)
+    http://public-repo-1.hortonworks.com/HDP-1.0.0.12/repos/centos6/tars/mysql-connector-java-5.1.18.zip (for RHEL and CentOS 6)
+    
+2. Unzip the file.
+
+3. Copy the JAR file
+
+    cp <download location>/mysql-connector-java-*-bin.jar /usr/lib/hive/lib/.
+    chmod 644 /usr/lib/hive/lib/*mysql*.jar
+
 
 Validate Installation
 ----
 
-### Smoke test Pig
+### Start Metaservice
 
-    hadoop dfs -rmr passwd /tmp/id.out
-    hadoop dfs -copyFromLocal /etc/passwd passwd 
-    hadoop dfs -ls 
+    /usr/lib/hive/bin/hive --service metastore
 
-    echo "A = load '\''passwd'\'' using PigStorage('\'':'\''); " > /tmp/id.pig
-    echo "B = foreach A generate \$0 as id; store B into '\''/tmp/id.out'\''; " >> /tmp/id.pig
+### Smoke Test Hive
 
-    pig -l /tmp/pig.log /tmp/id.pig
-
+    hive -e “show databases”
+    hive -e “create table test(col1 int, col2 string)”
+    hive -e “drop table test”
 
 
 ------
