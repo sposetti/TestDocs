@@ -68,11 +68,6 @@ Install Hadoop RPMs
        yum -y install hadoop hadoop-libhdfs hadoop-libhdfs.i386 hadoop-native hadoop-native.i386 hadoop-pipes hadoop-pipes.i386 hadoop-sbin.i386
 
 
-Install OpenSSL Libraries
----------
-
-       yum -y install openssl
-
 Install Compression Libraries
 ----------
 
