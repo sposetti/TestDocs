@@ -194,80 +194,16 @@ For your conveinence, we are providing <a href="./scripts/usersAndGroups.sh">use
 user and group parameters. Edit and execute as necessary to fit your environment.
 </pre>
 
-<table>
-	<tr>
-		<th>
-Parameter
-		</th>
-		<th>
-Definition
-		</th>
-	</tr>
-	<tr>
-		<td>
-<code>HDFS_USER</code>
-		</td>
-		<td>
-User which will own the HDFS services. For example, <code>hdfs</code>.
-		</td>
-	</tr>
-	<tr>
-		<td>
-<code>MAPRED_USER</code>
-		</td>
-		<td>
-User which will own the MapReduce services. For example, <code>mapred</code>.
-		</td>
-	</tr>
-	<tr>
-		<td>
-<code>ZOOKEEPER_USER</code>
-		</td>
-		<td>
-User which will own the ZooKeeper services. For example, <code>zookeeper</code>.
-		</td>
-	</tr>
-	<tr>
-		<td>
-<code>HIVE_USER</code>
-		</td>
-		<td>
-User which will own the Hive services. For example, <code>hive</code>.
-		</td>
-	</tr>
-	<tr>
-		<td>
-<code>HBASE_USER</code>
-		</td>
-		<td>
-User which will own the HBase services. For example, <code>hbase</code>.
-		</td>
-	</tr>
-	<tr>
-		<td>
-<code>OOZIE_USER</code>
-		</td>
-		<td>
-User which will own the Oozie services. For example, <code>oozie</code>.
-		</td>
-	</tr>
-	<tr>
-		<td>
-<code>PIG_USER</code>
-		</td>
-		<td>
-User which will own the Pig services. For example, <code>pig</code>.
-		</td>
-	</tr>
-	<tr>
-		<td>
-<code>HADOOP_GROUP</code>
-		</td>
-		<td>
-A common group shared by services. For example, <code>hadoop</code>.
-		</td>
-	</tr>
-</table>
+| Parameter | Definition |
+|----------------|------|
+| <code>HDFS_USER</code> | User which will own the HDFS services. For example, <code>hdfs</code>.
+| code>MAPRED_USER</code> | User which will own the MapReduce services. For example, <code>mapred</code>.
+| <code>ZOOKEEPER_USER</code> | User which will own the ZooKeeper services. For example, <code>zookeeper</code>.
+| <code>HIVE_USER</code> | User which will own the Hive services. For example, <code>hive</code>.
+| <code>HBASE_USER</code> | User which will own the HBase services. For example, <code>hbase</code>.
+| <code>OOZIE_USER</code> | User which will own the Oozie services. For example, <code>oozie</code>.
+| <code>PIG_USER</code> | User which will own the Pig services. For example, <code>pig</code>.
+| <code>HADOOP_GROUP</code> | A common group shared by services. For example, <code>hadoop</code>.
 
 
 The following table describes the directories for install, configuration, data, processes and logs.
