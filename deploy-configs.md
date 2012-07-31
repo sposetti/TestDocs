@@ -22,20 +22,20 @@ Modify Configuration Files
 
 ### core-site.xml
 
-| Parameter          | Example       | Comments                                       |
+| Parameter          | Example       | Description                                       |
 |--------------------|---------------|-----------------------------|
 | fs.default.name    | <code>hdfs://{namenode.full.hostname}:8020</code>  | Enter your NameNode hostname
-| fs.checkpoint.dir  | <code>/grid/hadoop/hdfs/snn</code>  | this is <code>$FS_CHECKPOINT_DIR</code>
+| fs.checkpoint.dir  | <code>/grid/hadoop/hdfs/snn</code>  | Comma separated list of paths. Use the value of <code>$FS_CHECKPOINT_DIR</code>
 
 ### hdfs-site.xml
 
-| Parameter                          | Example                                              |
-|------------------------------------|------------------------------------------------------|
-| dfs.name.dir                       | Comma separated list of paths such as <code>/grid/hadoop/hdfs/nn</code>, <code>/grid1/hadoop/hdfs/nn</code>
-| dfs.http.address	                | {namenode.full.hostname}:50070                       |
-| dfs.secondary.http.address         | {secondary.namenode.full.hostname}:50090             |
-| dfs.https.address                  | {namenode.full.hostname}:50470                       |
-| dfs.data.dir                       | Comma separated list of paths such as /grid1/hadoop/hdfs/dn,/grid2/hadoop/hdfs/dn,/grid3/hadoop/hdfs/dn,/grid4/hadoop/hdfs/dn,/grid5/hadoop/hdfs/dn,/grid6/hadoop/hdfs/dn
+| Parameter                          | Example          | Description                       |
+|------------------------------------|------------------|-----------------------------------|
+| dfs.name.dir                       | <code>/grid/hadoop/hdfs/nn</code> | Comma separated list of paths. Use the value of <code>$DFS_NAME_DIR</code>
+| dfs.data.dir                       | <code>/grid/hadoop/hdfs/dn</code> | Comma separated list of paths. Use the value of <code>$DFS_DATA_DIR</code>
+| dfs.http.address	                | {namenode.full.hostname}:50070   | Enter your NameNode hostname
+| dfs.secondary.http.address         | {secondary.namenode.full.hostname}:50090 | Enter your SecondaryNameNode hostname
+| dfs.https.address                  | {namenode.full.hostname}:50470   | Enter your NameNode hostname
 
 ### mapred-site.xml
 
