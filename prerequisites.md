@@ -110,19 +110,20 @@ Follow the instructions listed below to manually deploy JDK:
     Note: Optionally, download the 32-bit JDK (<code>jdk-6u31-linux-i586.bin</code>). You can install 32-bit JDK only on DataNodes and TaskTrackers.
     </pre>
     
-5. Change directory to the location where you have copied the JDK installer binary (for exam­ple: /usr/jdk1.6.0.31).
+5. Change directory to the location where you have downloaded the 64-bit JDK and run the install.
 
-        ./jdk-6u31-linux-x64.bin -noregister
+    cd /usr/jdk1.6.0.31
+    ./jdk-6u31-linux-x64.bin -noregister
 
-6. Optionally, to install 32-bit JDK on DataNodes and TaskTrackers, execute the following com­mand:
+6. (Optional) install 32-bit JDK on DataNodes and TaskTrackers by executing the following com­mand:
 
-        ./jdk-6u31-linux-i586.bin -noregister
+    ./jdk-6u31-linux-i586.bin -noregister
 
-7. Create the symbolic links (symlinks).
+7. Create the symbolic links (symlinks) to the JDK.
 
-        mkdir /usr/java
-        ln -s /usr/jdk1.6.0_31/jdk1.6.0_31 /usr/java/default
-        ln -s /usr/java/default/bin/java /usr/bin/java
+    mkdir /usr/java
+    ln -s /usr/jdk1.6.0_31/jdk1.6.0_31 /usr/java/default
+    ln -s /usr/java/default/bin/java /usr/bin/java
 
 6. Set up your environment to define JAVA_HOME and to put the Java Virtual Machine and the Java compiler on your path:
 
