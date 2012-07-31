@@ -10,7 +10,6 @@ Install Apache Oozie
 Apache Oozie is workflow scheduler.
 
 * [Install Oozie RPMs](#install-oozie-rpms)
-* [Set Directories and Permissions](#set-directories-and-permissions)
 * [Validate Installation](#validate-installation)
 
 
@@ -24,7 +23,7 @@ On all Oozie servers, install Oozie RPMs.
 Set Directories and Permissions
 ----
 
-### Create log directories
+### Create Log Directories
 
 Execute these commands on all nodes
 
@@ -32,7 +31,7 @@ Execute these commands on all nodes
     chown -R $OOZIE_USER:$HADOOP_GROUP $OOZIE_LOG_DIR;
     chmod 755 -R $OOZIE_LOG_DIR;
 
-#### Deploy the configurations
+#### Deploy Configurations
 
 Download the Oozie configuration files from xxxx and change following parameters per your environment.
 Look for all TODO’s in these files and change them to suit the environment
