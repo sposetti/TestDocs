@@ -5,25 +5,25 @@
 #
 
 # User which will own the HDFS services.
-HDFS_USER = hdfs
+export HDFS_USER=hdfs ;
 
 # User which will own the MapReduce services.
-MAPRED_USER = mapred
+export MAPRED_USER=mapred ;
 
 # User which will own the ZooKeeper services.
-ZOOKEEPER_USER = zookeeper
+export ZOOKEEPER_USER=zookeeper ;
 
 # User which will own the Hive services.
-HIVE_USER = hive
+export HIVE_USER=hive ;
 
 # User which will own the HBase services.
-HBASE_USER = hbase
+export HBASE_USER=hbase ;
 
 # User which will own the Oozie services.
-OOZIE_USER = oozie
+export OOZIE_USER=oozie;
 
 # User which will own the Pig services.
-PIG_USER = pig
+export PIG_USER=pig ;
 
 # A common group shared by services.
-HADOOP_GROUP = hadoop
+export HADOOP_GROUP=hadoop ;
