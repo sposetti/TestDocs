@@ -5,7 +5,7 @@
 Validate Installation
 ==========
 
-* [Format and Start HDFS](*format-and-start-hdfs)
+* [Format and Start HDFS](#format-and-start-hdfs)
 * [Smoke Test HDFS](#smoke-test-hdfs)
 * [Start MapReduce](#start-mapreduce)
 * [Smoke Test MapReduce](#smoke-test-mapreduce)
