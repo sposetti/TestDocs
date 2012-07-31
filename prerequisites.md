@@ -206,7 +206,7 @@ user and group parameters. Edit and execute as necessary to fit your environment
 | <code>HADOOP_GROUP</code> | A common group shared by services. For example, <code>hadoop</code>.
 
 
-The following table describes the directories for install, configuration, data, processes and logs based on the Hadoop Services you plan to install.
+The following table describes the directories for install, configuration, data, process IDs and logs based on the Hadoop Services you plan to install.
 
 <pre>
 For your conveinence, we are providing <a href="./scripts/directories.sh">directories.sh</a> script for setting
