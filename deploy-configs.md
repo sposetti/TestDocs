@@ -33,18 +33,18 @@ Modify Configuration Files
 |------------------------------------|------------------|-----------------------------------|
 | dfs.name.dir                       | <code>/grid/hadoop/hdfs/nn</code> | Comma separated list of paths. Use the value of <code>$DFS_NAME_DIR</code>
 | dfs.data.dir                       | <code>/grid/hadoop/hdfs/dn</code> | Comma separated list of paths. Use the value of <code>$DFS_DATA_DIR</code>
-| dfs.http.address	                | {namenode.full.hostname}:50070   | Enter your NameNode hostname
-| dfs.secondary.http.address         | {secondary.namenode.full.hostname}:50090 | Enter your SecondaryNameNode hostname
-| dfs.https.address                  | {namenode.full.hostname}:50470   | Enter your NameNode hostname
+| dfs.http.address	                | <code>{namenode.full.hostname}:50070</code>   | Enter your NameNode hostname
+| dfs.secondary.http.address         | <code>{secondary.namenode.full.hostname}:50090</code> | Enter your SecondaryNameNode hostname
+| dfs.https.address                  | <code>{namenode.full.hostname}:50470</code>   | Enter your NameNode hostname
 
 ### mapred-site.xml
 
-| Parameter                             | Example                                              |
-|---------------------------------------|------------------------------------------------------|
-| mapred.job.tracker                    | {jobtracker.full.hostname}:50300
-| mapred.job.tracker.http.address       | {jobtracker.full.hostname}:50030
-| mapreduce.history.server.http.address | {jobtracker.full.hostname}:51111
-| mapred.local.dir	                   | Comma separated list of paths such as /grid1/hadoop/mapred,/grid2/hadoop/mapred, /grid3/hadoop/mapred,/grid4/hadoop/mapred, /grid5/hadoop/mapred,/grid6/hadoop/mapred,
+| Parameter                             | Example       | Description                         |
+|---------------------------------------|---------------|---------------------------------------|
+| mapred.job.tracker                    | <code>{jobtracker.full.hostname}:50300</code> | Enter your JobTracker hostname
+| mapred.job.tracker.http.address       | <code>{jobtracker.full.hostname}:50030</code> | Enter your JobTracker hostname
+| mapreduce.history.server.http.address | <code>{jobtracker.full.hostname}:51111</code> | Enter your JobTracker hostname
+| mapred.local.dir	                   | <code>/grid/hadoop/mapred</code> | Comma separated list of paths. Use the value of <code>$MAPRED_LOCAL_DIR</code>
 
 ### hadoop-env.sh
 
