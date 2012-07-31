@@ -40,9 +40,22 @@ In some cases, adequate bandwidth is not available and you want to prevent downl
         [For RHEL and CentOS 6]
         wget http://public-repo-1.hortonworks.com/HDP-1.0.1.14/repos/centos6/hdp.repo
 
-2. On all hosts, copy the <code>hdp.repo</code> file to your yum repo list:
+2. On all hosts, copy the <code>hdp.repo</code> file to your yum repo list.
 
         cp ~/hdp.repo /etc/yum.repos.d/hdp.repo
+
+3. List the repository to confirm HDP is installed.
+
+        yum repolist
+        
+        Loaded plugins: fastestmirror, security
+        Loading mirror speeds from cached hostfile
+         * base: mirrors.cat.pdx.edu
+         * extras: linux.mirrors.es.net
+         * updates: mirrors.usc.edu
+        repo id            repo name                                              status
+        HDP-1.0.1.14       Hortonworks Data Platform Version - HDP-1.0.1.14          64
+        HDP-UTILS-1.0.1.14 Hortonworks Data Platform Utils Version - HDP-UTILS-1.    51
 
 ### Use Local Yum Repository (optional)
 
