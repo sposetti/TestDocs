@@ -104,9 +104,12 @@ Follow the instructions listed below to manually deploy JDK:
 
 4. Download Oracle JDK.
 
-    For Red Hat and CentOS compatible systems, download the 64-bit JDK (jdk-6u31-linux-x64.bin). Optionally, download the 32-bit JDK (jdk-6u31-linux-i586.bin).Note that you can install 32-bit JDK only on the DataNodes and the TaskTrackers.
-    For SUSE systems, download the 64-bit JDK (jdk-6u31-linux-x64.bin).
+    Download the 64-bit JDK [jdk-6u31-linux-x64.bin](http://www.oracle.com/technetwork/java/javase/downloads/jdk-6u31-download-1501634.html) from the Oracle download site.
 
+    <pre>
+    Note: Optionally, download the 32-bit JDK (<code>jdk-6u31-linux-i586.bin</code>). You can install 32-bit JDK only on DataNodes and TaskTrackers.
+    </pre>
+    
 5. Change directory to the location where you have copied the JDK installer binary (for exam­ple: /usr/jdk1.6.0.31).
 
         ./jdk-6u31-linux-x64.bin -noregister
