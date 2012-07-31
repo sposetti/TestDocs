@@ -119,7 +119,7 @@ Note: if any of these directories exist, we recommend deleting and recreating.
 
 ### Create NameNode directories
 
-Execute these commands the Master Node host that will run the NameNode service.
+Execute these commands the Master Node that will run the NameNode service.
 
         mkdir -p $DFS_NAME_DIR
         chown -R $HDFS_USER:$HADOOP_GROUP $DFS_NAME_DIR
@@ -127,7 +127,7 @@ Execute these commands the Master Node host that will run the NameNode service.
 
 ### Create SecondaryNameNode directories
 
-Execute these commands on all nodes, which potentially can run the secondary name node service (Typically all master nodes)
+Execute these commands on all nodes, which potentially can run the SecondaryNameNode service. Typically all Master Nodes.
 
         mkdir -p $FS_CHECKPOINT_DIR
         chown -R $HDFS_USER:$HADOOP_GROUP $FS_CHECKPOINT_DIR
@@ -135,7 +135,7 @@ Execute these commands on all nodes, which potentially can run the secondary nam
 
 ### Create DataNode and MapReduce local directories
 
-Execute these commands on all data nodes.
+Execute these commands on all DataNodes.
 
         mkdir -p $DFS_DATA_DIR;
         chown -R $HDFS_USER:$HADOOP_GROUP $DFS_DATA_DIR;
@@ -151,19 +151,19 @@ Execute these commands on all nodes.
 
         mkdir -p $HDFS_LOG_DIR;
         chown -R $HDFS_USER:$HADOOP_GROUP $HDFS_LOG_DIR;
-        chmod 755 -R $HDFS_LOG_DIR;
+        chmod -R 755 $HDFS_LOG_DIR;
 
         mkdir -p $MAPRED_LOG_DIR;
         chown -R $MAPRED_USER:$HADOOP_GROUP $MAPRED_LOG_DIR;
-        chmod 755 -R $MAPRED_LOG_DIR;
+        chmod -R 755 $MAPRED_LOG_DIR;
 
         mkdir -p $HDFS_PID_DIR;
         chown -R $HDFS_USER:$HADOOP_GROUP $HDFS_PID_DIR;
-        chmod 755 -R $HDFS_PID_DIR
+        chmod -R 755 $HDFS_PID_DIR
 
         mkdir -p $MAPRED_PID_DIR;
         chown -R $MAPRED_USER:$HADOOP_GROUP $MAPRED_PID_DIR;
-        chmod 755 -R $MAPRED_PID_DIR;
+        chmod -R 755 $MAPRED_PID_DIR;
 
 
 
