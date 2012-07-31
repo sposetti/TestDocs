@@ -23,25 +23,28 @@ Set Default File and Directory Permissions
 Set the default file and directory permissions to 0022 (022). This is typically the default for most Linux distributions.
 Use the <code>umask</code> command to confirm and set as necessary. Be sure umask is set for all terminal session that you will use during installation.
 
-Configure HDP Repository
+Configure Repository
 -------
 
-### Use Hosted HDP Repository
+The standard HDP install requires access to the Internet to fetch software from a remote repository. You can setup access to the [Remote Repository](#use-remote-repository).
 
-<pre>/etc/yum.repos.d/hdp.repo</pre>
+In some cases, adequate bandwidth is not available and you want to prevent downloading from the remote repository over and over again. Other times, Internet access is not available at all from the hosts in your cluster. In these situations, you must set up a version of the repository that your hosts can access locally. This is called a [Local Yum Repository](#use-local-yum-repository-optional).
 
-<pre>
-[HDP-1.0.0.12]
-name=Hortonworks Data Platform Version - HDP-1.0.0.12
-baseurl=http://public-repo-1.hortonworks.com/HDP-1.0.0.12/repos/centos5
-gpgcheck=0
-enabled=1
-priority=1
-</pre>
+### Use Remote Repository
 
-### Use Local HDP Repository (optional)
-TBD – get from existing docs
-http://docs.hortonworks.com/CURRENT/index.htm#Deploying_Hortonworks_Data_Platform/Using_HMC/Getting_Ready_To_Install/Optional_Configure_the_Local_yum_Repository.htm
+1. Download the yum repo configuration file (<code>hdp.repo</code>).
+
+        http://public-repo-1.hortonworks.com/HDP-1.0.1.14/repos/centos5/hdp.repo [For RHEL and CentOS 5]
+        http://public-repo-1.hortonworks.com/HDP-1.0.1.14/repos/centos6/hdp.repo [For RHEL and CentOS 6]
+
+2. On all hosts, copying the <code>hdp.repo</code> file to your yum repo list:
+
+        cp ~/hdp.repo /etc/yum.repos.d/hdp.repo
+
+### Use Local Yum Repository (optional)
+
+Information on setting up the Local Yum Repository can be found in the [Hortonworks Documentaiton](http://docs.hortonworks.com/CURRENT/index.htm#Deploying_Hortonworks_Data_Platform/Using_HMC/Configuring_Local_Mirror_Repository/Configuring_a_Local_Mirror.htm).
+
 
 Install Hadoop RPMs (All Nodes)
 ---------
