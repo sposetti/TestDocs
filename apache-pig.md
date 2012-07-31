@@ -24,15 +24,15 @@ On all client/gateway nodes from where pig programs will be executed, install pi
 Set Directories and Permissions
 ----
 
-### Create log directories
+### Create Log Directories
 
-Execute these commands on all nodes
+Execute these commands on all nodes:
 
     mkdir -p $PIG_LOG_DIR;
     chown -R $PIG_USER:$HADOOP_GROUP $PIG_LOG_DIR;
     chmod 755 -R $PIG_LOG_DIR;
 
-#### Deploy the configurations
+### Deploy Configurations
 
 Download the pig configuration files from xxxx and change following parameters per your environment.
 Look for all TODO’s in these files and change them to suit the environment pig-env.sh
@@ -41,7 +41,8 @@ Look for all TODO’s in these files and change them to suit the environment pig
 |-------------------|----------------|
 | JAVA_HOME         | Point to 1.6.-0_31 Java Home
 
-On all pig hosts create the config directory, copy the config files and set the permissions
+On all pig hosts create the config directory, copy the config files and set the permissions:
+
     mkdir -p $PIG_CONF_DIR ;
     <copy the config files to $PIG_CONF_DIR > 
     chown -R $PIG_USER:$HADOOP_GROUP $PIG_CONF_DIR/../  ;
@@ -51,7 +52,7 @@ On all pig hosts create the config directory, copy the config files and set the 
 Validate Installation
 ----
 
-### Smoke test Pig
+### Smoke Test Pig
 
     hadoop dfs -rmr passwd /tmp/id.out
     hadoop dfs -copyFromLocal /etc/passwd passwd 

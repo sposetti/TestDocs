@@ -33,12 +33,12 @@ Execute these commands on all nodes
     chown -R $HIVE_USER:$HADOOP_GROUP $HIVE_LOG_DIR;
     chmod 755 -R $HIVE_LOG_DIR;
 
-#### Deploy the Configurations
+### Deploy the Configurations
 
 Download the Hive configuration files from xxxx and change following parameters per your environment.
-Look for all TODO’s in these files and change them to suit the environment
+Look for all TODO’s in these files and change them to suit the environment.
 
-hive-site.xml
+#### hive-site.xml
 
 | Parameter         | Example        |
 |-------------------|----------------|
@@ -80,9 +80,9 @@ Validate Installation
 
 ### Smoke Test Hive
 
-    hive -e “show databases”
-    hive -e “create table test(col1 int, col2 string)”
-    hive -e “drop table test”
+    hive -e "show databases"
+    hive -e "create table test(col1 int, col2 string)"
+    hive -e "drop table test"
 
 
 ------
@@ -93,4 +93,4 @@ Prev: [Install Apache Pig](./apache-pig.md)
 |
 **Install Apache Hive and Apache HCatalog**
 |
-Next: [Install Apache Oozie](./apache-hive-oozie.md)
+Next: [Install Apache Oozie](./apache-oozie.md)

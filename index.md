@@ -1,6 +1,6 @@
 Hortonworks Data Platform - Manual Install Instructions
 =====
-*HDP 1.0.0.12*
+*HDP 1.0.1.14*
 
 ------
 

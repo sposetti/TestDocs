@@ -8,7 +8,7 @@ Prerequisites
 Before you install the Hortonworks Data Platform, confirm you meet the system requirements and perform the following tasks.
 
 * [System Requirements](#system-requirements)
-* [Collect Cluster Information](#collect-cluster-information)
+* [Preparing Your Cluster](#preparing-your-cluster)
 * [Installing the Java Development Kit (JDK)](#installing-the-java-development-kit)
 * [Installing MySQL (optional)](#installing-mysql-optional)
 * [Set Environment Parameters](#set-environment-parameters)
@@ -62,16 +62,16 @@ System Requirements
 <li><code>rpm, scp, curl, wget, unzip, tar, pdsh</code></li>
 </ul>
 
-<strong>MySQL 5:</strong>
+<strong>MySQL 5 (optional):</strong>
 <ul>
-<li>Optional: for use with Hive and HCatalog</li>
+<li>For use with Hive and HCatalog services.</li>
 <li>See <a href="#installing-mysql-optional">Installing MySQL</a></li>
 </ul>
 		</td>
 	</tr>
 </table>
 
-Collect Cluster Information
+Preparing Your Cluster
 -----
 
 * Confirm the Fully Qualified Domain Name (FQDN) for each host using the command <code>hostname -f</code>.
@@ -89,7 +89,7 @@ Installing the Java Development Kit (JDK)
 The Java Development Kit (JDK) must be installed on all the nodes in your cluster.
 Follow the instructions listed below to manually deploy JDK:
 
-1. Verify the existing version of Java.
+1. Verify the existing version of Java meets the [System Requirements](#system-requirements).
 
         java -version
 
@@ -102,26 +102,28 @@ Follow the instructions listed below to manually deploy JDK:
 
         which java
 
-4. Download Oracle JDK.
+4. Download the Oracle 64-bit JDK [jdk-6u31-linux-x64.bin](http://www.oracle.com/technetwork/java/javase/downloads/jdk-6u31-download-1501634.html) from the Oracle download site.
 
-    For Red Hat and CentOS compatible systems, download the 64-bit JDK (jdk-6u31-linux-x64.bin). Optionally, download the 32-bit JDK (jdk-6u31-linux-i586.bin).Note that you can install 32-bit JDK only on the DataNodes and the TaskTrackers.
-    For SUSE systems, download the 64-bit JDK (jdk-6u31-linux-x64.bin).
+    <pre>
+    Optional: Download the Oracle 32-bit JDK (<code>jdk-6u31-linux-i586.bin</code>). You can install 32-bit JDK only on DataNodes and TaskTrackers.
+    </pre>
+    
+5. Change directory to the location where you downloaded the 64-bit JDK and run the install.
 
-5. Change directory to the location where you have copied the JDK installer binary (for exam­ple: /usr/jdk1.6.0.31).
-
+        cd /usr/jdk1.6.0_31
         ./jdk-6u31-linux-x64.bin -noregister
 
-6. Optionally, to install 32-bit JDK on DataNodes and TaskTrackers, execute the following com­mand:
+6. (Optional) Install 32-bit JDK on DataNodes and TaskTrackers by executing the following com­mand:
 
         ./jdk-6u31-linux-i586.bin -noregister
 
-7. Create the symbolic links (symlinks).
+7. Create symbolic links (symlinks) to the JDK.
 
         mkdir /usr/java
         ln -s /usr/jdk1.6.0_31/jdk1.6.0_31 /usr/java/default
         ln -s /usr/java/default/bin/java /usr/bin/java
 
-6. Set up your environment to define JAVA_HOME and to put the Java Virtual Machine and the Java compiler on your path:
+6. Set up your environment to define <code>JAVA_HOME</code> to put the Java Virtual Machine and the Java compiler on your path:
 
         export JAVA_HOME=/usr/java/default
         export PATH=$JAVA_HOME/bin:$PATH
@@ -130,7 +132,7 @@ Follow the instructions listed below to manually deploy JDK:
 Installing MySQL (optional)
 ---
 
-If you will install Hive and HCatalog, you need a MySQL database instance to store metadata information. You can either use an existing MySQL instance or install a new instance of MySQL manually.
+If you will install Hive and HCatalog services, you need a MySQL database instance to store metadata information. You can either use an existing MySQL instance or install a new instance of MySQL manually.
 
 <pre>
 NOTE: If you are using an existing MySQL instance, the database user you create for HDP must have adequate privileges to create a database and tables in that database.
@@ -165,419 +167,77 @@ To install the instance manually, use the following instructions:
 Create System Users and Groups
 ---
 
-It is recommended that Hadoop services be owned by specific users and not by root or application users. In the table below are the typical users for Hadoop services. Identify the users that you want for your Hadoop services and the common group.
+It is recommended that Hadoop services be owned by specific users and not by <code>root</code> or application users. In the table below are the typical users for Hadoop services. Identify the users that you want for your Hadoop services and the common group and create these accounts on your system.
 
-<table>
-	<tr>
-		<th>
-Hadoop Service
-		</th>
-		<th>
-User
-		</th>
-		<th>
-Group
-		</th>
-	</tr>
-	<tr>
-		<td>
-HDFS
-		</td>
-		<td>
-hdfs
-		</td>
-		<td>
-hadoop
-		</td>
-	</tr>
-	<tr>
-		<td>
-MapReduce
-		</td>
-		<td>
-mapred
-		</td>
-		<td>
-hadoop
-		</td>
-	</tr>
-	<tr>
-		<td>
-Hive
-		</td>
-		<td>
-hive
-		</td>
-		<td>
-hadoop
-		</td>
-	</tr>
-	<tr>
-		<td>
-Pig
-		</td>
-		<td>
-pig
-		</td>
-		<td>
-hadoop
-		</td>
-	</tr>
-	<tr>
-		<td>
-HCatalog
-		</td>
-		<td>
-hcat
-		</td>
-		<td>
-hadoop
-		</td>
-	</tr>
-	<tr>
-		<td>
-Templeton
-		</td>
-		<td>
-templeton
-		</td>
-		<td>
-hadoop
-		</td>
-	</tr>
-	<tr>
-		<td>
-HBase
-		</td>
-		<td>
-hbase
-		</td>
-		<td>
-hadoop
-		</td>
-	</tr>
-	<tr>
-		<td>
-Zookeeper
-		</td>
-		<td>
-zookeeper
-		</td>
-		<td>
-hadoop
-		</td>
-	</tr>
-	<tr>
-		<td>
-Oozie
-		</td>
-		<td>
-oozie
-		</td>
-		<td>
-hadoop
-		</td>
-	</tr>
-</table>
+| Hadoop Service | User | Group |
+|----------------|------|-------|
+| HDFS | hdfs | hadoop |
+| MapReduce | mapred | hadoop |
+| Hive | hive | hadoop |
+| Pig | pig | hadoop |
+| HCatalog | hcat | hadoop |
+| Templeton | templeton | hadoop |
+| HBase | hbase | hadoop |
+| Zookeeper | zookeeper | hadoop |
+| Oozie | oozie | hadoop |
+
 
 Set Environment Parameters
 ---
 
-The following table describes system user account and groups.
+### Users and Groups
+
+The following table describes system user account and groups. These users and groups should reflect the accounts you created in [Create System Users and Groups](#create-system-users-and-groups)
 
 <pre>
-For your conveinence, we are providing <a href="./scripts/usersAndGroups.sh">usersAndGroups.sh</a> script for setting
-user and group parameters. Edit and execute as necessary to fit your environment.
+For your conveinence, we are providing <a href="./scripts/usersAndGroups.sh">usersAndGroups.sh</a> script for setting user and group parameters. Edit and execute as necessary to fit your environment.
 </pre>
 
-<table>
-	<tr>
-		<th>
-Parameter
-		</th>
-		<th>
-Definition
-		</th>
-	</tr>
-	<tr>
-		<td>
-<code>HDFS_USER</code>
-		</td>
-		<td>
-User which will own the HDFS services. For example, <code>hdfs</code>.
-		</td>
-	</tr>
-	<tr>
-		<td>
-<code>MAPRED_USER</code>
-		</td>
-		<td>
-User which will own the MapReduce services. For example, <code>mapred</code>.
-		</td>
-	</tr>
-	<tr>
-		<td>
-<code>ZOOKEEPER_USER</code>
-		</td>
-		<td>
-User which will own the ZooKeeper services. For example, <code>zookeeper</code>.
-		</td>
-	</tr>
-	<tr>
-		<td>
-<code>HIVE_USER</code>
-		</td>
-		<td>
-User which will own the Hive services. For example, <code>hive</code>.
-		</td>
-	</tr>
-	<tr>
-		<td>
-<code>HBASE_USER</code>
-		</td>
-		<td>
-User which will own the HBase services. For example, <code>hbase</code>.
-		</td>
-	</tr>
-	<tr>
-		<td>
-<code>OOZIE_USER</code>
-		</td>
-		<td>
-User which will own the Oozie services. For example, <code>oozie</code>.
-		</td>
-	</tr>
-	<tr>
-		<td>
-<code>PIG_USER</code>
-		</td>
-		<td>
-User which will own the Pig services. For example, <code>pig</code>.
-		</td>
-	</tr>
-	<tr>
-		<td>
-<code>HADOOP_GROUP</code>
-		</td>
-		<td>
-A common group shared by services. For example, <code>hadoop</code>.
-		</td>
-	</tr>
-</table>
+| Parameter | Definition |
+|----------------|------|
+| <code>HDFS_USER</code> | User which will own the HDFS services. For example, <code>hdfs</code>.
+| <code>MAPRED_USER</code> | User which will own the MapReduce services. For example, <code>mapred</code>.
+| <code>ZOOKEEPER_USER</code> | User which will own the ZooKeeper services. For example, <code>zookeeper</code>.
+| <code>HIVE_USER</code> | User which will own the Hive services. For example, <code>hive</code>.
+| <code>HBASE_USER</code> | User which will own the HBase services. For example, <code>hbase</code>.
+| <code>OOZIE_USER</code> | User which will own the Oozie services. For example, <code>oozie</code>.
+| <code>PIG_USER</code> | User which will own the Pig services. For example, <code>pig</code>.
+| <code>HADOOP_GROUP</code> | A common group shared by services. For example, <code>hadoop</code>.
 
+### Directories
 
-The following table describes the directories for install, configuration, data, processes and logs.
+The following table describes the directories for install, configuration, data, process IDs and logs based on the Hadoop Services you plan to install.
 
 <pre>
-For your conveinence, we are providing <a href="./scripts/directories.sh">directories.sh</a> script for setting
-directory parameters. Edit and execute as necessary to fit your environment.
+For your conveinence, we are providing <a href="./scripts/directories.sh">directories.sh</a> script for setting directory parameters. Edit and execute as necessary to fit your environment.
 </pre>
 
-<table>
-   <tr>
-	<th>
-Parameter
-	</th>
-	<th>
-   Definition
-	</th>
-   </tr>
-   <tr>
-	<td>
-<code>DFS_NAME_DIR</code>
-	</td>
-	<td>
-Space separated list of directories where NameNode will store file system image.
-For example, <code>"/grid/hadoop/hdfs/nn /grid1/hadoop/hdfs/nn"</code>
-	</td>
-   </tr>
-   <tr>
-	<td>
-<code>DFS_DATA_DIR</code>
-	</td>
-	<td>
-Space separated list of directories where DataNodes will store the blocks.
-For example, <code>"/grid/hadoop/hdfs/dn /grid1/hadoop/hdfs/dn /grid2/hadoop/hdfs/dn"</code>
-       </td>
-   </tr>
-   <tr>
-	<td>
-<code>ZOOKEEPER_DATA_DIR</code>
-	</td>
-	<td>
-Directory where ZooKeeper will store data. For example, <code>/grid1/hadoop/zookeeper/data</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>FS_CHECKPOINT_DIR</code>
-	</td>
-	<td>
-Space separated list of directories where SecondaryNameNode will store checkpoint image. For example, <code>"/grid/hadoop/hdfs/snn /grid1/hadoop/hdfs/snn /grid2/hadoop/hdfs/snn"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>MAPREDUCE_LOCAL_DIR</code>
-	</td>
-	<td>
-Space separated list of directories where MapReduce will store temporary data. For example, <code>"/grid/hadoop/hdfs/mapred /grid1/hadoop/hdfs/mapred /grid2/hadoop/hdfs/mapred"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>HADOOP_CONF_DIR</code>
-	</td>
-	<td>
-Directory to store the Hadoop configuration files. For example, <code>"/etc/hadoop/conf"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>HIVE_CONF_DIR</code>
-	</td>
-	<td>
-Directory to store the Hive configuration files. For example, <code>"/etc/hive/conf"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>HBASE_CONF_DIR</code>
-	</td>
-	<td>
-Directory to store the HBase configuration files. For example, <code>"/etc/hbase/conf"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>PIG_CONF_DIR</code>
-	</td>
-	<td>
-Directory to store the Pig configuration files. For example, <code>"/etc/pig/conf"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>ZOOKEEPER_CONF_DIR</code>
-	</td>
-	<td>
-Directory to store the Zookeeper configuration files. For example, <code>"/etc/zookeeper/conf"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>OOZIE_CONF_DIR</code>
-	</td>
-	<td>
-Directory to store the Oozie configuration files. For example, <code>"/etc/oozie/conf"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>HDFS_LOG_DIR</code>
-	</td>
-	<td>
-Directory to store the HDFS logs. For example, <code>"/var/log/hadoop/hdfs"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>MAPRED_LOG_DIR</code>
-	</td>
-	<td>
-Directory to store the HDFS logs. For example, <code>"/var/log/hadoop/mapred"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>HIVE_LOG_DIR</code>
-	</td>
-	<td>
-Directory to store the Hive logs. For example, <code>"/var/log/hive"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>HBASE_LOG_DIR</code>
-	</td>
-	<td>
-Directory to store the HBase logs. For example, <code>"/var/log/hbase"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>PIG_LOG_DIR</code>
-	</td>
-	<td>
-Directory to store the Pig logs. For example, <code>"/var/log/pig"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>ZOOKEEPER_LOG_DIR</code>
-	</td>
-	<td>
-Directory to store the ZooKeeper logs. For example, <code>"/var/log/zookeeper"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>OOZIE_LOG_DIR</code>
-	</td>
-	<td>
-Directory to store the Oozie logs. For example, <code>"/var/log/oozie"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>HDFS_PID_DIR</code>
-	</td>
-	<td>
-Directory to store the HDFS process ID. For example, <code>"/var/run/hadoop/hdfs"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>MAPRED_PID_DIR</code>
-	</td>
-	<td>
-Directory to store the MapReduce process ID. For example, <code>"/var/run/hadoop/mapred"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>HIVE_PID_DIR</code>
-	</td>
-	<td>
-Directory to store the Hive process ID. For example, <code>"/var/run/hive"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>PIG_PID_DIR</code>
-	</td>
-	<td>
-Directory to store the Pig process ID. For example, <code>"/var/run/pig"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>ZOOKEEPER_PID_DIR</code>
-	</td>
-	<td>
-Directory to store the ZooKeeper process ID. For example, <code>"/var/run/zookeeper"</code>
-</td>
-   </tr>
-   <tr>
-	<td>
-<code>OOZIE_PID_DIR</code>
-	</td>
-	<td>
-Directory to store the Oozie process ID. For example, <code>"/var/run/oozie"</code>
-</td>
-   </tr>
-
-</table>
+| Hadoop Serivce | Parameter | Definition |
+|----------------|------|---------|
+| HDFS | <code>DFS_NAME_DIR</code> | Space separated list of directories where NameNode will store file system image. For example, <code>"/grid/hadoop/hdfs/nn /grid1/hadoop/hdfs/nn"</code>
+| HDFS | <code>FS_CHECKPOINT_DIR</code> | Space separated list of directories where SecondaryNameNode will store checkpoint image. For example, <code>"/grid/hadoop/hdfs/snn /grid1/hadoop/hdfs/snn /grid2/hadoop/hdfs/snn"</code>
+| HDFS | <code>DFS_DATA_DIR</code> | Space separated list of directories where DataNodes will store the blocks. For example, <code>"/grid/hadoop/hdfs/dn /grid1/hadoop/hdfs/dn /grid2/hadoop/hdfs/dn"</code>
+| HDFS | <code>HDFS_LOG_DIR</code> | Directory to store the HDFS logs. For example, <code>"/var/log/hadoop/hdfs"</code>
+| HDFS | <code>HDFS_PID_DIR</code> | Directory to store the HDFS process ID. For example, <code>"/var/run/hadoop/hdfs"</code>
+| HDFS | <code>HADOOP_CONF_DIR</code> | Directory to store the Hadoop configuration files. For example, <code>"/etc/hadoop/conf"</code>
+| MapReduce | <code>MAPREDUCE_LOCAL_DIR</code> | Space separated list of directories where MapReduce will store temporary data. For example, <code>"/grid/hadoop/hdfs/mapred /grid1/hadoop/hdfs/mapred /grid2/hadoop/hdfs/mapred"</code>
+| MapReduce | <code>MAPRED_LOG_DIR</code> | Directory to store the HDFS logs. For example, <code>"/var/log/hadoop/mapred"</code>
+| MapReduce | <code>MAPRED_PID_DIR</code> | Directory to store the MapReduce process ID. For example, <code>"/var/run/hadoop/mapred"</code>
+| Pig | <code>PIG_CONF_DIR</code> | Directory to store the Pig configuration files. For example, <code>"/etc/pig/conf"</code>
+| Pig | <code>PIG_LOG_DIR</code> | Directory to store the Pig logs. For example, <code>"/var/log/pig"</code>
+| Pig | <code>PIG_PID_DIR</code> | Directory to store the Pig process ID. For example, <code>"/var/run/pig"</code>
+| Hive | <code>HIVE_CONF_DIR</code> | Directory to store the Hive configuration files. For example, <code>"/etc/hive/conf"</code>
+| Hive | <code>HIVE_LOG_DIR</code> | Directory to store the Hive logs. For example, <code>"/var/log/hive"</code>
+| Hive | <code>HIVE_PID_DIR</code> | Directory to store the Hive process ID. For example, <code>"/var/run/hive"</code>
+| HBase | <code>HBASE_CONF_DIR</code> | Directory to store the HBase configuration files. For example, <code>"/etc/hbase/conf"</code>
+| HBase | <code>HBASE_LOG_DIR</code> | Directory to store the HBase logs. For example, <code>"/var/log/hbase"</code>
+| Zookeeper | <code>ZOOKEEPER_DATA_DIR</code> | Directory where ZooKeeper will store data. For example, <code>/grid1/hadoop/zookeeper/data</code>
+| Zookeeper | <code>ZOOKEEPER_CONF_DIR</code> | Directory to store the Zookeeper configuration files. For example, <code>"/etc/zookeeper/conf"</code>
+| Zookeeper | <code>ZOOKEEPER_LOG_DIR</code> | Directory to store the ZooKeeper logs. For example, <code>"/var/log/zookeeper"</code>
+| Zookepper | <code>ZOOKEEPER_PID_DIR</code> | Directory to store the ZooKeeper process ID. For example, <code>"/var/run/zookeeper"</code>
+| Oozie | <code>OOZIE_CONF_DIR</code> | Directory to store the Oozie configuration files. For example, <code>"/etc/oozie/conf"</code>
+| Oozie | <code>OOZIE_LOG_DIR</code> | Directory to store the Oozie logs. For example, <code>"/var/log/oozie"</code>
+| Oozie | <code>OOZIE_PID_DIR</code> | Directory to store the Oozie process ID. For example, <code>"/var/run/oozie"</code>
 
 
 

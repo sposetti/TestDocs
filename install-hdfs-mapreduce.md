@@ -23,38 +23,52 @@ Set Default File and Directory Permissions
 Set the default file and directory permissions to 0022 (022). This is typically the default for most Linux distributions.
 Use the <code>umask</code> command to confirm and set as necessary. Be sure umask is set for all terminal session that you will use during installation.
 
-Configure HDP Repository
+Configure Repository
 -------
 
-### Use Hosted HDP Repository
+The standard HDP install requires access to the Internet to fetch software from a remote repository. You can setup access to the [Remote Repository](#use-remote-repository).
 
-<pre>/etc/yum.repos.d/hdp.repo</pre>
+In some cases, adequate bandwidth is not available and you want to prevent downloading from the remote repository over and over again. Other times, Internet access is not available at all from the hosts in your cluster. In these situations, you must set up a version of the repository that your hosts can access locally. This is called a [Local Yum Repository](#use-local-yum-repository-optional).
 
-<pre>
-[HDP-1.0.0.12]
-name=Hortonworks Data Platform Version - HDP-1.0.0.12
-baseurl=http://public-repo-1.hortonworks.com/HDP-1.0.0.12/repos/centos5
-gpgcheck=0
-enabled=1
-priority=1
-</pre>
+### Use Remote Repository
 
-### Use Local HDP Repository (optional)
-TBD – get from existing docs
-http://docs.hortonworks.com/CURRENT/index.htm#Deploying_Hortonworks_Data_Platform/Using_HMC/Getting_Ready_To_Install/Optional_Configure_the_Local_yum_Repository.htm
+1. Download the yum repo configuration file <code>hdp.repo</code>.
 
-Install Hadoop RPMs (All Nodes)
+        [For RHEL and CentOS 5]
+        wget http://public-repo-1.hortonworks.com/HDP-1.0.1.14/repos/centos5/hdp.repo
+
+        [For RHEL and CentOS 6]
+        wget http://public-repo-1.hortonworks.com/HDP-1.0.1.14/repos/centos6/hdp.repo
+
+2. On all hosts, copy the <code>hdp.repo</code> file to your yum repo list.
+
+        cp ~/hdp.repo /etc/yum.repos.d/hdp.repo
+
+3. Confirm the HDP repository is configured, check the repo list.
+
+        yum repolist
+        
+        Loaded plugins: fastestmirror, security
+        Loading mirror speeds from cached hostfile
+         * base: mirrors.cat.pdx.edu
+         * extras: linux.mirrors.es.net
+         * updates: mirrors.usc.edu
+        repo id            repo name                                              status
+        HDP-1.0.1.14       Hortonworks Data Platform Version - HDP-1.0.1.14          64
+        HDP-UTILS-1.0.1.14 Hortonworks Data Platform Utils Version - HDP-UTILS-1.    51
+
+### Use Local Yum Repository (optional)
+
+Information on setting up the Local Yum Repository can be found in the [Hortonworks Documentaiton](http://docs.hortonworks.com/CURRENT/index.htm#Deploying_Hortonworks_Data_Platform/Using_HMC/Configuring_Local_Mirror_Repository/Configuring_a_Local_Mirror.htm).
+
+
+Install Hadoop RPMs
 ---------
 
        yum -y install hadoop hadoop-libhdfs hadoop-libhdfs.i386 hadoop-native hadoop-native.i386 hadoop-pipes hadoop-pipes.i386 hadoop-sbin.i386
 
 
-Install OpenSSL Libraries
----------
-
-       yum -y install openssl openssl.i386
-
-Install Compression Libraries (All Nodes)
+Install Compression Libraries
 ----------
 
 ### Install Snappy
@@ -74,21 +88,25 @@ Install Compression Libraries (All Nodes)
 
         yum -y install lzo
 
-2. Download Hadoop LZO package to <code>$LZO_DIR</code>
+2. Download Hadoop LZO package
 
     <code>http://public-repo-1.hortonworks.com/HDP-1.0.0.12/repos/centos5/tars/hadoop-lzo-0.5.0.tar.gz</code> (for RHEL / CentOS 5)
     <code>http://public-repo-1.hortonworks.com/HDP-1.0.0.12/repos/centos6/tars/hadoop-lzo-0.5.0.tar.gz</code> (for RHEL / CentOS 6)
 
-3. Copy LZO JAR to Hadoop.
+3. Extract the LZO package. This will be the <code>$LZO_DIR</code> directory.
+
+        tar zxvf hadoop-lzo-0.5.0.tar.gz
+
+4. Copy LZO JAR to Hadoop.
 
         cp -f $LZO_DIR/hadoop-lzo-0.5.0.jar /usr/lib/hadoop/lib/.
 
-4. Replace Hadoop GPL compression with LZO library.
+5. Replace Hadoop GPL compression with LZO library.
 
-        rm –f /usr/lib/hadoop/lib/native/Linux-i386-32/libgplcompression*
-        rm –f /usr/lib/hadoop/lib/native/ Linux-amd64-64/libgplcompression*
+        rm -f /usr/lib/hadoop/lib/native/Linux-i386-32/libgplcompression*
+        rm -f /usr/lib/hadoop/lib/native/Linux-amd64-64/libgplcompression*
         mv $LZO_DIR/lib/native/Linux-i386-32/libgplcompression* /usr/lib/hadoop/lib/native/Linux-i386-32/.
-        mv $LZO_DIR/hadoop-lzo-0.5.0/lib/native/Linux-amd64-64/libgplcompression* /usr/lib/hadoop/lib/native/Linux-amd64-64/.
+        mv $LZO_DIR/lib/native/Linux-amd64-64/libgplcompression* /usr/lib/hadoop/lib/native/Linux-amd64-64/.
 
 Create Directories
 ----------
@@ -101,7 +119,7 @@ Note: if any of these directories exist, we recommend deleting and recreating.
 
 ### Create NameNode directories
 
-Execute these commands the Master Node host that will run the NameNode service.
+Execute these commands the Master Node that will run the NameNode service.
 
         mkdir -p $DFS_NAME_DIR
         chown -R $HDFS_USER:$HADOOP_GROUP $DFS_NAME_DIR
@@ -109,7 +127,7 @@ Execute these commands the Master Node host that will run the NameNode service.
 
 ### Create SecondaryNameNode directories
 
-Execute these commands on all nodes, which potentially can run the secondary name node service (Typically all master nodes)
+Execute these commands on all nodes, which potentially can run the SecondaryNameNode service. Typically all Master Nodes.
 
         mkdir -p $FS_CHECKPOINT_DIR
         chown -R $HDFS_USER:$HADOOP_GROUP $FS_CHECKPOINT_DIR
@@ -117,7 +135,7 @@ Execute these commands on all nodes, which potentially can run the secondary nam
 
 ### Create DataNode and MapReduce local directories
 
-Execute these commands on all data nodes.
+Execute these commands on all DataNodes.
 
         mkdir -p $DFS_DATA_DIR;
         chown -R $HDFS_USER:$HADOOP_GROUP $DFS_DATA_DIR;
@@ -133,19 +151,19 @@ Execute these commands on all nodes.
 
         mkdir -p $HDFS_LOG_DIR;
         chown -R $HDFS_USER:$HADOOP_GROUP $HDFS_LOG_DIR;
-        chmod 755 -R $HDFS_LOG_DIR;
+        chmod -R 755 $HDFS_LOG_DIR;
 
         mkdir -p $MAPRED_LOG_DIR;
         chown -R $MAPRED_USER:$HADOOP_GROUP $MAPRED_LOG_DIR;
-        chmod 755 -R $MAPRED_LOG_DIR;
+        chmod -R 755 $MAPRED_LOG_DIR;
 
         mkdir -p $HDFS_PID_DIR;
         chown -R $HDFS_USER:$HADOOP_GROUP $HDFS_PID_DIR;
-        chmod 755 -R $HDFS_PID_DIR
+        chmod -R 755 $HDFS_PID_DIR
 
         mkdir -p $MAPRED_PID_DIR;
         chown -R $MAPRED_USER:$HADOOP_GROUP $MAPRED_PID_DIR;
-        chmod 755 -R $MAPRED_PID_DIR;
+        chmod -R 755 $MAPRED_PID_DIR;
 
 
 
