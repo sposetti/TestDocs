@@ -62,9 +62,9 @@ System Requirements
 <li><code>rpm, scp, curl, wget, unzip, tar, pdsh</code></li>
 </ul>
 
-<strong>MySQL 5:</strong>
+<strong>MySQL 5 (optional):</strong>
 <ul>
-<li>Optional: for use with Hive and HCatalog</li>
+<li>For use with Hive and HCatalog services.</li>
 <li>See <a href="#installing-mysql-optional">Installing MySQL</a></li>
 </ul>
 		</td>
