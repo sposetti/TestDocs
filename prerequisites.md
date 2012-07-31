@@ -125,7 +125,7 @@ Follow the instructions listed below to manually deploy JDK:
         ln -s /usr/jdk1.6.0_31/jdk1.6.0_31 /usr/java/default
         ln -s /usr/java/default/bin/java /usr/bin/java
 
-6. Set up your environment to define JAVA_HOME and to put the Java Virtual Machine and the Java compiler on your path:
+6. Set up your environment to define <code>JAVA_HOME</code> to put the Java Virtual Machine and the Java compiler on your path:
 
         export JAVA_HOME=/usr/java/default
         export PATH=$JAVA_HOME/bin:$PATH
