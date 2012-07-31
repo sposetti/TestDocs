@@ -9,7 +9,7 @@ Install Apache Hive and Apache HCatalog
 
 Apache Hive and Apache HCatalog include a Metadata service and query platform.
 
-* [Install Hive and HCatalog RPMs](#install-hive-hcatalog-rpms)
+* [Install Hive and HCatalog RPMs](#install-hive-and-hcatalog-rpms)
 * [Set Directories and Permissions](#set-directories-and-permissions)
 * [Download MySQL Connector](#download-mysql-connector)
 * [Validate Installation](#validate-installation)
@@ -48,7 +48,7 @@ hive-site.xml
 | hive.metastore.uris               | thrift://<metastore server full hostname>:9083
 
 
-On all pig hosts create the config directory, copy the config files and set the permissions
+On all Hive hosts create the config directory, copy the config files and set the permissions
 
     mkdir -p $HIVE_CONF_DIR ;
     <copy the config files to $HIVE_CONF_DIR > 
@@ -67,7 +67,7 @@ Download MySQL Connector
 
 3. Copy the JAR file
 
-    cp <download location>/mysql-connector-java-*-bin.jar /usr/lib/hive/lib/.
+    <code>cp <download location>/mysql--connector--java--**--bin.jar /usr/lib/hive/lib/.</code>
     chmod 644 /usr/lib/hive/lib/*mysql*.jar
 
 
