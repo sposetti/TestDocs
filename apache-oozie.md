@@ -36,7 +36,7 @@ Execute these commands on all nodes
 Download the Oozie configuration files from xxxx and change following parameters per your environment.
 Look for all TODO’s in these files and change them to suit the environment
 
-oozie-site.xml
+#### oozie-site.xml
 
 | Parameter         | Example        |
 |-------------------|----------------|
@@ -44,7 +44,7 @@ oozie-site.xml
 | oozie.service.StoreService.jdbc.url | jdbc:derby:<$OOZIE_DB_DIR>/${oozie.db.schema.name}-db;create=true
 
 
-oozie-env.sh
+#### oozie-env.sh
 
 | Parameter         | Example        |
 |-------------------|----------------|
