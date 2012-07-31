@@ -43,16 +43,18 @@ Modify Configuration Files
 |---------------------------------------|---------------|---------------------------------------|
 | mapred.job.tracker                    | <code>{jobtracker.full.hostname}:50300</code> | Enter your JobTracker hostname
 | mapred.job.tracker.http.address       | <code>{jobtracker.full.hostname}:50030</code> | Enter your JobTracker hostname
+| mapred.local.dir                       | <code>/grid/hadoop/hdfs/mapred</code> | Comma separated list of paths. Use the value of <code>$MAPREDUCE_LOCAL_DIR</code>
+| mapreduce.tasktracker.group            | <code>hadoop</code> | Enter your group. Use the value of <code>$HADOOP_GROUP</code>
 | mapreduce.history.server.http.address | <code>{jobtracker.full.hostname}:51111</code> | Enter your JobTracker hostname
-| mapred.local.dir	                   | <code>/grid/hadoop/mapred</code> | Comma separated list of paths. Use the value of <code>$MAPRED_LOCAL_DIR</code>
 
 ### hadoop-env.sh
 
-| Parameter                             | Example                                              |
-|---------------------------------------|------------------------------------------------------|
-| JAVA_HOME                             | Point to 1.6.-0_31 java home
-| HADOOP_LOG_DIR                        | $HADOOP_LOG_DIR/$USER
-| HADOOP_PID_DIR                        | $HADOOP_PID_DIR/$USER
+| Parameter                             | Example        | Description                          |
+|---------------------------------------|----------------|-------------------------------------|
+| JAVA_HOME                             | <code>/usr/java/default</code> | Point to 1.6.-0_31 Java Home
+| HADOOP_CONF_DIR                       | <code>/etc/hadoop/conf</code> | Use the value of <code>$HADOOP_CONF_DIR</code>
+| HADOOP_LOG_DIR                        | <code>/var/log/hadoop/hdfs</code> | XXXXUse the value of $HADOOP_LOG_DIR/$USER
+| HADOOP_PID_DIR                        | $HADOOP_PID_DIR/$USER | XXXX
 
 
 Copy Configuration Files
