@@ -215,13 +215,14 @@ For your conveinence, we are providing <a href="./scripts/directories.sh">direct
 | Hadoop Serivce | Parameter | Definition |
 |----------------|------|---------|
 | HDFS | <code>DFS_NAME_DIR</code> | Space separated list of directories where NameNode will store file system image. For example, <code>"/grid/hadoop/hdfs/nn /grid1/hadoop/hdfs/nn"</code>
-| HDFS | <code>DFS_DATA_DIR</code> | Space separated list of directories where DataNodes will store the blocks. For example, <code>"/grid/hadoop/hdfs/dn /grid1/hadoop/hdfs/dn /grid2/hadoop/hdfs/dn"</code>
 | HDFS | <code>FS_CHECKPOINT_DIR</code> | Space separated list of directories where SecondaryNameNode will store checkpoint image. For example, <code>"/grid/hadoop/hdfs/snn /grid1/hadoop/hdfs/snn /grid2/hadoop/hdfs/snn"</code>
-| HDFS | <code>HADOOP_CONF_DIR</code> | Directory to store the Hadoop configuration files. For example, <code>"/etc/hadoop/conf"</code>
+| HDFS | <code>DFS_DATA_DIR</code> | Space separated list of directories where DataNodes will store the blocks. For example, <code>"/grid/hadoop/hdfs/dn /grid1/hadoop/hdfs/dn /grid2/hadoop/hdfs/dn"</code>
 | HDFS | <code>HDFS_LOG_DIR</code> | Directory to store the HDFS logs. For example, <code>"/var/log/hadoop/hdfs"</code>
 | HDFS | <code>HDFS_PID_DIR</code> | Directory to store the HDFS process ID. For example, <code>"/var/run/hadoop/hdfs"</code>
+| HDFS | <code>HADOOP_CONF_DIR</code> | Directory to store the Hadoop configuration files. For example, <code>"/etc/hadoop/conf"</code>
 | MapReduce | <code>MAPREDUCE_LOCAL_DIR</code> | Space separated list of directories where MapReduce will store temporary data. For example, <code>"/grid/hadoop/hdfs/mapred /grid1/hadoop/hdfs/mapred /grid2/hadoop/hdfs/mapred"</code>
 | MapReduce | <code>MAPRED_LOG_DIR</code> | Directory to store the HDFS logs. For example, <code>"/var/log/hadoop/mapred"</code>
+| MapReduce | <code>MAPRED_PID_DIR</code> | Directory to store the MapReduce process ID. For example, <code>"/var/run/hadoop/mapred"</code>
 | Pig | <code>PIG_CONF_DIR</code> | Directory to store the Pig configuration files. For example, <code>"/etc/pig/conf"</code>
 | Pig | <code>PIG_LOG_DIR</code> | Directory to store the Pig logs. For example, <code>"/var/log/pig"</code>
 | Pig | <code>PIG_PID_DIR</code> | Directory to store the Pig process ID. For example, <code>"/var/run/pig"</code>
@@ -236,7 +237,6 @@ For your conveinence, we are providing <a href="./scripts/directories.sh">direct
 | Zookepper | <code>ZOOKEEPER_PID_DIR</code> | Directory to store the ZooKeeper process ID. For example, <code>"/var/run/zookeeper"</code>
 | Oozie | <code>OOZIE_CONF_DIR</code> | Directory to store the Oozie configuration files. For example, <code>"/etc/oozie/conf"</code>
 | Oozie | <code>OOZIE_LOG_DIR</code> | Directory to store the Oozie logs. For example, <code>"/var/log/oozie"</code>
-| MapReduce | <code>MAPRED_PID_DIR</code> | Directory to store the MapReduce process ID. For example, <code>"/var/run/hadoop/mapred"</code>
 | Oozie | <code>OOZIE_PID_DIR</code> | Directory to store the Oozie process ID. For example, <code>"/var/run/oozie"</code>
 
 
