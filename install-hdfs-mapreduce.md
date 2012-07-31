@@ -44,7 +44,7 @@ In some cases, adequate bandwidth is not available and you want to prevent downl
 
         cp ~/hdp.repo /etc/yum.repos.d/hdp.repo
 
-3. List the repository to confirm HDP is installed.
+3. Confirm the HDP repository is configured, check the repo list.
 
         yum repolist
         
