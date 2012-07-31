@@ -89,7 +89,7 @@ Installing the Java Development Kit (JDK)
 The Java Development Kit (JDK) must be installed on all the nodes in your cluster.
 Follow the instructions listed below to manually deploy JDK:
 
-1. Verify the existing version of Java.
+1. Verify the existing version of Java meets the [System Requirements](#system-requirements).
 
         java -version
 
