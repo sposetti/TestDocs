@@ -214,7 +214,7 @@ directory parameters. Edit and execute as necessary to fit your environment.
 </pre>
 
 | Hadoop Serivce | Parameter | Definition |
-|----------------|------|
+|----------------|------|---------|
 | HDFS | <code>DFS_NAME_DIR</code> | Space separated list of directories where NameNode will store file system image. For example, <code>"/grid/hadoop/hdfs/nn /grid1/hadoop/hdfs/nn"</code>
 | HDFS | <code>DFS_DATA_DIR</code> | Space separated list of directories where DataNodes will store the blocks. For example, <code>"/grid/hadoop/hdfs/dn /grid1/hadoop/hdfs/dn /grid2/hadoop/hdfs/dn"</code>
 | HDFS | <code>FS_CHECKPOINT_DIR</code> | Space separated list of directories where SecondaryNameNode will store checkpoint image. For example, <code>"/grid/hadoop/hdfs/snn /grid1/hadoop/hdfs/snn /grid2/hadoop/hdfs/snn"</code>
