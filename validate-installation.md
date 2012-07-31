@@ -33,8 +33,8 @@ Format and Start HDFS
 Smoke Test HDFS
 ----
 
-         hadoop dfs -copyFromLocal /etc/passwd passwd-test
-         hadoop dfs -ls 
+        hadoop dfs -copyFromLocal /etc/passwd passwd-test
+        hadoop dfs -ls 
 
 Start MapReduce
 ----
@@ -57,8 +57,7 @@ Start MapReduce
 Smoke Test MapReduce
 ----
 
-Smoke test using Terasort and sort only 10GB of data.
-Replace the placeholders for map tasks and reduce task to suit your cluster
+Smoke test using Terasort and sort only 10GB of data. Replace the placeholders for map tasks and reduce task to suit your cluster
 
         hadoop jar /usr/lib/hadoop/hadoop-examples.jar -Dmapred.map.tasks=<number of map slots in your cluster> teragen 100000000 /test/10gsort/input
         hadoop jar /usr/lib/hadoop/hadoop-examples.jar -Dmapred.reduce.tasks=<number of reduce slots in your cluster> terasort /test/10gsort/input /test/10gsort/output
