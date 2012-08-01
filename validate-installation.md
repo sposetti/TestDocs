@@ -33,8 +33,19 @@ Format and Start HDFS
 Smoke Test HDFS
 ----
 
+1. Test you can reach the NameNode server with your browser.
+
+        http://{your.namenode.server}:50070
+        
+2. Test copying a file into HDFS.
+
         /usr/lib/hadoop/bin/hadoop dfs -copyFromLocal /etc/passwd passwd-test
         /usr/lib/hadoop/bin/hadoop dfs -ls 
+
+3. Test you can browse the data.
+
+        http://{your.datanode.server}:50075/browseDirectory.jsp?dir=/
+
 
 Start MapReduce
 ----
