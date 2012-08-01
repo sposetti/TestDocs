@@ -10,10 +10,9 @@ Install HDFS + MapReduce
 The following instructions describe how to install the Hadoop Core components, which include HDFS and MapReduce.
 
 * [Set Default File and Directory Permissions](#set-default-file-and-directory-permissions)
-* [Configure HDP Repository](#configure-hdp-repository)
-* [Install Hadoop RPMs (All Nodes)](#install-hadoop-repms-all-nodes)
-* [Install OpenSSL Libraries](#install-openssl-libraries)
-* [Install Compression Libraries (All Nodes)](#install-compression-libraries-all-nodes)
+* [Configure Repository](#configure-repository)
+* [Install Hadoop RPMs](#install-hadoop-rpms)
+* [Install Compression Libraries](#install-compression-libraries)
 * [Create Directories](#create-directories)
 
 
