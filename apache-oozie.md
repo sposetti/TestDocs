@@ -37,7 +37,7 @@ Execute these commands on your Oozie server.
 Modify Configuration Files
 ----
 
-1. Download the Hadoop configuration files from [here](#./conf/oozie) to a temporary directory.
+1. Download the Hadoop configuration files from [here](./conf/oozie) to a temporary directory.
 
 2. Modify the following parameters per your environment. Search for **TODO** in the configuration files for the properties to replace.
 
