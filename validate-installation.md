@@ -58,7 +58,7 @@ Start MapReduce
 
 1. Execute these commands from job tracker
 
-        <login as HDFS user>
+        <login as $HDFS_USER>
         /usr/lib/hadoop/bin/hadoop fs -mkdir /mapred
         /usr/lib/hadoop/bin/hadoop fs -chown -R mapred /mapred
 
