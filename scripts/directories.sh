@@ -31,7 +31,7 @@ HDFS_PID_DIR="/var/run/hadoop/hdfs" ;
 #
 
 # Space separated list of directories where MapReduce will store temporary data.
-MAPREDUCE_LOCAL_DIR="/grid/hadoop/hdfs/mapred /grid1/hadoop/hdfs/mapred /grid2/hadoop/hdfs/mapred" ;
+MAPREDUCE_LOCAL_DIR="/grid/hadoop/mapred /grid1/hadoop/mapred /grid2/hadoop/mapred" ;
 
 # Directory to store the MapReduce logs.
 MAPRED_LOG_DIR="/var/log/hadoop/mapred" ;
