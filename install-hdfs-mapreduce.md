@@ -65,7 +65,7 @@ Information on setting up the Local Yum Repository can be found in the [Hortonwo
 Install Hadoop RPMs
 ---------
 
-       yum -y install hadoop hadoop-libhdfs hadoop-libhdfs.i386 hadoop-native hadoop-native.i386 hadoop-pipes hadoop-pipes.i386 hadoop-sbin.i386
+       yum -y install hadoop hadoop-libhdfs hadoop-libhdfs.i386 mysql-connector-java hadoop-native hadoop-native.i386 hadoop-pipes hadoop-pipes.i386 hadoop-sbin.i386
 
 
 Install Compression Libraries
@@ -86,27 +86,7 @@ Install Compression Libraries
 
 1. Install LZO compression library.
 
-        yum -y install lzo
-
-2. Download Hadoop LZO package
-
-    <code>http://public-repo-1.hortonworks.com/HDP-1.0.0.12/repos/centos5/tars/hadoop-lzo-0.5.0.tar.gz</code> (for RHEL / CentOS 5)
-    <code>http://public-repo-1.hortonworks.com/HDP-1.0.0.12/repos/centos6/tars/hadoop-lzo-0.5.0.tar.gz</code> (for RHEL / CentOS 6)
-
-3. Extract the LZO package. This will be the <code>$LZO_DIR</code> directory.
-
-        tar zxvf hadoop-lzo-0.5.0.tar.gz
-
-4. Copy LZO JAR to Hadoop.
-
-        cp -f $LZO_DIR/hadoop-lzo-0.5.0.jar /usr/lib/hadoop/lib/.
-
-5. Replace Hadoop GPL compression with LZO library.
-
-        rm -f /usr/lib/hadoop/lib/native/Linux-i386-32/libgplcompression*
-        rm -f /usr/lib/hadoop/lib/native/Linux-amd64-64/libgplcompression*
-        mv $LZO_DIR/lib/native/Linux-i386-32/libgplcompression* /usr/lib/hadoop/lib/native/Linux-i386-32/.
-        mv $LZO_DIR/lib/native/Linux-amd64-64/libgplcompression* /usr/lib/hadoop/lib/native/Linux-amd64-64/.
+        yum -y install hadoop-lzo
 
 Create Directories
 ----------

@@ -12,8 +12,9 @@ Deploy Configurations
 Download Configuration Files
 -----
 
-Download the hadoop configuration files from xxxx and change following parameters per your environment.
-Look for all TODO’s in these files and change them to suit the environment 
+1. Download the Hadoop configuration files from [here](./conf) to a temporary directory.
+
+2. Modify the following parameters per your environment. Search for **TODO** in the configuration files for the properties to replace.
 
 
 Modify Configuration Files
@@ -21,37 +22,47 @@ Modify Configuration Files
 
 ### core-site.xml
 
-| Parameter          | Example                                              |
-|--------------------|------------------------------------------------------|
-| fs.default.name    | hdfs://{namenode.full.hostname}:8020                 |
-| fs.checkpoint.dir  | /grid/hadoop/hdfs/snn (per your partition layout)    |
+| Parameter          | Example       | Description                                       |
+|--------------------|---------------|-----------------------------|
+| fs.default.name    | <code>hdfs://{namenode.full.hostname}:8020</code>  | Enter your NameNode hostname
+| fs.checkpoint.dir  | <code>/grid/hadoop/hdfs/snn</code>  | Comma separated list of paths. Use the value of <code>$FS_CHECKPOINT_DIR</code>
 
 ### hdfs-site.xml
 
-| Parameter                          | Example                                              |
-|------------------------------------|------------------------------------------------------|
-| dfs.http.address	                | {namenode.full.hostname}:50070                       |
-| dfs.secondary.http.address         | {secondary.namenode.full.hostname}:50090             |
-| dfs.https.address                  | {namenode.full.hostname}:50470                       |
-| dfs.name.dir                       | Comma separated list of paths such as /grid/hadoop/hdfs/nn,/grid1/hadoop/hdfs/nn
-| dfs.data.dir                       | Comma separated list of paths such as /grid1/hadoop/hdfs/dn,/grid2/hadoop/hdfs/dn,/grid3/hadoop/hdfs/dn,/grid4/hadoop/hdfs/dn,/grid5/hadoop/hdfs/dn,/grid6/hadoop/hdfs/dn
+| Parameter                          | Example          | Description                       |
+|------------------------------------|------------------|-----------------------------------|
+| dfs.name.dir                       | <code>/grid/hadoop/hdfs/nn</code> | Comma separated list of paths. Use the value of <code>$DFS_NAME_DIR</code>
+| dfs.data.dir                       | <code>/grid/hadoop/hdfs/dn</code> | Comma separated list of paths. Use the value of <code>$DFS_DATA_DIR</code>
+| dfs.http.address	                | <code>{namenode.full.hostname}:50070</code>   | Enter your NameNode hostname
+| dfs.secondary.http.address         | <code>{secondary.namenode.full.hostname}:50090</code> | Enter your SecondaryNameNode hostname
+| dfs.https.address                  | <code>{namenode.full.hostname}:50470</code>   | Enter your NameNode hostname
 
 ### mapred-site.xml
 
-| Parameter                             | Example                                              |
-|---------------------------------------|------------------------------------------------------|
-| mapred.job.tracker                    | {jobtracker.full.hostname}:50300
-| mapred.job.tracker.http.address       | {jobtracker.full.hostname}:50030
-| mapreduce.history.server.http.address | {jobtracker.full.hostname}:51111
-| mapred.local.dir	                   | Comma separated list of paths such as /grid1/hadoop/mapred,/grid2/hadoop/mapred, /grid3/hadoop/mapred,/grid4/hadoop/mapred, /grid5/hadoop/mapred,/grid6/hadoop/mapred,
+| Parameter                             | Example       | Description                         |
+|---------------------------------------|---------------|---------------------------------------|
+| mapred.job.tracker                    | <code>{jobtracker.full.hostname}:50300</code> | Enter your JobTracker hostname
+| mapred.job.tracker.http.address       | <code>{jobtracker.full.hostname}:50030</code> | Enter your JobTracker hostname
+| mapred.local.dir                       | <code>/grid/hadoop/mapred</code> | Comma separated list of paths. Use the value of <code>$MAPREDUCE_LOCAL_DIR</code>
+| mapreduce.tasktracker.group            | <code>hadoop</code> | Enter your group. Use the value of <code>$HADOOP_GROUP</code>
+| mapreduce.history.server.http.address | <code>{jobtracker.full.hostname}:51111</code> | Enter your JobTracker hostname
 
 ### hadoop-env.sh
 
-| Parameter                             | Example                                              |
-|---------------------------------------|------------------------------------------------------|
-| JAVA_HOME                             | Point to 1.6.-0_31 java home
-| HADOOP_LOG_DIR                        | $HADOOP_LOG_DIR/$USER
-| HADOOP_PID_DIR                        | $HADOOP_PID_DIR/$USER
+| Parameter                             | Example        | Description                          |
+|---------------------------------------|----------------|-------------------------------------|
+| JAVA_HOME                             | <code>/usr/java/default</code> | Point to 1.6.-0_31 Java Home
+| HADOOP_CONF_DIR                       | <code>/etc/hadoop/conf</code> | Use the value of <code>$HADOOP_CONF_DIR</code>
+| HADOOP_LOG_DIR                        | <code>/var/log/hadoop/hdfs</code> | Use the value of <code>$HADOOP_LOG_DIR</code>
+| HADOOP_PID_DIR                        | <code>/var/run/hadoop/hdfs</code> | Use the value of <code>$HADOOP_PID_DIR</code>
+
+### taskcontroller.cfg
+
+| Parameter                             | Example        | Description                          |
+|---------------------------------------|----------------|-------------------------------------|
+| mapred.local.dir                         | <code>/grid/hadoop/hdfs/mapred</code> | Use the value of <code>$MAPREDUCE_LOCAL_DIR</code>
+| mapreduce.tasktracker.group              | <code>hadoop</code> | Use the value of <code>$HADOOP_GROUP</code>
+| hadoop.log.dir                        | <code>/var/log/hadoop/mapred</code> | Use the value of <code>$MAPRED_LOG_DIR</code>
 
 
 Copy Configuration Files
