@@ -32,7 +32,11 @@ Execute these commands on your Oozie server.
 
     mkdir -p $OOZIE_LOG_DIR;
     chown -R $OOZIE_USER:$HADOOP_GROUP $OOZIE_LOG_DIR;
-    chmod 755 -R $OOZIE_LOG_DIR;
+    chmod -R 755 $OOZIE_LOG_DIR;
+
+    mkdir -p $OOZIE_PID_DIR;
+    chown -R $OOZIE_USER:$HADOOP_GROUP $OOZIE_PID_DIR;
+    chmod -R 755 $OOZIE_PID_DIR;
 
 Modify Configuration Files
 ----
@@ -76,8 +80,9 @@ Validate Installation
 
 ### Smoke Test Oozie
 
-TBD
+1. Confirm you can browse to the Oozie server.
 
+    http://{oozie.full.hostname}:11000/oozie
 
 ------
 
