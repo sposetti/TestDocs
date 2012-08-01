@@ -51,7 +51,7 @@ Modify Configuration Files
 
 | Parameter                             | Example        | Description                          |
 |---------------------------------------|----------------|-------------------------------------|
-| JAVA_HOME                             | <code>/usr/java/default</code> | Point to 1.6.-0_31 Java Home
+| JAVA_HOME                             | <code>/usr/java/default</code> | Location of JDK 1.6.0_31 Java Home
 | HADOOP_CONF_DIR                       | <code>/etc/hadoop/conf</code> | Use the value of <code>$HADOOP_CONF_DIR</code>
 | HADOOP_LOG_DIR                        | <code>/var/log/hadoop/hdfs</code> | Use the value of <code>$HADOOP_LOG_DIR</code>
 | HADOOP_PID_DIR                        | <code>/var/run/hadoop/hdfs</code> | Use the value of <code>$HADOOP_PID_DIR</code>
@@ -72,11 +72,11 @@ On all hosts create the config directory, copy the config files and set the perm
 
     mkdir -p $HADOOP_CONF_DIR
     
-    {copy the config xml files to $HADOOP_CONF_DIR}
+    <copy the config xml files to $HADOOP_CONF_DIR>
     
     chmod a+x $HADOOP_CONF_DIR/health_check
-    chown -R $HDFS_USER:$HADOOP_GROUP $HADOOP_CONF_DIR/../
-    chmod -R 755 $HADOOP_CONF_DIR/../
+    chown -R $HDFS_USER:$HADOOP_GROUP $HADOOP_CONF_DIR
+    chmod -R 755 $HADOOP_CONF_DIR
 
 
 ------
