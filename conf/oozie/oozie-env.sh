@@ -18,7 +18,7 @@
 #
 
 #Set JAVA HOME
-export JAVA_HOME=TODO-OOZIE-JAVA-HOME
+export JAVA_HOME=/usr/java/default
 
 # Set Oozie specific environment variables here.
 
