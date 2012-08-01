@@ -17,7 +17,7 @@ Format and Start HDFS
 1. Execute these commands on the NameNode:
 
         <login as $HDFS_USER>
-        /usr/lib/hadoop/bin/hadoop namenode –format
+        /usr/lib/hadoop/bin/hadoop namenode -format
         /usr/lib/hadoop/bin/hadoop-daemon.sh --config $HADOOP_CONF_DIR start namenode
 
 2. Execute these commands from SecondaryNameNode:
