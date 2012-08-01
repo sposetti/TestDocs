@@ -44,7 +44,9 @@ Look for all TODO’s in these files and change them to suit the environment pig
 On all pig hosts create the config directory, copy the config files and set the permissions:
 
     mkdir -p $PIG_CONF_DIR ;
+
     <copy the config files to $PIG_CONF_DIR > 
+
     chown -R $PIG_USER:$HADOOP_GROUP $PIG_CONF_DIR/../  ;
     chmod -R 755 $PIG_CONF_DIR/../
    
