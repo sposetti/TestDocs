@@ -40,8 +40,8 @@ Look for all TODO’s in these files and change them to suit the environment
 
 | Parameter         | Example        | Description            |
 |-------------------|----------------|-------------------- 
-| oozie.base.url    | http://{oozie.full.hostname}:11000/oozie | Enter your Oozie server hostname
-| oozie.service.StoreService.jdbc.url | jdbc:derby:/var/db/oozie/${oozie.db.schema.name}-db;create=true | Use value from <code>$OOZIE_DATA_DIR</code>
+| oozie.base.url    | <code>http://{oozie.full.hostname}:11000/oozie</code> | Enter your Oozie server hostname
+| oozie.service.StoreService.jdbc.url | <code>jdbc:derby:/var/db/oozie/${oozie.db.schema.name}-db;create=true</code> | Use value from <code>$OOZIE_DATA_DIR</code>
 
 
 #### oozie-env.sh
