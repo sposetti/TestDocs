@@ -98,7 +98,7 @@ Note: if any of these directories exist, we recommend deleting and recreating.
 </pre>
 
 <pre>
-For your conveinence, we provide [directories.sh](./script/directories.sh) script for setting directory parameters.
+For your convenience, we provide [directories.sh](./script/directories.sh) script for setting directory parameters.
 We strongly suggest you edit and execute this script as necessary to fit your environment.
 </pre>
 
