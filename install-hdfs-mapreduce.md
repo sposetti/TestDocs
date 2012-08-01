@@ -40,9 +40,9 @@ In some cases, adequate bandwidth is not available and you want to prevent downl
         [For RHEL and CentOS 6]
         wget http://public-repo-1.hortonworks.com/HDP-1.0.1.14/repos/centos6/hdp.repo
 
-2. On all hosts, copy the <code>hdp.repo</code> file to your yum repo list.
+2. On all hosts, copy the <code>hdp.repo</code> file you just downloaded to your yum repo list.
 
-        cp ~/hdp.repo /etc/yum.repos.d/hdp.repo
+        cp ./hdp.repo /etc/yum.repos.d/hdp.repo
 
 3. Confirm the HDP repository is configured, check the repo list.
 
