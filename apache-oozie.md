@@ -82,13 +82,13 @@ Validate Installation
 
 1. Run the following command to start the Oozie server.
 
-    /usr/lib/oozie/bin/oozie-start.sh
+        /usr/lib/oozie/bin/oozie-start.sh
 
 ### Smoke Test Oozie
 
 1. Confirm you can browse to the Oozie server.
 
-    http://{oozie.full.hostname}:11000/oozie
+        http://{oozie.full.hostname}:11000/oozie
 
 ------
 
