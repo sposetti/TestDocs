@@ -42,6 +42,7 @@ Start MapReduce
 1. Execute these commands from job tracker
 
          <login as $MAPRED_USER>
+        hadoop fs -chown -R mapred /mapred  
          /usr/lib/hadoop/bin/hadoop-daemon.sh --config $HADOOP_CONF_DIR start jobtracker
 
 2. Execute these commands from job history server
@@ -59,6 +60,7 @@ Smoke Test MapReduce
 
 Smoke test using Terasort and sort only 10GB of data. Replace the placeholders for map tasks and reduce task to suit your cluster
 
+        <login as $HDFS_USER>
         hadoop jar /usr/lib/hadoop/hadoop-examples.jar -Dmapred.map.tasks=<number of map slots in your cluster> teragen 100000000 /test/10gsort/input
         hadoop jar /usr/lib/hadoop/hadoop-examples.jar -Dmapred.reduce.tasks=<number of reduce slots in your cluster> terasort /test/10gsort/input /test/10gsort/output
 
