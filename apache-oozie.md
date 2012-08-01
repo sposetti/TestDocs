@@ -38,10 +38,10 @@ Look for all TODO’s in these files and change them to suit the environment
 
 #### oozie-site.xml
 
-| Parameter         | Example        |
-|-------------------|----------------|
-| oozie.base.url    | http://{oozie.server.host.name}:11000/oozie
-| oozie.service.StoreService.jdbc.url | jdbc:derby:<$OOZIE_DB_DIR>/${oozie.db.schema.name}-db;create=true
+| Parameter         | Example        | Description            |
+|-------------------|----------------|-------------------- 
+| oozie.base.url    | http://{oozie.full.hostname}:11000/oozie | Enter your Oozie server hostname
+| oozie.service.StoreService.jdbc.url | jdbc:derby:/var/db/oozie/${oozie.db.schema.name}-db;create=true | Use value from <code>$OOZIE_DATA_DIR</code>
 
 
 #### oozie-env.sh
