@@ -62,7 +62,7 @@ On all hosts create the config directory, copy the config files and set the perm
     rm -r $HADOOP_CONF_DIR
     mkdir -p $HADOOP_CONF_DIR
     
-    <copy the config xml files to $HADOOP_CONF_DIR>
+    <copy the config files to $HADOOP_CONF_DIR>
     
     chmod a+x $HADOOP_CONF_DIR/health_check
     chown -R $HDFS_USER:$HADOOP_GROUP $HADOOP_CONF_DIR/..
