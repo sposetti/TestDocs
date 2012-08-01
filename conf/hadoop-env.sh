@@ -6,7 +6,7 @@
 # remote nodes.
 
 # The java implementation to use.  Required.
-export JAVA_HOME=TODO-JAVA-HOME
+export JAVA_HOME=/usr/java/default
 export HADOOP_HOME_WARN_SUPPRESS=1
 
 # Hadoop Configuration Directory
