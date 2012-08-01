@@ -74,18 +74,18 @@ Install Compression Libraries
 
 1. Install Snappy compression/decompression library.
 
-        yum -y install snappy snappy.i386
+        yum -y install snappy snappy-devel snappy.i386
 
 2. Create symbolic links.
 
-        ln -sf /usr/lib64/libsnappy.so.1 /usr/lib/hadoop/lib/native/Linux-amd64-64/.
-        ln -sf /usr/lib/libsnappy.so.1 /usr/lib/hadoop/lib/native/Linux-i386-32/.
+        ln -sf /usr/lib64/libsnappy.so /usr/lib/hadoop/lib/native/Linux-amd64-64/.
+        ln -sf /usr/lib/libsnappy.so /usr/lib/hadoop/lib/native/Linux-i386-32/.
 
 ### Install LZO
 
 1. Install LZO compression library.
 
-        yum -y install hadoop-lzo lzo
+        yum -y install hadoop-lzo lzo lzo-devel
 
 Create Directories
 ----------
