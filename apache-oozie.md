@@ -16,7 +16,7 @@ Apache Oozie is workflow scheduler.
 Install Oozie RPMs
 ----
 
-On all Oozie servers, install Oozie RPMs.
+On Oozie server, install the necessary RPMs.
 
     yum -y install oozie
 
@@ -25,7 +25,7 @@ Set Directories and Permissions
 
 ### Create Log Directories
 
-Execute these commands on all nodes
+Execute these commands on your Oozie server.
 
     mkdir -p $OOZIE_LOG_DIR;
     chown -R $OOZIE_USER:$HADOOP_GROUP $OOZIE_LOG_DIR;
@@ -46,13 +46,12 @@ Look for all TODO’s in these files and change them to suit the environment
 
 #### oozie-env.sh
 
-| Parameter         | Example        |
-|-------------------|----------------|
-| JAVA_HOME	        | Point to 1.6.0_31 Java Home
-| OOZIE_LOG         | $OOZIE_LOG_DIR
-| OOZIE_DATA	    | $OOZIE_DATA_DIR
-
-   
+| Parameter         | Example        | Description            |
+|-------------------|----------------|---------------------------|
+| JAVA_HOME         | <code>/usr/java/default</code> | Location of JDK 1.6 update 31 Java Home
+| OOZIE_LOG_DIR     | <code>/var/log/oozie</code> | Use value from <code>$OOZIE_LOG_DIR</code>
+| OOZIE_PID_DIR     | <code>/var/run/oozie</code> | Use value from <code>$OOZIE_PID_DIR</code>
+| OOZIE_DATA_DIR    | <code>/var/db/oozie</code> | Use value from <Code>$OOZIE_DATA_DIR</code>
 
 Validate Installation
 ----
