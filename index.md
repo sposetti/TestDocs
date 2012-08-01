@@ -19,6 +19,7 @@ This guide is intended for Operators and IT Administrators who need to install t
 * **Essential Hadoop Services**
 
  * [Install Apache Pig](./apache-pig.md)
- * [Apache Hive and Apache HCatalog](./apache-hive-hcatalog.md)
- * [Apache Oozie](./apache-oozie.md)
- * [Apache HBase and Apache Zookeeper](./apache-hbase-zookeeper.md)
+ * [Install Apache Hive and Apache HCatalog](./apache-hive-hcatalog.md)
+ * [Install Apache Oozie](./apache-oozie.md)
+ * [Install Apache HBase and Apache Zookeeper](./apache-hbase-zookeeper.md)
+ * [Install Apache Sqoop](./apache-sqoop.md)
