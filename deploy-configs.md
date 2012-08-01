@@ -53,8 +53,8 @@ Modify Configuration Files
 |---------------------------------------|----------------|-------------------------------------|
 | JAVA_HOME                             | <code>/usr/java/default</code> | Point to 1.6.-0_31 Java Home
 | HADOOP_CONF_DIR                       | <code>/etc/hadoop/conf</code> | Use the value of <code>$HADOOP_CONF_DIR</code>
-| HADOOP_LOG_DIR                        | <code>/var/log/hadoop/hdfs</code> | XXXXUse the value of $HADOOP_LOG_DIR/$USER
-| HADOOP_PID_DIR                        | $HADOOP_PID_DIR/$USER | XXXX
+| HADOOP_LOG_DIR                        | <code>/var/log/hadoop/hdfs</code> | Use the value of $HADOOP_LOG_DIR
+| HADOOP_PID_DIR                        | <code>/var/run/hadoop/hdfs</code> | Use the value of $HADOOP_PID_DIR
 
 
 Copy Configuration Files
