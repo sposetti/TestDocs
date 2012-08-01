@@ -11,7 +11,6 @@ Apache Pig is a scripting platform for writing MapReduce applications.
 
 * [Install Pig RPMs](#install-pig-rpms)
 * [Set Directories and Permissions](#set-directories-and-permissions)
-* [Modify Configuration Files](#modify-configuration-files)
 * [Copy Configuration Files](#copy-configuration-files)
 * [Validate Installation](#validate-installation)
 
@@ -33,20 +32,6 @@ Execute these commands on all nodes:
     mkdir -p $PIG_LOG_DIR;
     chown -R $PIG_USER:$HADOOP_GROUP $PIG_LOG_DIR;
     chmod 755 -R $PIG_LOG_DIR;
-
-Modify Configuration Files
-----
-
-1. Download the Pig configuration files from here to a temporary directory.
-
-2. Modify the following parameters per your environment. Search for **TODO** in the configuration files for the properties to replace.
-
-#### pig-env.sh
-
-| Parameter         | Example        | Description
-|-------------------|----------------|-------------|
-| JAVA_HOME         | <code>/usr/java/default</code> | Location of JDK 1.6 update 31 Java Home
-
 
 Copy Configuration Files
 ----
