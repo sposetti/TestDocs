@@ -31,8 +31,8 @@ Modify Configuration Files
 
 | Parameter                          | Example          | Description                       |
 |------------------------------------|------------------|-----------------------------------|
-| dfs.name.dir                       | <code>/grid/hadoop/hdfs/nn</code> | Comma separated list of paths. Use the value of <code>$DFS_NAME_DIR</code>
-| dfs.data.dir                       | <code>/grid/hadoop/hdfs/dn</code> | Comma separated list of paths. Use the value of <code>$DFS_DATA_DIR</code>
+| dfs.name.dir                       | <code>/grid/hadoop/hdfs/nn,/grid1/hadoop/hdfs/nn</code> | Comma separated list of paths. Use the list of directories from <code>$DFS_NAME_DIR</code>
+| dfs.data.dir                       | <code>/grid/hadoop/hdfs/dn,/grid1/hadoop/hdfs/dn</code> | Comma separated list of paths. Use the list of directories from <code>$DFS_DATA_DIR</code>
 | dfs.http.address	                | <code>{namenode.full.hostname}:50070</code>   | Enter your NameNode hostname
 | dfs.secondary.http.address         | <code>{secondary.namenode.full.hostname}:50090</code> | Enter your SecondaryNameNode hostname
 | dfs.https.address                  | <code>{namenode.full.hostname}:50470</code>   | Enter your NameNode hostname
