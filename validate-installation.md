@@ -22,32 +22,32 @@ Format and Start HDFS
 
 2. Execute these commands from SecondaryNameNode:
 
-         <login as $HDFS_USER>
-         /usr/lib/hadoop/bin/hadoop-daemon.sh --config $HADOOP_CONF_DIR start secondarynamenode
+        <login as $HDFS_USER>
+        /usr/lib/hadoop/bin/hadoop-daemon.sh --config $HADOOP_CONF_DIR start secondarynamenode
 
 3. Execute these commands from all DataNodes:
 
-         <login as $HDFS_USER>
-         /usr/lib/hadoop/bin/hadoop-daemon.sh --config $HADOOP_CONF_DIR start datanode
+        <login as $HDFS_USER>
+        /usr/lib/hadoop/bin/hadoop-daemon.sh --config $HADOOP_CONF_DIR start datanode
 
 Smoke Test HDFS
 ----
 
-        hadoop dfs -copyFromLocal /etc/passwd passwd-test
-        hadoop dfs -ls 
+        /usr/lib/hadoop/bin/hadoop dfs -copyFromLocal /etc/passwd passwd-test
+        /usr/lib/hadoop/bin/hadoop dfs -ls 
 
 Start MapReduce
 ----
 
 1. Execute these commands from job tracker
 
-         <login as $MAPRED_USER>
-        hadoop fs -chown -R mapred /mapred  
-         /usr/lib/hadoop/bin/hadoop-daemon.sh --config $HADOOP_CONF_DIR start jobtracker
+        <login as $MAPRED_USER>
+        /usr/lib/hadoop/bin/hadoop fs -chown -R mapred /mapred  
+        /usr/lib/hadoop/bin/hadoop-daemon.sh --config $HADOOP_CONF_DIR start jobtracker
 
 2. Execute these commands from job history server
 
-         <login as $MAPRED_USER>
+        <login as $MAPRED_USER>
         /usr/lib/hadoop/bin/hadoop-daemon.sh --config $HADOOP_CONF_DIR start historyserver
 
 3. Execute these commands from all task tracker nodes
@@ -61,8 +61,8 @@ Smoke Test MapReduce
 Smoke test using Terasort and sort only 10GB of data. Replace the placeholders for map tasks and reduce task to suit your cluster
 
         <login as $HDFS_USER>
-        hadoop jar /usr/lib/hadoop/hadoop-examples.jar -Dmapred.map.tasks=<number of map slots in your cluster> teragen 100000000 /test/10gsort/input
-        hadoop jar /usr/lib/hadoop/hadoop-examples.jar -Dmapred.reduce.tasks=<number of reduce slots in your cluster> terasort /test/10gsort/input /test/10gsort/output
+        /usr/lib/hadoop/bin/hadoop jar /usr/lib/hadoop/hadoop-examples.jar teragen 100000000 /test/10gsort/input
+        /usr/lib/hadoop/bin/hadoop jar /usr/lib/hadoop/hadoop-examples.jar terasort /test/10gsort/input /test/10gsort/output
 
 
 ------
