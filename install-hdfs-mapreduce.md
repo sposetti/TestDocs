@@ -98,8 +98,8 @@ Note: if any of these directories exist, we recommend deleting and recreating.
 </pre>
 
 <pre>
-For your convenience, we provide [directories.sh](./script/directories.sh) script for setting directory parameters.
-We strongly suggest you edit and execute this script as necessary to fit your environment.
+For your convenience, we provide <a href="./scripts/directories.sh">directories.sh</a> and <a href="./scripts/directories.sh">usersAndGroups.sh</a>
+scripts for setting environment parameters. We strongly suggest you edit and execute this script to fit your environment.
 </pre>
 
 ### Create NameNode directories
