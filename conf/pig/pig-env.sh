@@ -13,5 +13,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-JAVA_HOME=TODO-JAVA-HOME
+JAVA_HOME=/usr/java/default
 HADOOP_HOME=${HADOOP_HOME:-/usr/lib/hadoop}
