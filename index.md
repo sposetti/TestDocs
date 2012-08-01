@@ -16,7 +16,7 @@ This guide is intended for Operators and IT Administrators who need to install t
  * [Deploy Configurations](./deploy-configs.md)
  * [Validate Installation](./validate-installation.md)
 
-* **Essential Hadoop Services**
+* **Essential Hadoop Components**
 
  * [Install Apache Pig](./apache-pig.md)
  * [Install Apache Hive and Apache HCatalog](./apache-hive-hcatalog.md)
