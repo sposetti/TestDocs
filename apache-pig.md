@@ -45,7 +45,7 @@ Modify Configuration Files
 
 | Parameter         | Example        | Description
 |-------------------|----------------|-------------|
-| JAVA_HOME         | <code>/usr/java/default</code> | Point to 1.6.-0_31 Java Home
+| JAVA_HOME         | <code>/usr/java/default</code> | Location of JDK 1.6 update 31 Java Home
 
 
 Copy Configuration Files
