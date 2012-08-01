@@ -125,7 +125,7 @@ Execute these commands on all DataNodes.
 
         mkdir -p $DFS_DATA_DIR;
         chown -R $HDFS_USER:$HADOOP_GROUP $DFS_DATA_DIR;
-        chmod -R 755 $DFS_DATA_DIR;
+        chmod -R 750 $DFS_DATA_DIR;
 
         mkdir -p $MAPREDUCE_LOCAL_DIR;
         chown -R $MAPRED_USER:$HADOOP_GROUP $MAPREDUCE_LOCAL_DIR;
