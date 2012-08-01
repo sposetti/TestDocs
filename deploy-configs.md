@@ -47,12 +47,6 @@ Modify Configuration Files
 | mapreduce.tasktracker.group            | <code>hadoop</code> | Enter your group. Use the value of <code>$HADOOP_GROUP</code>
 | mapreduce.history.server.http.address | <code>{jobtracker.full.hostname}:51111</code> | Enter your JobTracker hostname
 
-### hadoop-env.sh
-
-| Parameter                             | Example        | Description                          |
-|---------------------------------------|----------------|-------------------------------------|
-| JAVA_HOME                             | <code>/usr/java/default</code> | Location of JDK 1.6.0_31 Java Home
-
 ### taskcontroller.cfg
 
 | Parameter                             | Example        | Description                          |
