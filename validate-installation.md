@@ -16,21 +16,18 @@ Format and Start HDFS
 
 1. Execute these commands on the NameNode:
 
-        <login as $HDFS_USER>
-        
+        <login as $HDFS_USER>        
         /usr/lib/hadoop/bin/hadoop namenode -format
         /usr/lib/hadoop/bin/hadoop-daemon.sh --config /etc/hadoop/conf start namenode
 
 2. Execute these commands from SecondaryNameNode:
 
         <login as $HDFS_USER>
-        
         /usr/lib/hadoop/bin/hadoop-daemon.sh --config /etc/hadoop/conf start secondarynamenode
 
 3. Execute these commands from all DataNodes:
 
         <login as $HDFS_USER>
-        
         /usr/lib/hadoop/bin/hadoop-daemon.sh --config /etc/hadoop/conf start datanode
 
 Smoke Test HDFS
@@ -66,17 +63,17 @@ Start MapReduce
         /usr/lib/hadoop/bin/hadoop fs -chown -R mapred /mapred
 
         <login as $MAPRED_USER>
-        /usr/lib/hadoop/bin/hadoop-daemon.sh --config $HADOOP_CONF_DIR start jobtracker
+        /usr/lib/hadoop/bin/hadoop-daemon.sh --config /etc/hadoop/conf start jobtracker
 
 2. Execute these commands from job history server
 
         <login as $MAPRED_USER>
-        /usr/lib/hadoop/bin/hadoop-daemon.sh --config $HADOOP_CONF_DIR start historyserver
+        /usr/lib/hadoop/bin/hadoop-daemon.sh --config /etc/hadoop/conf start historyserver
 
 3. Execute these commands from all task tracker nodes
 
         <login as $MAPRED_USER>
-        /usr/lib/hadoop/bin/hadoop-daemon.sh --config $HADOOP_CONF_DIR start tasktracker
+        /usr/lib/hadoop/bin/hadoop-daemon.sh --config /etc/hadoop/conf start tasktracker
 
 Smoke Test MapReduce
 ----
