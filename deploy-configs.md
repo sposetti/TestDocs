@@ -14,7 +14,7 @@ Download Configuration Files
 
 1. Download the Hadoop configuration files from [here](./conf) to a temporary directory.
 
-2. Modify the following parameters per your environment. You can search for *TODO* in the configuration files for the properties to replace.
+2. Modify the following parameters per your environment. Search for **TODO** in the configuration files for the properties to replace.
 
 
 Modify Configuration Files
