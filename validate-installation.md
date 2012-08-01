@@ -37,12 +37,18 @@ Smoke Test HDFS
 
         http://{your.namenode.server}:50070
         
-2. Test copying a file into HDFS.
+2. Test you can list the files
 
+        <login as $HDFS_USER>
+        /usr/lib/hadoop/bin/hadoop dfs -ls 
+
+3. Test copying a file into HDFS.
+
+        <login as $HDFS_USER>
         /usr/lib/hadoop/bin/hadoop dfs -copyFromLocal /etc/passwd passwd-test
         /usr/lib/hadoop/bin/hadoop dfs -ls 
 
-3. Test you can browse HDFS.
+4. Test you can browse HDFS.
 
         http://{your.datanode.server}:50075/browseDirectory.jsp?dir=/
 
@@ -52,8 +58,11 @@ Start MapReduce
 
 1. Execute these commands from job tracker
 
+        <login as HDFS user>
+        /usr/lib/hadoop/bin/hadoop fs -mkdir /mapred
+        /usr/lib/hadoop/bin/hadoop fs -chown -R mapred /mapred
+
         <login as $MAPRED_USER>
-        /usr/lib/hadoop/bin/hadoop fs -chown -R mapred /mapred  
         /usr/lib/hadoop/bin/hadoop-daemon.sh --config $HADOOP_CONF_DIR start jobtracker
 
 2. Execute these commands from job history server
