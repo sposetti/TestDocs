@@ -66,7 +66,7 @@ Validate Installation
 
 ### Smoke Test Pig
 
-    hadoop dfs -rmr passwd /tmp/id.pig
+    hadoop dfs -rmr passwd
     hadoop dfs -copyFromLocal /etc/passwd passwd 
     hadoop dfs -ls 
 
