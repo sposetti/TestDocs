@@ -78,6 +78,12 @@ On your Oozie server, create the config directory, copy the config files and set
 Validate Installation
 ----
 
+### Start Oozie
+
+1. Run the following command to start the Oozie server.
+
+    /usr/lib/oozie/bin/oozie-start.sh
+
 ### Smoke Test Oozie
 
 1. Confirm you can browse to the Oozie server.
