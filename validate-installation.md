@@ -42,7 +42,7 @@ Smoke Test HDFS
         /usr/lib/hadoop/bin/hadoop dfs -copyFromLocal /etc/passwd passwd-test
         /usr/lib/hadoop/bin/hadoop dfs -ls 
 
-3. Test you can browse the data.
+3. Test you can browse HDFS.
 
         http://{your.datanode.server}:50075/browseDirectory.jsp?dir=/
 
@@ -69,12 +69,15 @@ Start MapReduce
 Smoke Test MapReduce
 ----
 
-Smoke test using Terasort and sort only 10GB of data. Replace the placeholders for map tasks and reduce task to suit your cluster
+1. Test you can browse your Job Tracker.
+
+        http://{your.jobtracker.server}:50030/
+
+2. Smoke test using Terasort and sort 10GB of data.
 
         <login as $HDFS_USER>
         /usr/lib/hadoop/bin/hadoop jar /usr/lib/hadoop/hadoop-examples.jar teragen 100000000 /test/10gsort/input
         /usr/lib/hadoop/bin/hadoop jar /usr/lib/hadoop/hadoop-examples.jar terasort /test/10gsort/input /test/10gsort/output
-
 
 ------
 
