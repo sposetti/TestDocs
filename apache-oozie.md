@@ -10,6 +10,9 @@ Install Apache Oozie
 Apache Oozie is workflow scheduler.
 
 * [Install Oozie RPMs](#install-oozie-rpms)
+* [Set Directories and Permissions](#set-directories-and-permissions)
+* [Modify Configuration Files](#modify-configuration-files)
+* [Copy Configuration Files](#copy-configuration-files)
 * [Validate Installation](#validate-installation)
 
 
@@ -31,10 +34,12 @@ Execute these commands on your Oozie server.
     chown -R $OOZIE_USER:$HADOOP_GROUP $OOZIE_LOG_DIR;
     chmod 755 -R $OOZIE_LOG_DIR;
 
-#### Deploy Configurations
+Modify Configuration Files
+----
 
-Download the Oozie configuration files from xxxx and change following parameters per your environment.
-Look for all TODO’s in these files and change them to suit the environment
+1. Download the Hadoop configuration files from [here](#./conf/oozie) to a temporary directory.
+
+2. Modify the following parameters per your environment. Search for **TODO** in the configuration files for the properties to replace.
 
 #### oozie-site.xml
 
@@ -52,6 +57,19 @@ Look for all TODO’s in these files and change them to suit the environment
 | OOZIE_LOG_DIR     | <code>/var/log/oozie</code> | Use value from <code>$OOZIE_LOG_DIR</code>
 | OOZIE_PID_DIR     | <code>/var/run/oozie</code> | Use value from <code>$OOZIE_PID_DIR</code>
 | OOZIE_DATA_DIR    | <code>/var/db/oozie</code> | Use value from <Code>$OOZIE_DATA_DIR</code>
+
+Copy Configuration Files
+----
+
+On your Oozie server, create the config directory, copy the config files and set the permissions:
+
+    mkdir -p $OOZIE_CONF_DIR ;
+
+    <copy the config files to $OOZIE_CONF_DIR > 
+
+    chown -R $OOZIE_USER:$HADOOP_GROUP $OOZIE_CONF_DIR ;
+    chmod -R 755 $OOZIE_CONF_DIR ;
+
 
 Validate Installation
 ----
