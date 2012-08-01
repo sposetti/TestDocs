@@ -220,7 +220,7 @@ For your conveinence, we are providing <a href="./scripts/directories.sh">direct
 | HDFS | <code>HDFS_LOG_DIR</code> | Directory to store the HDFS logs. This directory name is a combination of a directory and the <code>$HDFS_USER</code>. For example, <code>"/var/log/hadoop/hdfs"</code> where <code>hdfs</code> is the <code>$HDFS_USER</code>
 | HDFS | <code>HDFS_PID_DIR</code> | Directory to store the HDFS process ID. This directory name is a combination of a directory and the <code>$HDFS_USER</code>. For example, <code>"/var/run/hadoop/hdfs"</code> where <code>hdfs</code> is the <code>$HDFS_USER</code>
 | HDFS | <code>HADOOP_CONF_DIR</code> | Directory to store the Hadoop configuration files. For example, <code>"/etc/hadoop/conf"</code>
-| MapReduce | <code>MAPREDUCE_LOCAL_DIR</code> | Space separated list of directories where MapReduce will store temporary data. For example, <code>"/grid/hadoop/mapred /grid1/hadoop/mapred /grid2/hadoop/mapred"</code>
+| MapReduce | <code>MAPREDUCE_LOCAL_DIR</code> | Space separated list of directories where MapReduce will store temporary data. For example, <code>"/grid/hadoop/mapred /grid1/hadoop/mapred /grid2/hadoop/mapred"</code>. This directory name is a combination of a directory and the <code>$MAPRED_USER</code>. For example, <code>"/grid/hadoop/mapred"</code> where <code>mapred</code> is the <code>$MAPRED_USER</code>
 | MapReduce | <code>MAPRED_LOG_DIR</code> | Directory to store the HDFS logs. For example, <code>"/var/log/hadoop/mapred"</code>
 | MapReduce | <code>MAPRED_PID_DIR</code> | Directory to store the MapReduce process ID. For example, <code>"/var/run/hadoop/mapred"</code>
 | Pig | <code>PIG_CONF_DIR</code> | Directory to store the Pig configuration files. For example, <code>"/etc/pig/conf"</code>
