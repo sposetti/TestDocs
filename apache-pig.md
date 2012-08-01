@@ -70,8 +70,8 @@ Validate Installation
     hadoop dfs -copyFromLocal /etc/passwd passwd 
     hadoop dfs -ls 
 
-    echo "A = load '\''passwd'\'' using PigStorage('\'':'\''); " > /tmp/id.pig
-    echo "B = foreach A generate \$0 as id; store B into '\''/tmp/id.out'\''; " >> /tmp/id.pig
+    echo "A = load \'passwd\' using PigStorage(\':\'); " > /tmp/id.pig
+    echo "B = foreach A generate \$0 as id; store B into \'/tmp/id.out\'; " >> /tmp/id.pig
 
     pig -l /tmp/pig.log /tmp/id.pig
 
