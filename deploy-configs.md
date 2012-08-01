@@ -43,7 +43,7 @@ Modify Configuration Files
 |---------------------------------------|---------------|---------------------------------------|
 | mapred.job.tracker                    | <code>{jobtracker.full.hostname}:50300</code> | Enter your JobTracker hostname
 | mapred.job.tracker.http.address       | <code>{jobtracker.full.hostname}:50030</code> | Enter your JobTracker hostname
-| mapred.local.dir                       | <code>/grid/hadoop/hdfs/mapred</code> | Comma separated list of paths. Use the value of <code>$MAPREDUCE_LOCAL_DIR</code>
+| mapred.local.dir                       | <code>/grid/hadoop/mapred</code> | Comma separated list of paths. Use the value of <code>$MAPREDUCE_LOCAL_DIR</code>
 | mapreduce.tasktracker.group            | <code>hadoop</code> | Enter your group. Use the value of <code>$HADOOP_GROUP</code>
 | mapreduce.history.server.http.address | <code>{jobtracker.full.hostname}:51111</code> | Enter your JobTracker hostname
 
