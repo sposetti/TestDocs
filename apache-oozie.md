@@ -57,7 +57,6 @@ Modify Configuration Files
 
 | Parameter         | Example        | Description            |
 |-------------------|----------------|---------------------------|
-| JAVA_HOME         | <code>/usr/java/default</code> | Location of JDK 1.6 update 31 Java Home
 | OOZIE_LOG_DIR     | <code>/var/log/oozie</code> | Use value from <code>$OOZIE_LOG_DIR</code>
 | OOZIE_PID_DIR     | <code>/var/run/oozie</code> | Use value from <code>$OOZIE_PID_DIR</code>
 | OOZIE_DATA_DIR    | <code>/var/db/oozie</code> | Use value from <Code>$OOZIE_DATA_DIR</code>
