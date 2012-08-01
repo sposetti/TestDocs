@@ -74,7 +74,7 @@ Install Compression Libraries
 
 1. Install Snappy compression/decompression library.
 
-        yum -y install snappy snappy-devel snappy.i386
+        yum -y install snappy snappy-devel snappy.i386 snappy-devel.i386
 
 2. Create symbolic links.
 
@@ -85,7 +85,7 @@ Install Compression Libraries
 
 1. Install LZO compression library.
 
-        yum -y install hadoop-lzo lzo lzo-devel
+        yum -y install hadoop-lzo lzo lzo-devel hadoop-lzo-native lzo.i386 lzo-devel.i386
 
 Create Directories
 ----------
