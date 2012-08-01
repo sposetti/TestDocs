@@ -25,7 +25,7 @@ Modify Configuration Files
 | Parameter          | Example       | Description                                       |
 |--------------------|---------------|-----------------------------|
 | fs.default.name    | <code>hdfs://{namenode.full.hostname}:8020</code>  | Enter your NameNode hostname
-| fs.checkpoint.dir  | <code>/grid/hadoop/hdfs/snn</code>  | Comma separated list of paths. Use the value of <code>$FS_CHECKPOINT_DIR</code>
+| fs.checkpoint.dir  | <code>/grid/hadoop/hdfs/snn</code>  | Comma separated list of paths. Use the list of directories from <code>$FS_CHECKPOINT_DIR</code>
 
 ### hdfs-site.xml
 
@@ -43,7 +43,7 @@ Modify Configuration Files
 |---------------------------------------|---------------|---------------------------------------|
 | mapred.job.tracker                    | <code>{jobtracker.full.hostname}:50300</code> | Enter your JobTracker hostname
 | mapred.job.tracker.http.address       | <code>{jobtracker.full.hostname}:50030</code> | Enter your JobTracker hostname
-| mapred.local.dir                       | <code>/grid/hadoop/mapred</code> | Comma separated list of paths. Use the value of <code>$MAPREDUCE_LOCAL_DIR</code>
+| mapred.local.dir                       | <code>/grid/hadoop/mapred,/grid1/hadoop/mapred</code> | Comma separated list of paths. Use the list of directories from <code>$MAPREDUCE_LOCAL_DIR</code>
 | mapreduce.tasktracker.group            | <code>hadoop</code> | Enter your group. Use the value of <code>$HADOOP_GROUP</code>
 | mapreduce.history.server.http.address | <code>{jobtracker.full.hostname}:51111</code> | Enter your JobTracker hostname
 
@@ -52,17 +52,12 @@ Modify Configuration Files
 | Parameter                             | Example        | Description                          |
 |---------------------------------------|----------------|-------------------------------------|
 | JAVA_HOME                             | <code>/usr/java/default</code> | Location of JDK 1.6.0_31 Java Home
-| HADOOP_CONF_DIR                       | <code>/etc/hadoop/conf</code> | Use the value of <code>$HADOOP_CONF_DIR</code>
-| HADOOP_LOG_DIR                        | <code>/var/log/hadoop/hdfs</code> | Use the value of <code>$HADOOP_LOG_DIR</code>
-| HADOOP_PID_DIR                        | <code>/var/run/hadoop/hdfs</code> | Use the value of <code>$HADOOP_PID_DIR</code>
 
 ### taskcontroller.cfg
 
 | Parameter                             | Example        | Description                          |
 |---------------------------------------|----------------|-------------------------------------|
-| mapred.local.dir                         | <code>/grid/hadoop/hdfs/mapred</code> | Use the value of <code>$MAPREDUCE_LOCAL_DIR</code>
-| mapreduce.tasktracker.group              | <code>hadoop</code> | Use the value of <code>$HADOOP_GROUP</code>
-| hadoop.log.dir                        | <code>/var/log/hadoop/mapred</code> | Use the value of <code>$MAPRED_LOG_DIR</code>
+| mapred.local.dir                         | <code>/grid/hadoop/mapred,/grid1/hadoop/mapred</code> | Comma separated list of paths. Use the list of directories from <code>$MAPREDUCE_LOCAL_DIR</code>
 
 
 Copy Configuration Files
