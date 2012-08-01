@@ -57,8 +57,8 @@ On all Pig hosts, create the config directory, copy the config files and set the
 
     <copy the config files to $PIG_CONF_DIR > 
 
-    chown -R $PIG_USER:$HADOOP_GROUP $PIG_CONF_DIR/../  ;
-    chmod -R 755 $PIG_CONF_DIR/../
+    chown -R $PIG_USER:$HADOOP_GROUP $PIG_CONF_DIR ;
+    chmod -R 755 $PIG_CONF_DIR
    
 
 Validate Installation
@@ -66,7 +66,7 @@ Validate Installation
 
 ### Smoke Test Pig
 
-    hadoop dfs -rmr passwd /tmp/id.out
+    hadoop dfs -rmr passwd /tmp/id.pig
     hadoop dfs -copyFromLocal /etc/passwd passwd 
     hadoop dfs -ls 
 
