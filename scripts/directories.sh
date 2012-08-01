@@ -1,7 +1,12 @@
 #!/bin/sh
 
 #
-# Direcories
+# Direcories Script
+#
+# 1. To use this script, you must edit the TODO variables below for your environment.
+#
+# 2. Warning: Leave the other parameters as the default values. Changing these default values will require you to
+#    change values in other configuration files.
 #
 
 #
@@ -9,13 +14,13 @@
 #
 
 # Space separated list of directories where NameNode will store file system image.
-DFS_NAME_DIR="/grid/hadoop/hdfs/nn /grid1/hadoop/hdfs/nn" ;
+DFS_NAME_DIR="TODO-LIST-OF-NAMENODE-DIRS" ;
 
 # Space separated list of directories where DataNodes will store the blocks.
-DFS_DATA_DIR="/grid/hadoop/hdfs/dn /grid1/hadoop/hdfs/dn /grid2/hadoop/hdfs/dn" ;
+DFS_DATA_DIR="TODO-LIST-OF-DATA-DIRS" ;
 
 # Space separated list of directories where SecondaryNameNode will store checkpoint image.
-FS_CHECKPOINT_DIR="/grid/hadoop/hdfs/snn /grid1/hadoop/hdfs/snn /grid2/hadoop/hdfs/snn" ;
+FS_CHECKPOINT_DIR="TODO-LIST-OF-SECONDARY-NAMENODE-DIRS" ;
 
 # Directory to store the Hadoop configuration files.
 HADOOP_CONF_DIR="/etc/hadoop/conf" ;
@@ -31,7 +36,7 @@ HDFS_PID_DIR="/var/run/hadoop/hdfs" ;
 #
 
 # Space separated list of directories where MapReduce will store temporary data.
-MAPREDUCE_LOCAL_DIR="/grid/hadoop/mapred /grid1/hadoop/mapred /grid2/hadoop/mapred" ;
+MAPREDUCE_LOCAL_DIR="TODO-LIST-OF-MAPRED-DIRS" ;
 
 # Directory to store the MapReduce logs.
 MAPRED_LOG_DIR="/var/log/hadoop/mapred" ;
@@ -67,7 +72,7 @@ HBASE_LOG_DIR="/var/log/hbase" ;
 #
 
 # Directory where Zookeeper will store data.
-ZOOKEEPER_DATA_DIR="/grid1/hadoop/zookeeper/data" ;
+ZOOKEEPER_DATA_DIR="TODO-ZOOKEPPER-DATA-DIR" ;
 
 # Directory to store the ZooKeeper configuration files.
 ZOOKEEPER_CONF_DIR="/etc/zookeeper/conf" ;
