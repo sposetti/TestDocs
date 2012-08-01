@@ -31,7 +31,7 @@ Execute these commands on all nodes
 
     mkdir -p $HIVE_LOG_DIR;
     chown -R $HIVE_USER:$HADOOP_GROUP $HIVE_LOG_DIR;
-    chmod 755 -R $HIVE_LOG_DIR;
+    chmod -R 755 $HIVE_LOG_DIR;
 
 ### Deploy the Configurations
 
@@ -40,8 +40,8 @@ Look for all TODO’s in these files and change them to suit the environment.
 
 #### hive-site.xml
 
-| Parameter         | Example        |
-|-------------------|----------------|
+| Parameter         | Example        | Description  |
+|-------------------|----------------|------------------|
 | javax.jdo.option.ConnectionURL        | jdbc:mysql://<mysql host name>:<port>/<database name>?createDatabaseIfNotExist=true
 | javax.jdo.option.ConnectionUserName	| MySQL username
 | javax.jdo.option.ConnectionPassword   | MySQL password
@@ -51,9 +51,11 @@ Look for all TODO’s in these files and change them to suit the environment.
 On all Hive hosts create the config directory, copy the config files and set the permissions
 
     mkdir -p $HIVE_CONF_DIR ;
+    
     <copy the config files to $HIVE_CONF_DIR > 
-    chown -R $HIVE_USER:$HADOOP_GROUP $HIVE_CONF_DIR/../  ;
-    chmod -R 755 $HIVE_CONF_DIR/../
+
+    chown -R $HIVE_USER:$HADOOP_GROUP $HIVE_CONF_DIR
+    chmod -R 755 $HIVE_CONF_DIR
    
 Download MySQL Connector
 ---

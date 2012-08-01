@@ -226,6 +226,10 @@ For your conveinence, we are providing <a href="./scripts/directories.sh">direct
 | Pig | <code>PIG_CONF_DIR</code> | Directory to store the Pig configuration files. For example, <code>"/etc/pig/conf"</code>
 | Pig | <code>PIG_LOG_DIR</code> | Directory to store the Pig logs. For example, <code>"/var/log/pig"</code>
 | Pig | <code>PIG_PID_DIR</code> | Directory to store the Pig process ID. For example, <code>"/var/run/pig"</code>
+| Oozie | <code>OOZIE_CONF_DIR</code> | Directory to store the Oozie configuration files. For example, <code>"/etc/oozie/conf"</code>
+| Oozie | <code>OOZIE_DATA_DIR</code> | Directory to store the Oozie data. For example, <code>"/var/db/oozie"</code>
+| Oozie | <code>OOZIE_LOG_DIR</code> | Directory to store the Oozie logs. For example, <code>"/var/log/oozie"</code>
+| Oozie | <code>OOZIE_PID_DIR</code> | Directory to store the Oozie process ID. For example, <code>"/var/run/oozie"</code>
 | Hive | <code>HIVE_CONF_DIR</code> | Directory to store the Hive configuration files. For example, <code>"/etc/hive/conf"</code>
 | Hive | <code>HIVE_LOG_DIR</code> | Directory to store the Hive logs. For example, <code>"/var/log/hive"</code>
 | Hive | <code>HIVE_PID_DIR</code> | Directory to store the Hive process ID. For example, <code>"/var/run/hive"</code>
@@ -235,10 +239,6 @@ For your conveinence, we are providing <a href="./scripts/directories.sh">direct
 | Zookeeper | <code>ZOOKEEPER_CONF_DIR</code> | Directory to store the Zookeeper configuration files. For example, <code>"/etc/zookeeper/conf"</code>
 | Zookeeper | <code>ZOOKEEPER_LOG_DIR</code> | Directory to store the ZooKeeper logs. For example, <code>"/var/log/zookeeper"</code>
 | Zookepper | <code>ZOOKEEPER_PID_DIR</code> | Directory to store the ZooKeeper process ID. For example, <code>"/var/run/zookeeper"</code>
-| Oozie | <code>OOZIE_CONF_DIR</code> | Directory to store the Oozie configuration files. For example, <code>"/etc/oozie/conf"</code>
-| Oozie | <code>OOZIE_LOG_DIR</code> | Directory to store the Oozie logs. For example, <code>"/var/log/oozie"</code>
-| Oozie | <code>OOZIE_PID_DIR</code> | Directory to store the Oozie process ID. For example, <code>"/var/run/oozie"</code>
-
 
 
 ------
