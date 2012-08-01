@@ -74,7 +74,11 @@ Install Compression Libraries
 
 1. Install Snappy compression/decompression library.
 
+        [For RHEL 5 and CentOS 5]
         yum -y install snappy snappy-devel snappy.i386 snappy-devel.i386
+
+        [For RHEL 6 and CentOS 6]
+        yum -y install snappy snappy-devel snappy.i686 snappy-devel.i686
 
 2. Create symbolic links.
 
@@ -85,7 +89,11 @@ Install Compression Libraries
 
 1. Install LZO compression library.
 
+        [For RHEL 5 and CentOS 5]
         yum -y install hadoop-lzo lzo lzo-devel hadoop-lzo-native lzo.i386 lzo-devel.i386
+
+        [For RHEL 6 and CentOS 6]
+        yum -y install hadoop-lzo lzo lzo-devel hadoop-lzo-native lzo.i686 lzo-devel.i686
 
 Create Directories
 ----------
@@ -96,11 +104,8 @@ Create directories and configure ownership + permissions on the appropriate host
 Note: if any of these directories exist, we recommend deleting and recreating.
 </pre>
 
-<pre>
-For your convenience, we provide <a href="./scripts/directories.sh">directories.sh</a> and <a href="./scripts/directories.sh">usersAndGroups.sh</a> scripts for setting environment parameters.
-We strongly suggest you edit and execute this script to fit your environment.
-See <a href="./prerequisites.md#set-environment-parameters">Prerequisites &gt; Set Environment Parameters</a> for more information.
-</pre>
+> For your convenience, we provide <a href="./scripts/directories.sh">directories.sh</a> and <a href="./scripts/directories.sh">usersAndGroups.sh</a> scripts for setting environment parameters.
+> We strongly suggest you edit and execute this scripts based on your environment. See <a href="./prerequisites.md#set-environment-parameters">Prerequisites &gt; Set Environment Parameters</a> for more information.
 
 ### Create NameNode directories
 
