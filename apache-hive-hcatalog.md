@@ -54,10 +54,10 @@ Modify Configuration Files
 
 | Parameter         | Example        | Description  |
 |-------------------|----------------|------------------|
-| javax.jdo.option.ConnectionURL        | jdbc:mysql://<mysql host name>:<port>/<database name>?createDatabaseIfNotExist=true
-| javax.jdo.option.ConnectionUserName	| MySQL username
-| javax.jdo.option.ConnectionPassword   | MySQL password
-| hive.metastore.uris               | thrift://<metastore server full hostname>:9083
+| javax.jdo.option.ConnectionURL        | jdbc:mysql://{mysql.full.hostname}:{port}/{database.name}?createDatabaseIfNotExist=true | Enter your JDBC connection string.
+| javax.jdo.option.ConnectionUserName	| MySQL username | Enter your MySQL username
+| javax.jdo.option.ConnectionPassword   | MySQL password | Enter your MySQL password
+| hive.metastore.uris               | thrift://{metastore.server.full.hostname>:9083 | Enter your Thrift server
 
 
 On all Hive hosts create the config directory, copy the config files and set the permissions
