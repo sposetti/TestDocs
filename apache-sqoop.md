@@ -9,6 +9,10 @@ Install Apache Sqoop
 
 TBD
 
+yum -y install sqoop
+
+
+
 ------
 
 [Index](./index.md)
