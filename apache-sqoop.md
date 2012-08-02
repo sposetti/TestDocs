@@ -32,7 +32,7 @@ Download MySQL Connector
 
 3. Copy the JAR file
 
-        cp ./mysql-connector-java-5.1.18-bin.jar /usr/lib/hive/lib/.
+        cp ./mysql-connector-java-5.1.18-bin.jar /usr/lib/sqoop/lib/.
         chmod 644 /usr/lib/sqoop/lib/*mysql*.jar
 
 ### Deploy Configurations
