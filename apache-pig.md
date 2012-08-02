@@ -25,6 +25,10 @@ On all hosts from where Pig programs will be executed, install RPMs.
 Set Directories and Permissions
 ----
 
+> For your convenience, we provide [directories.sh](#./scripts/directories.sh) and [usersAndGroups.sh](#./scripts/usersAndGroups.sh) scripts for setting
+> environment parameters. We strongly suggest you edit and execute this scripts based
+> on your environment. See [Prerequisites &gt; Set Environment Parameters](#./prerequisites.md#set-environment-parameters) for more information.
+
 ### Create Log Directories
 
 Execute these commands on all nodes:
