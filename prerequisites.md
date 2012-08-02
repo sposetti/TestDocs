@@ -232,6 +232,7 @@ The following table describes the directories for install, configuration, data, 
 | Oozie | <code>OOZIE_DATA_DIR</code> | Directory to store the Oozie data. For example, <code>"/var/db/oozie"</code>
 | Oozie | <code>OOZIE_LOG_DIR</code> | Directory to store the Oozie logs. For example, <code>"/var/log/oozie"</code>
 | Oozie | <code>OOZIE_PID_DIR</code> | Directory to store the Oozie process ID. For example, <code>"/var/run/oozie"</code>
+| Oozie | <code>OOZIE_TMP_DIR</code> | Directory to store the Oozie temporary files. For example, <code>"/var/tmp/oozie"</code>
 | Hive | <code>HIVE_CONF_DIR</code> | Directory to store the Hive configuration files. For example, <code>"/etc/hive/conf"</code>
 | Hive | <code>HIVE_LOG_DIR</code> | Directory to store the Hive logs. For example, <code>"/var/log/hive"</code>
 | Hive | <code>HIVE_PID_DIR</code> | Directory to store the Hive process ID. For example, <code>"/var/run/hive"</code>

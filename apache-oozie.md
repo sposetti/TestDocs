@@ -19,9 +19,13 @@ Apache Oozie is workflow scheduler.
 Install Oozie RPMs
 ----
 
-On Oozie server, install the necessary RPMs.
+1. On Oozie server, install the necessary RPMs.
 
-    yum -y install oozie
+        yum -y install oozie extjs
+
+2. Add the ExtJS library to the Oozie application.
+
+        /usr/lib/oozie/bin/oozie-setup.sh -hadoop 0.20.200  /usr/lib/hadoop -extjs /tmp/HDP-oozie/ext-2.2.zip
 
 Set Directories and Permissions
 ----
@@ -37,6 +41,10 @@ Execute these commands on your Oozie server.
     mkdir -p $OOZIE_PID_DIR;
     chown -R $OOZIE_USER:$HADOOP_GROUP $OOZIE_PID_DIR;
     chmod -R 755 $OOZIE_PID_DIR;
+
+    mkdir -p $OOZIE_TMP_DIR;
+    chown -R $OOZIE_USER:$HADOOP_GROUP $OOZIE_TMP_DIR;
+    chmod -R 755 $OOZIE_TMP_DIR;
 
 Modify Configuration Files
 ----
@@ -66,12 +74,13 @@ Copy Configuration Files
 
 On your Oozie server, create the config directory, copy the config files and set the permissions:
 
+    rm -r $OOZIE_CONF_DIR ;
     mkdir -p $OOZIE_CONF_DIR ;
 
-    <copy the config files to $OOZIE_CONF_DIR > 
+    <copy the config files to $OOZIE_CONF_DIR>
 
-    chown -R $OOZIE_USER:$HADOOP_GROUP $OOZIE_CONF_DIR ;
-    chmod -R 755 $OOZIE_CONF_DIR ;
+    chown -R $OOZIE_USER:$HADOOP_GROUP $OOZIE_CONF_DIR/../ ;
+    chmod -R 755 $OOZIE_CONF_DIR/../ ;
 
 
 Validate Installation
@@ -81,6 +90,7 @@ Validate Installation
 
 1. Run the following command to start the Oozie server.
 
+        <login as $OOZIE_USER>
         /usr/lib/oozie/bin/oozie-start.sh
 
 ### Smoke Test Oozie

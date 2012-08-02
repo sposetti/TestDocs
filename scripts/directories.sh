@@ -108,3 +108,6 @@ OOZIE_LOG_DIR="/var/log/oozie" ;
 
 # Directory to store the Oozie process ID.
 OOZIE_PID_DIR="/var/run/oozie" ;
+
+# Directory to store the Oozie temporary files.
+OOZIE_TMP_DIR="/var/tmp/oozie" ;
