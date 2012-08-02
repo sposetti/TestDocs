@@ -10,7 +10,7 @@ Deploy Configurations
 * [Copy Configuration Files](#copy-configuration-files)
 
 > For your convenience, we provide [directories.sh](./scripts/directories.sh) and [usersAndGroups.sh](./scripts/usersAndGroups.sh) scripts for setting
-> environment parameters. We strongly suggest you edit and execute these scripts prepare your environment.
+> environment parameters. We strongly suggest you edit and execute these scripts to prepare your environment.
 > See [Prerequisites &gt; Set Environment Parameters](./prerequisites.md#set-environment-parameters) for more information.
 
 Download Configuration Files
