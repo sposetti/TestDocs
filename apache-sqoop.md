@@ -39,13 +39,9 @@ Download MySQL Connector
 
 1. Download the Sqoop configuration files from [here](./conf/sqoop) to a temporary directory.
 
-2. Create the config directory, copy the config files and set the permissions:
+2. Çopy the config files to the Sqoop conf dir.
 
-    <copy the config files to $SQOOP_CONF_DIR > 
-    
-    chown -R $SQOOP_USER:$HADOOP_GROUP $SQOOP_CONF_DIR/../  ;
-    chmod -R 755 $SQOOP_CONF_DIR/../
-   
+    <copy the config files to $SQOOP_CONF_DIR >    
 
 Validate Installation
 ----
@@ -54,7 +50,7 @@ Validate Installation
 
 1. Execute the following comm
 
-        sqoop version | grep 'Sqoop [0-9].*
+        sqoop version | grep 'Sqoop [0-9].*'
 
 ------
 
