@@ -18,18 +18,23 @@ Apache Hive and Apache HCatalog include a Metadata service and query platform.
 Install Hive and HCatalog RPMs
 ----
 
-On all client/gateway nodes from where Hive programs will be executed, install Hive RPMs.
+On all client/gateway nodes from where Hive programs will be executed, install the Hive RPMs.
 
     yum -y install hive hcatalog
 
 Set Directories and Permissions
 ----
 
+> For your convenience, we provide [directories.sh](./scripts/directories.sh) and [usersAndGroups.sh](./scripts/usersAndGroups.sh) scripts for setting
+> environment parameters. We strongly suggest you edit and execute these scripts to prepare your environment.
+> See [Prerequisites &gt; Set Environment Parameters](./prerequisites.md#set-environment-parameters) for more information.
+
 ### Create Log Directories
 
-Execute these commands on all nodes
+Execute these commands on all nodes:
 
     mkdir -p $HIVE_LOG_DIR;
+    
     chown -R $HIVE_USER:$HADOOP_GROUP $HIVE_LOG_DIR;
     chmod -R 755 $HIVE_LOG_DIR;
 
