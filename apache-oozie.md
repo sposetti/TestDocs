@@ -97,6 +97,13 @@ Validate Installation
         <login as $OOZIE_USER>
         /usr/lib/oozie/bin/oozie-start.sh
 
+### Stop Oozie
+
+1. Run the following command to stop the Oozie server.
+
+        <login as $OOZIE_USER>
+        /usr/lib/oozie/bin/oozie-stop.sh
+
 ### Smoke Test Oozie
 
 1. Confirm you can browse to the Oozie server.
