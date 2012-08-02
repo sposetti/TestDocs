@@ -21,7 +21,7 @@ Install Oozie RPMs
 
 On Oozie server, install the necessary RPMs.
 
-    yum -y install oozie
+    yum -y install oozie extjs
 
 Set Directories and Permissions
 ----
@@ -66,6 +66,7 @@ Copy Configuration Files
 
 On your Oozie server, create the config directory, copy the config files and set the permissions:
 
+    rm -r $OOZIE_CONF_DIR ;
     mkdir -p $OOZIE_CONF_DIR ;
 
     <copy the config files to $OOZIE_CONF_DIR > 
@@ -81,6 +82,7 @@ Validate Installation
 
 1. Run the following command to start the Oozie server.
 
+        <login as $OOZIE_USER>
         /usr/lib/oozie/bin/oozie-start.sh
 
 ### Smoke Test Oozie
