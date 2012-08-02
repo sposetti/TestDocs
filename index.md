@@ -23,3 +23,9 @@ This guide is intended for Operators and IT Administrators who need to install t
  * [Install Apache Oozie](./apache-oozie.md)
  * [Install Apache HBase and Apache Zookeeper](./apache-hbase-zookeeper.md)
  * [Install Apache Sqoop](./apache-sqoop.md)
+
+
+* **Monitoring and Alerts**
+
+ * Ganglia - coming soon
+ * Nagios - coming soon
