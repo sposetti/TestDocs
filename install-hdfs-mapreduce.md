@@ -20,7 +20,7 @@ Set Default File and Directory Permissions
 -------
 
 Set the default file and directory permissions to 0022 (022). This is typically the default for most Linux distributions.
-Use the <code>umask</code> command to confirm and set as necessary. Be sure umask is set for all terminal session that you will use during installation.
+Use the <code>umask</code> command to confirm and set as necessary. Be sure <code>umask</code> is set for all terminal session that you will use during installation.
 
 Configure Repository
 -------
@@ -64,7 +64,8 @@ Information on setting up the Local Yum Repository can be found in the [Hortonwo
 Install Hadoop RPMs
 ---------
 
-       yum -y install hadoop hadoop-libhdfs hadoop-libhdfs.i386 mysql-connector-java hadoop-native hadoop-native.i386 hadoop-pipes hadoop-pipes.i386 hadoop-sbin.i386
+        yum -y install hadoop hadoop-libhdfs hadoop-libhdfs.i386 mysql-connector-java hadoop-native
+                       hadoop-native.i386 hadoop-pipes hadoop-pipes.i386 hadoop-sbin.i386
 
 
 Install Compression Libraries
@@ -104,8 +105,9 @@ Create directories and configure ownership + permissions on the appropriate host
 Note: if any of these directories exist, we recommend deleting and recreating.
 </pre>
 
-> For your convenience, we provide <a href="./scripts/directories.sh">directories.sh</a> and <a href="./scripts/directories.sh">usersAndGroups.sh</a> scripts for setting environment parameters.
-> We strongly suggest you edit and execute this scripts based on your environment. See <a href="./prerequisites.md#set-environment-parameters">Prerequisites &gt; Set Environment Parameters</a> for more information.
+> For your convenience, we provide [directories.sh](./scripts/directories.sh) and [usersAndGroups.sh](./scripts/usersAndGroups.sh) scripts for setting
+> environment parameters. We strongly suggest you edit and execute these scripts prepare your environment.
+> See [Prerequisites &gt; Set Environment Parameters](./prerequisites.md#set-environment-parameters) for more information.
 
 ### Create NameNode directories
 
@@ -154,7 +156,6 @@ Execute these commands on all nodes.
         mkdir -p $MAPRED_PID_DIR;
         chown -R $MAPRED_USER:$HADOOP_GROUP $MAPRED_PID_DIR;
         chmod -R 755 $MAPRED_PID_DIR;
-
 
 
 
