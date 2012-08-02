@@ -10,6 +10,10 @@ Validate Installation
 * [Start MapReduce](#start-mapreduce)
 * [Smoke Test MapReduce](#smoke-test-mapreduce)
 
+> For your convenience, we provide [directories.sh](./scripts/directories.sh) and [usersAndGroups.sh](./scripts/usersAndGroups.sh) scripts for setting
+> environment parameters. We strongly suggest you edit and execute this scripts based
+> on your environment. See [Prerequisites &gt; Set Environment Parameters](./prerequisites.md#set-environment-parameters) for more information.
+
 
 Format and Start HDFS
 -----
@@ -18,17 +22,17 @@ Format and Start HDFS
 
         <login as $HDFS_USER>        
         /usr/lib/hadoop/bin/hadoop namenode -format
-        /usr/lib/hadoop/bin/hadoop-daemon.sh --config /etc/hadoop/conf start namenode
+        /usr/lib/hadoop/bin/hadoop-daemon.sh --config $HADOOP_CONF_DIR start namenode
 
 2. Execute these commands from SecondaryNameNode:
 
         <login as $HDFS_USER>
-        /usr/lib/hadoop/bin/hadoop-daemon.sh --config /etc/hadoop/conf start secondarynamenode
+        /usr/lib/hadoop/bin/hadoop-daemon.sh --config $HADOOP_CONF_DIR start secondarynamenode
 
 3. Execute these commands from all DataNodes:
 
         <login as $HDFS_USER>
-        /usr/lib/hadoop/bin/hadoop-daemon.sh --config /etc/hadoop/conf start datanode
+        /usr/lib/hadoop/bin/hadoop-daemon.sh --config $HADOOP_CONF_DIR start datanode
 
 Smoke Test HDFS
 ----
@@ -63,17 +67,17 @@ Start MapReduce
         /usr/lib/hadoop/bin/hadoop fs -chown -R mapred /mapred
 
         <login as $MAPRED_USER>
-        /usr/lib/hadoop/bin/hadoop-daemon.sh --config /etc/hadoop/conf start jobtracker
+        /usr/lib/hadoop/bin/hadoop-daemon.sh --config $HADOOP_CONF_DIR start jobtracker
 
 2. Execute these commands from job history server
 
         <login as $MAPRED_USER>
-        /usr/lib/hadoop/bin/hadoop-daemon.sh --config /etc/hadoop/conf start historyserver
+        /usr/lib/hadoop/bin/hadoop-daemon.sh --config $HADOOP_CONF_DIR start historyserver
 
 3. Execute these commands from all task tracker nodes
 
         <login as $MAPRED_USER>
-        /usr/lib/hadoop/bin/hadoop-daemon.sh --config /etc/hadoop/conf start tasktracker
+        /usr/lib/hadoop/bin/hadoop-daemon.sh --config $HADOOP_CONF_DIR start tasktracker
 
 Smoke Test MapReduce
 ----
