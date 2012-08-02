@@ -7,11 +7,19 @@
 Install Apache Sqoop
 =====
 
-TBD
+Apache Sqoop is a NoSQL database and Apache Zookeeper performs cluster coordination.
 
-yum -y install sqoop
+* [Install RPMs](#install-rpms)
+* [Download MySQL Connector](#download-mysql-connector)
+* [Copy Configuration Files](#copy-configuration-files)
+* [Validate Installation](#validate-installation)
 
+Install RPMs
+----
 
+On all nodes where you plan to use the Sqoop client, install RPMs.
+
+        yum -y install sqoop
 
 
 Download MySQL Connector
