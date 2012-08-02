@@ -7,7 +7,7 @@
 Install Apache Sqoop
 =====
 
-Apache Sqoop is a NoSQL database and Apache Zookeeper performs cluster coordination.
+Apache Sqoop tool designed for transferring data between Apache Hadoop and structured datastores.
 
 * [Install RPMs](#install-rpms)
 * [Download MySQL Connector](#download-mysql-connector)
