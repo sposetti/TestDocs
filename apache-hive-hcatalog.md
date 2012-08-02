@@ -77,14 +77,14 @@ Download MySQL Connector
 
 1. Download MySQL connector JAR.
 
-    http://public-repo-1.hortonworks.com/ARTIFACTS/mysql-connector-java-5.1.18.zip
+        http://public-repo-1.hortonworks.com/ARTIFACTS/mysql-connector-java-5.1.18.zip
     
 2. Unzip the file.
 
 3. Copy the JAR file
 
-    <code>cp <download location>/mysql--connector--java--**--bin.jar /usr/lib/hive/lib/.</code>
-    chmod 644 /usr/lib/hive/lib/*mysql*.jar
+        cp ./mysql-connector-java-5.1.18-bin.jar /usr/lib/hive/lib/.
+        chmod 644 /usr/lib/hive/lib/*mysql*.jar
 
 
 Validate Installation
