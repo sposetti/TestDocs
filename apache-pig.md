@@ -26,8 +26,8 @@ Set Directories and Permissions
 ----
 
 > For your convenience, we provide [directories.sh](./scripts/directories.sh) and [usersAndGroups.sh](./scripts/usersAndGroups.sh) scripts for setting
-> environment parameters. We strongly suggest you edit and execute this scripts based
-> on your environment. See [Prerequisites &gt; Set Environment Parameters](./prerequisites.md#set-environment-parameters) for more information.
+> environment parameters. We strongly suggest you edit and execute these scripts to prepare your environment.
+> See [Prerequisites &gt; Set Environment Parameters](./prerequisites.md#set-environment-parameters) for more information.
 
 ### Create Log Directories
 
@@ -40,7 +40,7 @@ Execute these commands on all nodes:
 Copy Configuration Files
 ----
 
-On all Pig hosts, create the config directory, copy the config files and set the permissions:
+On all hosts where Pig will be executed, create the config directory, copy the config files and set the permissions:
 
     rm -r $PIG_CONF_DIR
     mkdir -p $PIG_CONF_DIR
