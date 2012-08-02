@@ -19,9 +19,13 @@ Apache Oozie is workflow scheduler.
 Install Oozie RPMs
 ----
 
-On Oozie server, install the necessary RPMs.
+1. On Oozie server, install the necessary RPMs.
 
     yum -y install oozie extjs
+
+2. Add the ExtJS library to the Oozie application.
+
+    /usr/lib/oozie/bin/oozie-setup.sh -hadoop 0.20.200  /usr/lib/hadoop -extjs /tmp/HDP-oozie/ext-2.2.zip
 
 Set Directories and Permissions
 ----
