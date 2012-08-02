@@ -43,7 +43,7 @@ Execute these commands on all nodes:
 Download Configuration Files
 ---
 
-1. Download the Hive and HCatalog configuration files from [here](#./conf/hive) to a temporary directory.
+1. Download the Hive and HCatalog configuration files from [here](./conf/hive) to a temporary directory.
 
 2. Modify the following parameters per your environment. Search for **TODO** in the configuration files for the properties to replace.
 
