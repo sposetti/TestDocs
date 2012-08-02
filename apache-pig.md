@@ -42,6 +42,7 @@ Copy Configuration Files
 
 On all Pig hosts, create the config directory, copy the config files and set the permissions:
 
+    rm -r $PIG_CONF_DIR
     mkdir -p $PIG_CONF_DIR
 
     <copy the config files to $PIG_CONF_DIR>
