@@ -250,6 +250,7 @@ The following table describes the directories for install, configuration, data, 
 | ZooKeeper | <code>ZOOKEEPER_CONF_DIR</code> | Directory to store the ZooKeeper configuration files. For example, <code>"/etc/zookeeper/conf"</code>
 | ZooKeeper | <code>ZOOKEEPER_LOG_DIR</code> | Directory to store the ZooKeeper logs. For example, <code>"/var/log/zookeeper"</code>
 | ZooKepper | <code>ZOOKEEPER_PID_DIR</code> | Directory to store the ZooKeeper process ID. For example, <code>"/var/run/zookeeper"</code>
+| Sqoop | <code>SQOOP_CONF_DIR</code> | Directory to store the Sqoop configuration files. For example, <code>"/usr/lib/sqoop/conf"</code>
 
 
 ------
