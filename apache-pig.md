@@ -29,9 +29,9 @@ Set Directories and Permissions
 
 Execute these commands on all nodes:
 
-    mkdir -p $PIG_LOG_DIR;
-    chown -R $PIG_USER:$HADOOP_GROUP $PIG_LOG_DIR;
-    chmod 755 -R $PIG_LOG_DIR;
+    mkdir -p $PIG_LOG_DIR
+    chown -R $PIG_USER:$HADOOP_GROUP $PIG_LOG_DIR
+    chmod 755 -R $PIG_LOG_DIR
 
 Copy Configuration Files
 ----
@@ -51,9 +51,9 @@ Validate Installation
 
 ### Smoke Test Pig
 
-    hadoop dfs -rmr passwd
-    hadoop dfs -copyFromLocal /etc/passwd passwd 
-    hadoop dfs -ls 
+    /usr/lib/hadoop/bin/hadoop dfs -rmr passwd
+    /usr/lib/hadoop/bin/hadoop dfs -copyFromLocal /etc/passwd passwd 
+    /usr/lib/hadoop/bin/hadoop dfs -ls 
 
     echo "A = load 'passwd' using PigStorage(':'); " > /tmp/id.pig
     echo "B = foreach A generate \$0 as id; store B into '/tmp/id.out'; " >> /tmp/id.pig
