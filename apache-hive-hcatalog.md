@@ -93,7 +93,6 @@ Validate Installation
 ### Start Metaservice
 
     <login as $HIVE_USER>
-    
     /usr/lib/hive/bin/hive --service metastore
 
 ### Smoke Test Hive
