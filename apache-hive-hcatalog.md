@@ -55,12 +55,13 @@ Look for all TODO’s in these files and change them to suit the environment.
 
 On all Hive hosts create the config directory, copy the config files and set the permissions
 
+    rm -r $HIVE_CONF_DIR ;
     mkdir -p $HIVE_CONF_DIR ;
     
     <copy the config files to $HIVE_CONF_DIR > 
 
-    chown -R $HIVE_USER:$HADOOP_GROUP $HIVE_CONF_DIR
-    chmod -R 755 $HIVE_CONF_DIR
+    chown -R $HIVE_USER:$HADOOP_GROUP $HIVE_CONF_DIR/../ ;
+    chmod -R 755 $HIVE_CONF_DIR/../ ;
    
 Download MySQL Connector
 ---
