@@ -30,6 +30,10 @@ Install Oozie RPMs
 Set Directories and Permissions
 ----
 
+> For your convenience, we provide [directories.sh](./scripts/directories.sh) and [usersAndGroups.sh](./scripts/usersAndGroups.sh) scripts for setting
+> environment parameters. We strongly suggest you edit and execute these scripts to prepare your environment.
+> See [Prerequisites &gt; Set Environment Parameters](./prerequisites.md#set-environment-parameters) for more information.
+
 ### Create Log Directories
 
 Execute these commands on your Oozie server.
