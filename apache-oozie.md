@@ -73,10 +73,10 @@ On your Oozie server, create the config directory, copy the config files and set
     rm -r $OOZIE_CONF_DIR ;
     mkdir -p $OOZIE_CONF_DIR ;
 
-    <copy the config files to $OOZIE_CONF_DIR > 
+    <copy the config files to $OOZIE_CONF_DIR>
 
-    chown -R $OOZIE_USER:$HADOOP_GROUP $OOZIE_CONF_DIR ;
-    chmod -R 755 $OOZIE_CONF_DIR ;
+    chown -R $OOZIE_USER:$HADOOP_GROUP $OOZIE_CONF_DIR/../ ;
+    chmod -R 755 $OOZIE_CONF_DIR/../ ;
 
 
 Validate Installation
