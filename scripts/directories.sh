@@ -68,10 +68,10 @@ HBASE_CONF_DIR="/etc/hbase/conf" ;
 HBASE_LOG_DIR="/var/log/hbase" ;
 
 #
-# Hadoop Service - Zookeeper
+# Hadoop Service - ZooKeeper
 #
 
-# Directory where Zookeeper will store data.
+# Directory where ZooKeeper will store data.
 ZOOKEEPER_DATA_DIR="TODO-ZOOKEPPER-DATA-DIR" ;
 
 # Directory to store the ZooKeeper configuration files.
