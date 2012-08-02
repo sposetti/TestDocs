@@ -39,7 +39,7 @@ Download MySQL Connector
 
 1. Download the Sqoop configuration files from [here](./conf/sqoop) to a temporary directory.
 
-2. Çopy the config files to the Sqoop conf dir.
+2. Copy the config files to the Sqoop conf dir.
 
         <copy the config files to $SQOOP_CONF_DIR >    
 
