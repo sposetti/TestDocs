@@ -229,7 +229,7 @@ The following table describes the directories for install, configuration, data, 
 | MapReduce | <code>MAPRED_PID_DIR</code> | Directory to store the MapReduce process ID. For example, <code>"/var/run/hadoop/mapred"</code>. This directory name is a combination of a directory and the <code>$MAPRED_USER</code>. For example, <code>"/var/run/hadoop/mapred"</code> where <code>mapred</code> is the <code>$MAPRED_USER</code>
 
 
-#### Ecosystem Hadoop Projects
+#### Ecosystem Hadoop Components
 
 | Hadoop Serivce | Parameter | Definition |
 |----------------|------|---------|
