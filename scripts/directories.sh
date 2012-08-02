@@ -111,3 +111,8 @@ OOZIE_PID_DIR="/var/run/oozie" ;
 
 # Directory to store the Oozie temporary files.
 OOZIE_TMP_DIR="/var/tmp/oozie" ;
+
+#
+# Hadoop Service - Sqoop
+#
+SQOOP_CONF_DIR="/usr/lib/sqoop/conf" ;
