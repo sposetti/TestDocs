@@ -11,6 +11,8 @@ Apache Hive and Apache HCatalog include a Metadata service and query platform.
 
 * [Install Hive and HCatalog RPMs](#install-hive-and-hcatalog-rpms)
 * [Set Directories and Permissions](#set-directories-and-permissions)
+* [Download Configuration Files](#download-configuration-files)
+* [Modify Configuration Files](#modify-configuration-files)
 * [Download MySQL Connector](#download-mysql-connector)
 * [Validate Installation](#validate-installation)
 
@@ -38,10 +40,15 @@ Execute these commands on all nodes:
     chown -R $HIVE_USER:$HADOOP_GROUP $HIVE_LOG_DIR;
     chmod -R 755 $HIVE_LOG_DIR;
 
-### Deploy the Configurations
+Download Configuration Files
+---
 
-Download the Hive configuration files from xxxx and change following parameters per your environment.
-Look for all TODO’s in these files and change them to suit the environment.
+1. Download the Hive and HCatalog configuration files from [here](#./conf/hive) to a temporary directory.
+
+2. Modify the following parameters per your environment. Search for **TODO** in the configuration files for the properties to replace.
+
+Modify Configuration Files
+---
 
 #### hive-site.xml
 
