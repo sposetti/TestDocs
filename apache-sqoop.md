@@ -41,14 +41,14 @@ Download MySQL Connector
 
 2. Çopy the config files to the Sqoop conf dir.
 
-    <copy the config files to $SQOOP_CONF_DIR >    
+        <copy the config files to $SQOOP_CONF_DIR >    
 
 Validate Installation
 ----
 
 ### Smoke Test
 
-1. Execute the following comm
+1. Execute the following command. You should see the Sqoop version information displayed.
 
         sqoop version | grep 'Sqoop [0-9].*'
 
