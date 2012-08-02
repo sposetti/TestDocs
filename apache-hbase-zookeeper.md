@@ -136,6 +136,8 @@ Execute these commands from all region server nodes:
 
 [Index](./index.md)
 |
-Next: [Install Apache Oozie](./apache-oozie.md)
+Prev: [Install Apache Oozie](./apache-oozie.md)
 |
 **Install Apache HBase and Apache Zookeeper**
+|
+Next: [Install Apache Sqoop](./apache-sqoop.md)

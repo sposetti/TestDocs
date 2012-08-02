@@ -1,10 +1,10 @@
 [Index](./index.md)
 /
-**Install Apache Pig**
+**Install Apache Sqoop**
 
 ------
 
-Install Apache Pig
+Install Apache Sqoop
 =====
 
 Apache Pig is a scripting platform for writing MapReduce applications.
@@ -71,6 +71,6 @@ Validate Installation
 
 [Index](./index.md)
 |
-**Install Apache Pig**
+Prev: [Install Apache HBase and Apache Zookeeper](./apache-hbase-zookeeper.md)
 |
-Next: [Install Apache Hive and Apache HCatalog](./apache-hive-hcatalog.md)
+**Install Apache Sqoop**
