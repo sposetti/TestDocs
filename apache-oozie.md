@@ -42,6 +42,10 @@ Execute these commands on your Oozie server.
     chown -R $OOZIE_USER:$HADOOP_GROUP $OOZIE_PID_DIR;
     chmod -R 755 $OOZIE_PID_DIR;
 
+    mkdir -p $OOZIE_TMP_DIR;
+    chown -R $OOZIE_USER:$HADOOP_GROUP $OOZIE_TMP_DIR;
+    chmod -R 755 $OOZIE_TMP_DIR;
+
 Modify Configuration Files
 ----
 
