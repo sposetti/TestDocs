@@ -144,14 +144,18 @@ To install the instance manually, use the following instructions:
 
 2. Install MySQL server.
 
-        yum install mysql-server [for RHEL and CentOS]
+        [For RHEL and CentOS]
+        yum install mysql-server
 
-        zypper install mysql [for SLES]
+        [For SLES]
+        zypper install mysql
 
 3. Start the instance.
 
-        /etc/init.d/mysqld start [for RHEL and CentOS]
+        [For RHEL and CentOS]
+        /etc/init.d/mysqld start
 
+        [For SLES]
         /etc/init.d/mysql start [for SLES]
 
 4. Remove unnecessary information from log and STDOUT.
