@@ -71,6 +71,6 @@ Validate Installation
 
 [Index](./index.md)
 |
-Pre: [Install Apache Hive and Apache HCatalog](./apache-hive-hcatalog.md)
+Prev: [Install Apache HBase and Apache Zookeeper](./apache-hbase-zookeeper.md)
 |
 **Install Apache Sqoop**
