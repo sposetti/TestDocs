@@ -193,10 +193,8 @@ Set Environment Parameters
 
 The following table describes system user account and groups. These users and groups should reflect the accounts you created in [Create System Users and Groups](#create-system-users-and-groups)
 
-<pre>
-For your convenience, we provide <a href="./scripts/usersAndGroups.sh">usersAndGroups.sh</a> script for setting user and
-group environment parameters. We strongly suggest you edit and execute this script to fit your environment.
-</pre>
+> For your convenience, we provide <a href="./scripts/usersAndGroups.sh">usersAndGroups.sh</a> script for setting user and
+> group environment parameters. We strongly suggest you edit and execute this script to fit your environment.
 
 | Parameter | Definition |
 |----------------|------|
@@ -213,10 +211,8 @@ group environment parameters. We strongly suggest you edit and execute this scri
 
 The following table describes the directories for install, configuration, data, process IDs and logs based on the Hadoop Services you plan to install.
 
-<pre>
-For your convenience, we are providing <a href="./scripts/directories.sh">directories.sh</a> script for setting directory
-environment parameters. We strongly suggest you edit and execute this script to fit your environment.
-</pre>
+> For your convenience, we provide <a href="./scripts/directories.sh">directories.sh</a> script for setting directory
+> environment parameters. We strongly suggest you edit and execute this script to fit your environment.
 
 | Hadoop Serivce | Parameter | Definition |
 |----------------|------|---------|
