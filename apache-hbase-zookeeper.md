@@ -54,7 +54,7 @@ Execute these commands on all nodes:
 
 ### Deploy the configurations
 
-1. Download the HBase configuration files from [here](./conf/hbase) and the Zookepper configuration files from [here](.conf/zookepper) to a temporary directory.
+1. Download the HBase configuration files from [here](./conf/hbase) and the Zookepper configuration files from [here](./conf/zookepper) to a temporary directory.
 
 2. Modify the following parameters per your environment. Search for **TODO** in the configuration files for the properties to replace.
 
