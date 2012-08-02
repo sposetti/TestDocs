@@ -62,26 +62,17 @@ Execute these commands on all nodes:
 
 | Parameter         | Example        | Description |
 |-------------------|----------------|-----------------------|
-| dataDir           | <code>/grid1/hadoop/zookeeper/data</code> | Directory where Zookeeper will store data <code>$ZOOKEEPER_DATA_DIR</code>
-| server.1	        | zookeeper server 1 full host name>:2888:3888
-| server.2          | zookeeper server 2 full host name>:2888:3888
-| server.3          | zookeeper server 3 full host name>:2888:3888
-
-#### zookeeper-env.sh
-
-| Parameter         | Example        | Description |
-|-------------------|----------------|------------------------|
-| ZOOKEEPER_LOG_DIR	    | <code>/var/log/zookeeper</code> | Directory for Zookeeper logs <code>$ZOOKEEPER_LOG_DIR</code>
-| ZOOKEEPER_PID_FILE   | <code>/var/run/zookeeper/zookeeper_server.pid</code> | File for Zookeeper process ID. Directory should be <code>$ZOOKEEPER_PID_DIR</code>
+| server.1	        | <code>{zookeeper.server1.full.hostname}:2888:3888</code> | Server 1
+| server.2          | <code>{zookeeper.server2.full.hostname}:2888:3888</code> | Server 2
+| server.3          | <code>{zookeeper.server3.full.hostname}:2888:3888</code> | Server 3
 
 #### hbase-site.xml
 
 | Parameter         | Example        | Description |
 |-------------------|----------------|------------------------|
-| hbase.rootdir     | <code>hdfs://{namenode.full.hostname}:8020/apps/hbase/data</code> | HDFS name node server
+| hbase.rootdir     | <code>hdfs://{hbase.namenode.full.hostname}:8020/apps/hbase/data</code> | HBase name node server
 | hbase.master.info.bindAddress | {hbase.master.full.hostname} | HBase master server
-| hbase.zookeeper.quorum	    | Comma separated list of zookeeper servers (match to what is specified in <code>zoo.cfg</code> but without portnumbers)
-| hbase.tmp.dir                 | <code>/var/log/hbase</code> | Directory for HBase logs <code>$HBASE_LOG_DIR</code>
+| hbase.zookeeper.quorum	    | <code>server1.full.hostname,server1.full.hostname</code> | Comma separated list of Zookeeper servers (match to what is specified in <code>zoo.cfg</code> but without portnumbers)
 
 On all hosts create the config directory, copy the config files and set the permissions:
 
