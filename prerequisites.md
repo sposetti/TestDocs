@@ -214,6 +214,8 @@ The following table describes the directories for install, configuration, data, 
 > For your convenience, we provide <a href="./scripts/directories.sh">directories.sh</a> script for setting directory
 > environment parameters. We strongly suggest you edit and execute this script to fit your environment.
 
+#### Core Hadoop
+
 | Hadoop Serivce | Parameter | Definition |
 |----------------|------|---------|
 | HDFS | <code>DFS_NAME_DIR</code> | Space separated list of directories where NameNode will store file system image. For example, <code>"/grid/hadoop/hdfs/nn /grid1/hadoop/hdfs/nn"</code>
@@ -225,6 +227,12 @@ The following table describes the directories for install, configuration, data, 
 | MapReduce | <code>MAPREDUCE_LOCAL_DIR</code> | Space separated list of directories where MapReduce will store temporary data. For example, <code>"/grid/hadoop/mapred /grid1/hadoop/mapred /grid2/hadoop/mapred"</code>.
 | MapReduce | <code>MAPRED_LOG_DIR</code> | Directory to store the HDFS logs. For example, <code>"/var/log/hadoop/mapred"</code>. This directory name is a combination of a directory and the <code>$MAPRED_USER</code>. For example, <code>"/log/hadoop/mapred"</code> where <code>mapred</code> is the <code>$MAPRED_USER</code>
 | MapReduce | <code>MAPRED_PID_DIR</code> | Directory to store the MapReduce process ID. For example, <code>"/var/run/hadoop/mapred"</code>. This directory name is a combination of a directory and the <code>$MAPRED_USER</code>. For example, <code>"/var/run/hadoop/mapred"</code> where <code>mapred</code> is the <code>$MAPRED_USER</code>
+
+
+#### Ecosystem Hadoop Projects
+
+| Hadoop Serivce | Parameter | Definition |
+|----------------|------|---------|
 | Pig | <code>PIG_CONF_DIR</code> | Directory to store the Pig configuration files. For example, <code>"/etc/pig/conf"</code>
 | Pig | <code>PIG_LOG_DIR</code> | Directory to store the Pig logs. For example, <code>"/var/log/pig"</code>
 | Pig | <code>PIG_PID_DIR</code> | Directory to store the Pig process ID. For example, <code>"/var/run/pig"</code>
@@ -238,10 +246,10 @@ The following table describes the directories for install, configuration, data, 
 | Hive | <code>HIVE_PID_DIR</code> | Directory to store the Hive process ID. For example, <code>"/var/run/hive"</code>
 | HBase | <code>HBASE_CONF_DIR</code> | Directory to store the HBase configuration files. For example, <code>"/etc/hbase/conf"</code>
 | HBase | <code>HBASE_LOG_DIR</code> | Directory to store the HBase logs. For example, <code>"/var/log/hbase"</code>
-| Zookeeper | <code>ZOOKEEPER_DATA_DIR</code> | Directory where ZooKeeper will store data. For example, <code>/grid1/hadoop/zookeeper/data</code>
-| Zookeeper | <code>ZOOKEEPER_CONF_DIR</code> | Directory to store the Zookeeper configuration files. For example, <code>"/etc/zookeeper/conf"</code>
-| Zookeeper | <code>ZOOKEEPER_LOG_DIR</code> | Directory to store the ZooKeeper logs. For example, <code>"/var/log/zookeeper"</code>
-| Zookepper | <code>ZOOKEEPER_PID_DIR</code> | Directory to store the ZooKeeper process ID. For example, <code>"/var/run/zookeeper"</code>
+| ZooKeeper | <code>ZOOKEEPER_DATA_DIR</code> | Directory where ZooKeeper will store data. For example, <code>/grid1/hadoop/zookeeper/data</code>
+| ZooKeeper | <code>ZOOKEEPER_CONF_DIR</code> | Directory to store the ZooKeeper configuration files. For example, <code>"/etc/zookeeper/conf"</code>
+| ZooKeeper | <code>ZOOKEEPER_LOG_DIR</code> | Directory to store the ZooKeeper logs. For example, <code>"/var/log/zookeeper"</code>
+| ZooKepper | <code>ZOOKEEPER_PID_DIR</code> | Directory to store the ZooKeeper process ID. For example, <code>"/var/run/zookeeper"</code>
 
 
 ------
