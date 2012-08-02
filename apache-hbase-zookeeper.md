@@ -118,11 +118,11 @@ Validate Installation
 ### Smoke Test
 
     echo "echo status | hbase shell" > /tmp/hbasesmoke.sh 
-    echo "echo disable \\'\''usertable\\'\'' | hbase shell" >> /tmp/hbasesmoke.sh
-    echo "echo drop \\'\''usertable\\'\'' | hbase shell" >> /tmp/hbasesmoke.sh
-    echo "echo create \\'\''usertable\\'\'', \\'\''family\\'\'' | hbase shell" >> /tmp/hbasesmoke.sh 
-    echo "echo put \\'\''usertable\\'\'', \\'\''row01\\'\'', \\'\''family:col01\\'\'', \\'\''value1\\'\'' | hbase shell" >> /tmp/hbasesmoke.sh
-    echo "echo scan \\'\''usertable\\'\'' | hbase shell" >> /tmp/hbasesmoke.sh 
+    echo "echo disable 'usertable' | hbase shell" >> /tmp/hbasesmoke.sh
+    echo "echo drop 'usertable' | hbase shell" >> /tmp/hbasesmoke.sh
+    echo "echo create 'usertable', 'family' | hbase shell" >> /tmp/hbasesmoke.sh 
+    echo "echo put 'usertable', 'row01', 'family:col01', 'value1' | hbase shell" >> /tmp/hbasesmoke.sh
+    echo "echo scan 'usertable' | hbase shell" >> /tmp/hbasesmoke.sh
     sh /tmp/hbasesmoke.sh
 
 ------
