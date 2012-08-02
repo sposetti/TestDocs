@@ -47,6 +47,8 @@ Download Configuration Files
 
 2. Modify the following parameters per your environment. Search for **TODO** in the configuration files for the properties to replace.
 
+3. Refer to the (Prerequisites &gt; Installing MySQL](./prerequisites.md#installing-mysql-optional) section for information on configuring a MySQL instance.
+
 Modify Configuration Files
 ---
 
@@ -54,10 +56,10 @@ Modify Configuration Files
 
 | Parameter         | Example        | Description  |
 |-------------------|----------------|------------------|
-| javax.jdo.option.ConnectionURL        | jdbc:mysql://{mysql.full.hostname}:{port}/{database.name}?createDatabaseIfNotExist=true | Enter your JDBC connection string.
+| javax.jdo.option.ConnectionURL        | jdbc:mysql://{mysql.full.hostname}:3306/{database.name}?createDatabaseIfNotExist=true | Enter your JDBC connection string.
 | javax.jdo.option.ConnectionUserName	| MySQL username | Enter your MySQL username
 | javax.jdo.option.ConnectionPassword   | MySQL password | Enter your MySQL password
-| hive.metastore.uris               | thrift://{metastore.server.full.hostname>:9083 | Enter your Thrift server
+| hive.metastore.uris               | thrift://{metastore.server.full.hostname}:9083 | Enter your Thrift server
 
 
 On all Hive hosts create the config directory, copy the config files and set the permissions
@@ -75,8 +77,7 @@ Download MySQL Connector
 
 1. Download MySQL connector JAR.
 
-    http://public-repo-1.hortonworks.com/HDP-1.0.0.12/repos/centos5/tars/mysql-connector-java-5.1.18.zip (for RHEL and CentOS 5)
-    http://public-repo-1.hortonworks.com/HDP-1.0.0.12/repos/centos6/tars/mysql-connector-java-5.1.18.zip (for RHEL and CentOS 6)
+    http://public-repo-1.hortonworks.com/ARTIFACTS/mysql-connector-java-5.1.18.zip
     
 2. Unzip the file.
 
