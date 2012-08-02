@@ -64,8 +64,7 @@ Information on setting up the Local Yum Repository can be found in the [Hortonwo
 Install Hadoop RPMs
 ---------
 
-        yum -y install hadoop hadoop-libhdfs hadoop-libhdfs.i386 mysql-connector-java hadoop-native
-                       hadoop-native.i386 hadoop-pipes hadoop-pipes.i386 hadoop-sbin.i386
+        yum -y install hadoop hadoop-libhdfs hadoop-libhdfs.i386 mysql-connector-java hadoop-native hadoop-native.i386 hadoop-pipes hadoop-pipes.i386 hadoop-sbin.i386
 
 
 Install Compression Libraries
