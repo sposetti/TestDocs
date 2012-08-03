@@ -128,33 +128,33 @@ Execute these commands on all nodes, which potentially can run the SecondaryName
 
 Execute these commands on all DataNodes.
 
-        mkdir -p $DFS_DATA_DIR;
-        chown -R $HDFS_USER:$HADOOP_GROUP $DFS_DATA_DIR;
-        chmod -R 750 $DFS_DATA_DIR;
+    mkdir -p $DFS_DATA_DIR;
+    chown -R $HDFS_USER:$HADOOP_GROUP $DFS_DATA_DIR;
+    chmod -R 750 $DFS_DATA_DIR;
 
-        mkdir -p $MAPREDUCE_LOCAL_DIR;
-        chown -R $MAPRED_USER:$HADOOP_GROUP $MAPREDUCE_LOCAL_DIR;
-        chmod -R 755 $MAPREDUCE_LOCAL_DIR;
+    mkdir -p $MAPREDUCE_LOCAL_DIR;
+    chown -R $MAPRED_USER:$HADOOP_GROUP $MAPREDUCE_LOCAL_DIR;
+    chmod -R 755 $MAPREDUCE_LOCAL_DIR;
 
 ### Create log and pid directories
 
 Execute these commands on all nodes.
 
-        mkdir -p $HDFS_LOG_DIR;
-        chown -R $HDFS_USER:$HADOOP_GROUP $HDFS_LOG_DIR;
-        chmod -R 755 $HDFS_LOG_DIR;
+    mkdir -p $HDFS_LOG_DIR;
+    chown -R $HDFS_USER:$HADOOP_GROUP $HDFS_LOG_DIR;
+    chmod -R 755 $HDFS_LOG_DIR;
 
-        mkdir -p $MAPRED_LOG_DIR;
-        chown -R $MAPRED_USER:$HADOOP_GROUP $MAPRED_LOG_DIR;
-        chmod -R 755 $MAPRED_LOG_DIR;
+    mkdir -p $MAPRED_LOG_DIR;
+    chown -R $MAPRED_USER:$HADOOP_GROUP $MAPRED_LOG_DIR;
+    chmod -R 755 $MAPRED_LOG_DIR;
 
-        mkdir -p $HDFS_PID_DIR;
-        chown -R $HDFS_USER:$HADOOP_GROUP $HDFS_PID_DIR;
-        chmod -R 755 $HDFS_PID_DIR
+    mkdir -p $HDFS_PID_DIR;
+    chown -R $HDFS_USER:$HADOOP_GROUP $HDFS_PID_DIR;
+    chmod -R 755 $HDFS_PID_DIR
 
-        mkdir -p $MAPRED_PID_DIR;
-        chown -R $MAPRED_USER:$HADOOP_GROUP $MAPRED_PID_DIR;
-        chmod -R 755 $MAPRED_PID_DIR;
+    mkdir -p $MAPRED_PID_DIR;
+    chown -R $MAPRED_USER:$HADOOP_GROUP $MAPRED_PID_DIR;
+    chmod -R 755 $MAPRED_PID_DIR;
 
 
 
