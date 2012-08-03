@@ -64,7 +64,7 @@ Information on setting up the Local Yum Repository can be found in the [Hortonwo
 Install Hadoop RPMs
 ---------
 
-        yum -y install hadoop hadoop-libhdfs hadoop-libhdfs.i386 mysql-connector-java hadoop-native hadoop-native.i386 hadoop-pipes hadoop-pipes.i386 hadoop-sbin.i386
+    yum -y install hadoop hadoop-libhdfs hadoop-libhdfs.i386 mysql-connector-java hadoop-native hadoop-native.i386 hadoop-pipes hadoop-pipes.i386 hadoop-sbin.i386
 
 
 Install Compression Libraries
@@ -112,17 +112,17 @@ Note: if any of these directories exist, we recommend deleting and recreating.
 
 Execute these commands the Master Node that will run the NameNode service.
 
-        mkdir -p $DFS_NAME_DIR
-        chown -R $HDFS_USER:$HADOOP_GROUP $DFS_NAME_DIR
-        chmod -R 755 $DFS_NAME_DIR
+    mkdir -p $DFS_NAME_DIR
+    chown -R $HDFS_USER:$HADOOP_GROUP $DFS_NAME_DIR
+    chmod -R 755 $DFS_NAME_DIR
 
 ### Create SecondaryNameNode directories
 
 Execute these commands on all nodes, which potentially can run the SecondaryNameNode service. Typically all Master Nodes.
 
-        mkdir -p $FS_CHECKPOINT_DIR
-        chown -R $HDFS_USER:$HADOOP_GROUP $FS_CHECKPOINT_DIR
-        chmod -R 755 $FS_CHECKPOINT_DIR
+    mkdir -p $FS_CHECKPOINT_DIR
+    chown -R $HDFS_USER:$HADOOP_GROUP $FS_CHECKPOINT_DIR
+    chmod -R 755 $FS_CHECKPOINT_DIR
 
 ### Create DataNode and MapReduce local directories
 
