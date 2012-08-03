@@ -18,7 +18,7 @@ Download Configuration Files
 
 1. Download the Hadoop configuration files from [here](./conf) to a temporary directory.
 
-2. Modify the following parameters per your environment. Search for **TODO** in the configuration files for the properties to replace.
+2. Modify the following properties per your environment. Search for **TODO** in the configuration files for the properties to replace.
 
 
 Modify Configuration Files
@@ -26,14 +26,14 @@ Modify Configuration Files
 
 ### core-site.xml
 
-| Parameter          | Example       | Description                                       |
+| Property          | Example       | Description                                       |
 |--------------------|---------------|-----------------------------|
 | fs.default.name    | <code>hdfs://{namenode.full.hostname}:8020</code>  | Enter your NameNode hostname
 | fs.checkpoint.dir  | <code>/grid/hadoop/hdfs/snn</code>  | Comma separated list of paths. Use the list of directories from <code>$FS_CHECKPOINT_DIR</code>
 
 ### hdfs-site.xml
 
-| Parameter                          | Example          | Description                       |
+| Property                          | Example          | Description                       |
 |------------------------------------|------------------|-----------------------------------|
 | dfs.name.dir                       | <code>/grid/hadoop/hdfs/nn,/grid1/hadoop/hdfs/nn</code> | Comma separated list of paths. Use the list of directories from <code>$DFS_NAME_DIR</code>
 | dfs.data.dir                       | <code>/grid/hadoop/hdfs/dn,/grid1/hadoop/hdfs/dn</code> | Comma separated list of paths. Use the list of directories from <code>$DFS_DATA_DIR</code>
@@ -43,7 +43,7 @@ Modify Configuration Files
 
 ### mapred-site.xml
 
-| Parameter                             | Example       | Description                         |
+| Property                             | Example       | Description                         |
 |---------------------------------------|---------------|---------------------------------------|
 | mapred.job.tracker                    | <code>{jobtracker.full.hostname}:50300</code> | Enter your JobTracker hostname
 | mapred.job.tracker.http.address       | <code>{jobtracker.full.hostname}:50030</code> | Enter your JobTracker hostname
@@ -53,7 +53,7 @@ Modify Configuration Files
 
 ### taskcontroller.cfg
 
-| Parameter                             | Example        | Description                          |
+| Property                             | Example        | Description                          |
 |---------------------------------------|----------------|-------------------------------------|
 | mapred.local.dir                         | <code>/grid/hadoop/mapred,/grid1/hadoop/mapred</code> | Comma separated list of paths. Use the list of directories from <code>$MAPREDUCE_LOCAL_DIR</code>
 
