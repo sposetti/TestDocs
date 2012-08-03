@@ -219,8 +219,8 @@ The following table describes the directories for install, configuration, data, 
 | Hadoop Serivce | Parameter | Definition |
 |----------------|------|---------|
 | HDFS | <code>DFS_NAME_DIR</code> | Space separated list of directories where NameNode will store file system image. For example, <code>"/grid/hadoop/hdfs/nn /grid1/hadoop/hdfs/nn"</code>
-| HDFS | <code>FS_CHECKPOINT_DIR</code> | Space separated list of directories where SecondaryNameNode will store checkpoint image. For example, <code>"/grid/hadoop/hdfs/snn /grid1/hadoop/hdfs/snn /grid2/hadoop/hdfs/snn"</code>
 | HDFS | <code>DFS_DATA_DIR</code> | Space separated list of directories where DataNodes will store the blocks. For example, <code>"/grid/hadoop/hdfs/dn /grid1/hadoop/hdfs/dn /grid2/hadoop/hdfs/dn"</code>
+| HDFS | <code>FS_CHECKPOINT_DIR</code> | Space separated list of directories where SecondaryNameNode will store checkpoint image. For example, <code>"/grid/hadoop/hdfs/snn /grid1/hadoop/hdfs/snn /grid2/hadoop/hdfs/snn"</code>
 | HDFS | <code>HDFS_LOG_DIR</code> | Directory to store the HDFS logs. This directory name is a combination of a directory and the <code>$HDFS_USER</code>. For example, <code>"/var/log/hadoop/hdfs"</code> where <code>hdfs</code> is the <code>$HDFS_USER</code>
 | HDFS | <code>HDFS_PID_DIR</code> | Directory to store the HDFS process ID. This directory name is a combination of a directory and the <code>$HDFS_USER</code>. For example, <code>"/var/run/hadoop/hdfs"</code> where <code>hdfs</code> is the <code>$HDFS_USER</code>
 | HDFS | <code>HADOOP_CONF_DIR</code> | Directory to store the Hadoop configuration files. For example, <code>"/etc/hadoop/conf"</code>
