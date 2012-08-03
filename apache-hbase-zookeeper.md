@@ -105,12 +105,12 @@ Validate Installation
         <login as $ZOOKEEPER_USER>
         /usr/lib/zookeeper/bin/zkServer.sh start $ZOOKEEPER_CONF_DIR/zoo.cfg
 
-2. Execute these commands from HBase Master:
+2. Execute these commands from HBase Master node:
 
         <login as $HBASE_USER>
         /usr/lib/hbase/bin/hbase-daemon.sh --config $HBASE_CONF_DIR start master
 
-3. Execute these commands from all region server nodes:
+3. Execute these commands from all HBase Region Server nodes:
 
         <login as $HBASE_USER>
         /usr/lib/hbase/bin/hbase-daemon.sh --config $HBASE_CONF_DIR start regionserver
