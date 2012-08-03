@@ -19,7 +19,7 @@ Install RPMs
 
 On all nodes where you plan to use the Sqoop client, install RPMs.
 
-        yum -y install sqoop
+    yum -y install sqoop
 
 Download MySQL Connector
 ---
