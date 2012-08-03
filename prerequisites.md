@@ -96,7 +96,7 @@ Follow the instructions listed below to manually deploy JDK:
 2. (Optional) Uninstall the Java package if JDK version is less than v1.6 update 31.
 
         rpm -qa | grep java
-        yum remove java-x.xx-gcj-compat-x.x.x.x-xxjpp_xxrh
+        yum remove {java-1.x.0-jdk-1.x.0.0-1.45.1.11.1.el6.x86_64}
 
 3. (Optional) Verify that the default Java package is uninstalled.
 
