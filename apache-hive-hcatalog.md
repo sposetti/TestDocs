@@ -79,13 +79,11 @@ Download MySQL Connector
 
         http://public-repo-1.hortonworks.com/ARTIFACTS/mysql-connector-java-5.1.18.zip
     
-2. Unzip the file.
+2. Unzip the file and copy the JAR file
 
-3. Copy the JAR file
-
-        cp ./mysql-connector-java-5.1.18-bin.jar /usr/lib/hive/lib/.
+        unzip mysql-connector-java-5.1.18.zip
+        cp ./mysql-connector-java-5.1.18/mysql-connector-java-5.1.18-bin.jar /usr/lib/hive/lib/.
         chmod 644 /usr/lib/hive/lib/*mysql*.jar
-
 
 Validate Installation
 ----
@@ -97,9 +95,8 @@ Validate Installation
 
 ### Smoke Test Hive
 
-    hive -e "show databases"
-    hive -e "create table test(col1 int, col2 string)"
-    hive -e "drop table test"
+    hive -e 'show databases'
+    hive -e 'create table test(col1 int, col2 string)'
 
 
 ------
