@@ -38,11 +38,11 @@ The view can be built as a maven project.
 
 The build will produce the view archive.
 
-    target/pig-0.1.0-SNAPSHOT.jar
+    target/pig-0.1.0.jar
 
 Place the view archive on the Ambari Server and restart to deploy.    
 
-    cp pig-0.1.0-SNAPSHOT.jar /var/lib/ambari-server/resources/views/
+    cp pig-0.1.0.jar /var/lib/ambari-server/resources/views/
     ambari-server restart
 
 View Definition
@@ -51,7 +51,7 @@ View Definition
     <!-- HDFS Configs -->
     <parameter>
         <name>webhdfs.url</name>
-        <description>WebHDFS FileSystem URI (example: webhdfs://namenode:50070)</description>
+        <description>WebHDFS FileSystem URL (example: webhdfs://namenode.host:50070)</description>
         <required>true</required>
     </parameter>
 
@@ -83,43 +83,43 @@ View Definition
 
     <parameter>
         <name>scripts.dir</name>
-        <description>HDFS directory path to store Pig scripts (example: /user/${username}/scripts)</description>
+        <description>HDFS directory path to store Pig scripts (example: /tmp/${username}/scripts)</description>
         <required>true</required>
     </parameter>
 
     <parameter>
         <name>jobs.dir</name>
-        <description>HDFS directory path to store Pig job status (example: /user/${username}/jobs)</description>
+        <description>HDFS directory path to store Pig job status (example: /tmp/${username}/jobs)</description>
         <required>true</required>
     </parameter>
 
     <parameter>
         <name>store.dir</name>
-        <description>HDFS directory to store meta information about Pig scripts and jobs (example: /user/${username}/store)</description>
+        <description>HDFS directory to store meta information about Pig scripts and jobs (example: /tmp/${username}/store)</description>
         <required>false</required>
     </parameter>
 
 Cluster Configuration
 -----
-1. HDFS core-site
+1. Configure HDFS for a proxy user. In core-site.xml, add the following properties:
 
     hadoop.proxyuser.root.hosts=*
     hadoop.proxyuser.root.groups=*
     hadoop.proxyuser.hcat.hosts=*
     hadoop.proxyuser.hcat.groups=*
 
-2. WebHCat webhcat-site
+2. Configure WebHCat for a proxy user. In webhcat-site.xml, add the following properties:
 
     webhcat.proxyuser.hcat.hosts=*
     webhcat.proxyuser.hcat.groups=*
 
-3. Create users.
+3. Create Hadoop users and make members of the hdfs, hadoop and users groups. For example, to create a user "admin": 
 
     useradd -G hdfs admin
     usermod -a -G users admin
     usermod -a -G hadoop admin
 
-4. Check user.
+4. Check the "admin" user has the correct group membership.
 
     id admin
     uid=1002(admin) gid=1002(admin) groups=1002(admin),100(users),503(hadoop),498(hdfs)
@@ -128,27 +128,35 @@ Cluster Configuration
 Single Node Cluster
 -----
 
-#Install Ambari Server and Ambari Agent
-#Manually register Ambari Agent with Server
-#Setup and Start Ambari Server
-#Create Blueprint
+The following section describes how to use the Ambari vagrant setup to create a single-node cluster with the Pig View. 
 
-POST
-http://c6403.ambari.apache.org:8080/api/v1/blueprints/pig-view
+1. Install Ambari Server and Ambari Agent
+2. Manually register Ambari Agent with Server
+3. Setup and Start Ambari Server
+4. Create Blueprint using the provided blueprint.json file.
 
-blueprint.json
+    POST
+    http://c6401.ambari.apache.org:8080/api/v1/blueprints/pig-view
 
-#Create Cluster
-http://c6403.ambari.apache.org:8080/api/v1/clusters/PigView
+5. Create Cluster using the provided clustertemplate.json file
 
-clustertemplate.json
+    POST
+    http://c6401.ambari.apache.org:8080/api/v1/clusters/PigView
 
-#Deploy view
-#Create instance
+6. After the cluster is created, deploy the Pig View into Ambari.
+
+    cp pig-0.1.0.jar /var/lib/ambari-server/resources/views/
+    ambari-server restart
+
+7. Create a view instance:
 
 | Details: Instance Name | PIG_1 |
 | Details: Display Name | Pig |
-| Properties: webhdfs.url | webhdfs://c6403.ambari.apache.org:50070 |
-| Properties: webhcat.url | http://c6403.ambari.apache.org:50111/templeton/v1 |
+| Properties: webhdfs.url | webhdfs://c6401.ambari.apache.org:50070 |
+| Properties: webhcat.url | http://c6401.ambari.apache.org:50111/templeton/v1 |
 | Properties: scripts.dir | /tmp/${username}/scripts |
 | Properties: jobs.dir | /tmp/${username}/jobs |
+
+8. Login and browse to the view instance.
+
+    http://c6401.ambari.apache.org:8080/#/main/views/PIG/0.1.0/PIG
