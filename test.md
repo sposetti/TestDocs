@@ -150,6 +150,8 @@ The following section describes how to use the Ambari vagrant setup to create a 
 
 7. Create a view instance:
 
+|Property|Value|
+|---|---|
 | Details: Instance Name | PIG_1 |
 | Details: Display Name | Pig |
 | Properties: webhdfs.url | webhdfs://c6401.ambari.apache.org:50070 |
