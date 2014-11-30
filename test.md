@@ -101,25 +101,25 @@ View Definition
 
 Cluster Configuration
 -----
-1. Configure HDFS for a proxy user. In core-site.xml, add the following properties:
+Configure HDFS for a proxy user. In core-site.xml, add the following properties:
 
     hadoop.proxyuser.root.hosts=*
     hadoop.proxyuser.root.groups=*
     hadoop.proxyuser.hcat.hosts=*
     hadoop.proxyuser.hcat.groups=*
 
-2. Configure WebHCat for a proxy user. In webhcat-site.xml, add the following properties:
+Configure WebHCat for a proxy user. In webhcat-site.xml, add the following properties:
 
     webhcat.proxyuser.hcat.hosts=*
     webhcat.proxyuser.hcat.groups=*
 
-3. Create Hadoop users and make members of the hdfs, hadoop and users groups. For example, to create a user "admin": 
+Create Hadoop users and make members of the hdfs, hadoop and users groups. For example, to create a user "admin": 
 
     useradd -G hdfs admin
     usermod -a -G users admin
     usermod -a -G hadoop admin
 
-4. Check the "admin" user has the correct group membership.
+Check the "admin" user has the correct group membership.
 
     id admin
     uid=1002(admin) gid=1002(admin) groups=1002(admin),100(users),503(hadoop),498(hdfs)
@@ -130,24 +130,25 @@ Single Node Cluster
 
 The following section describes how to use the [Ambari Vagrant](https://cwiki.apache.org/confluence/display/AMBARI/Quick+Start+Guide) setup to create a single-node cluster with the Pig View. 
 
-1. Install Ambari Server and Ambari Agent.
-2. Manually register Ambari Agent with Server.
-3. Setup and Start Ambari Server.
-4. Create Blueprint using the provided [blueprint.json](blueprint.json) file.
+Install Ambari Server and Ambari Agent.
+Manually register Ambari Agent with Server.
+Setup and Start Ambari Server.
+Create Blueprint using the provided [blueprint.json](blueprint.json) file.
   
     POST
     http://c6401.ambari.apache.org:8080/api/v1/blueprints/pig-view
 
-5. Create Cluster using the provided [clustertemplate.json](clustertemplate.json) file
+Create Cluster using the provided [clustertemplate.json](clustertemplate.json) file
     
     POST
     http://c6401.ambari.apache.org:8080/api/v1/clusters/PigView
 
-6. After the cluster is created, deploy the Pig View into Ambari.
+After the cluster is created, deploy the Pig View into Ambari.
+
     cp pig-0.1.0.jar /var/lib/ambari-server/resources/views/
     ambari-server restart
 
-7. Create a view instance.
+Create a view instance.
 
 |Property|Value|
 |---|---|
@@ -158,6 +159,6 @@ The following section describes how to use the [Ambari Vagrant](https://cwiki.ap
 | Properties: scripts.dir | /tmp/${username}/scripts |
 | Properties: jobs.dir | /tmp/${username}/jobs |
 
-8. Login and browse to the view instance.
+Login and browse to the view instance.
 
-    http://c6401.ambari.apache.org:8080/#/main/views/PIG/0.1.0/PIG
+    http://c6401.ambari.apache.org:8080/#/main/views/PIG/0.1.0/PIG_1
