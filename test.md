@@ -128,15 +128,15 @@ Cluster Configuration
 Single Node Cluster
 -----
 
-The following section describes how to use the Ambari vagrant setup to create a single-node cluster with the Pig View. 
+The following section describes how to use the [Ambari Vagrant|https://cwiki.apache.org/confluence/display/AMBARI/Quick+Start+Guide] setup to create a single-node cluster with the Pig View. 
 
 1. Install Ambari Server and Ambari Agent.
 2. Manually register Ambari Agent with Server.
 3. Setup and Start Ambari Server.
 4. Create Blueprint using the provided blueprint.json file.
-    
-    POST
-    http://c6401.ambari.apache.org:8080/api/v1/blueprints/pig-view
+  
+  POST
+  http://c6401.ambari.apache.org:8080/api/v1/blueprints/pig-view
 
 5. Create Cluster using the provided clustertemplate.json file
     
