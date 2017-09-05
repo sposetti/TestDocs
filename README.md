@@ -3,10 +3,10 @@
 - [Custom Images for Cloudbreak](#cloud-images-for-cloudbreak)
   - [What is Cloudbreak?](#what-is-cloudbreak)
   - [What are Custom Images?](#what-are-custom-images)
-- [Building a Custom Image](#building-a-custom-image)
   - [Using this Repository](#using-this-repository)
   - [Finding the Correct Branch](#finding-the-correct-branch)
-  - [Building Cloudbreak images with Packer](#packer)
+- [Building a Custom Image](#building-a-custom-image)
+  - [Packer](#packer)
     - [Prerequisites](#prerequisites)
     - [AWS](#aws)
     - [Azure](#azure)
@@ -14,7 +14,7 @@
     - [GCP](#gcp)
     - [Running packer in debug mode](#running-packer-in-debug-mode)
     - [Check the logs without debug mode](#check-the-logs-without-debug-mode)
-   - [Advanced topics](#advanced-topics)
+    - [Advanced topics](#advanced-topics)
 
 
 # Custom Images for Cloudbreak
@@ -41,8 +41,6 @@ instead, the user would like to start their clusters from their own **custom ima
 The repository includes **instructions** and **scripts** to help build those **custom images**. Once you have an images, refer to the Cloudbreak documentation
 for information on how to register and use these images with Cloudbreak: http://hortonworks.github.io/cloudbreak-docs/
 
-# Building a Custom Image
-
 ## Using this Repository
 Our recommendation is to fork this repo to to your own GitHub account or to the account of your organization and you can make changes there and create an image from there.
 If you think that some of the changes you made might be useful for the Cloudbreak product as a whole, feel free to send us a pull request.
@@ -60,6 +58,8 @@ If you are using 2.0.1 version of Cloudbreak then the related image branch is rc
 
 > Note: If you do not use the appropriate branch for creating your image then there is a chance that Cloudbreak will not be able to install the cluster successfully.
 
+# Building a Custom Image
+
 ## Packer
 
 Images for Cloudbreak are created by [Packer](https://www.packer.io/docs/). The main entry point for creating an image is the `Makefile` which provides wrapper functionality around Packer scripts.
@@ -75,7 +75,7 @@ The following are requirements for the image building environment:
 
 ### AWS
 
-Following environment variables are necessary for building aws images:
+Set the following environment variables to build AWS images:
 
 * AWS_ACCESS_KEY_ID
 * AWS_SECRET_ACCESS_KEY
@@ -86,9 +86,12 @@ export AWS_ACCESS_KEY_ID=AKIAIQ**********
 export AWS_SECRET_ACCESS_KEY=XHj6bjmal***********************
 ```
 
-If you would like to build an image for AWS which is based on Amazon Linux you can execute:
-```
-make build-aws-amazonlinux
+Use the following commands to build images based on the following base operating systems:
+
+| OS | Command
+|---|---
+| Amazon Linux | `make build-aws-amazonlinux` |
+
 ```
 
 If you would like to build images based on different operating systems like CentOS 6, CentOS 7 or RHEL 7 use one of the following commands: 
