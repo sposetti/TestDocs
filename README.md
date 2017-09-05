@@ -2,13 +2,11 @@
 
 - [Custom Images for Cloudbreak](#cloud-images-for-cloudbreak)
   - [What is Cloudbreak?](#what-is-cloudbreak)
-  - [What are Custom Images?](#default-and-custom-images)
-  - [Default image content](#default-image-content)
-  - [Supported Operating Systems](#supported-operating-systems)
-- [Custom image burning](#custom-image-burning)
-  - [Access to image repository](#access-to-image-repository)
-  - [Finding the right branch](#finding-the-right-branch)
-  - [Building Cloudbreak images with Packer](#building-cloudbreak-images-with-packer)
+  - [What are Custom Images?](#what-are-custom-images)
+- [Building a Custom Image](#building-a-custom-image)
+  - [Using this Repository](#using-this-repository)
+  - [Finding the Correct Branch](#finding-the-correct-branch)
+  - [Building Cloudbreak images with Packer](#packer)
     - [Prerequisites](#prerequisites)
     - [AWS](#aws)
     - [Azure](#azure)
@@ -32,19 +30,21 @@ Learn more about Cloudbreak here: http://hortonworks.github.io/cloudbreak-docs/
 Cloudbreak launches clusters from an image that includes default configuration and default tooling for provisioning. These
 are considered the **Standard** default images and these images are provided with each Cloudbreak version.
 
-In some cases, these default images might not fit the requirements of users  (e.g. they need custom OS hardening, libraries, tooling, etc) and instead, the user would like to start their clusters from their own **custom image**.
-
-From bird's-eye view, images contain the followings:
-- Operating system (Red Hat derivative e.g CentOS, Amazon Linux, RHEL)
+From bird's-eye view, images contain the following:
+- Operating system (e.g. CentOS, Amazon Linux)
 - Standard configuration (disabled SE Linux, permissive iptables, best practice configs, etc.)
 - Standard tooling (bootstrap scripts, bootstrap binaries)
 
-Images do not limit the version of Ambari and HDP that can be installed by Cloudbreak. Ambari and HDP packages are not part of the image and the desired version of Ambari/HDP packages are downloaded during provision time. 
+In some cases, these default images might not fit the requirements of users (e.g. they need custom OS hardening, libraries, tooling, etc) and
+instead, the user would like to start their clusters from their own **custom image**.
+
+The repository includes **instructions** and **scripts** to help build those **custom images**. Once you have an images, refer to the Cloudbreak documentation
+for information on how to register and use these images with Cloudbreak: http://hortonworks.github.io/cloudbreak-docs/
 
 # Building a Custom Image
 
 ## Using this Repository
-One recommendation is to fork this repo to to your own GitHub account or to the account of your organization and you can make changes there and create an image from there.
+Our recommendation is to fork this repo to to your own GitHub account or to the account of your organization and you can make changes there and create an image from there.
 If you think that some of the changes you made might be useful for the Cloudbreak product as a whole, feel free to send us a pull request.
 
 > Note: After you have have forked the repository, you are responsible to keep it up to date and fetch the latest changes from the upstream repository. 
@@ -54,12 +54,11 @@ This repository contains different branches for different Cloudbreak versions. C
 ```
 <major>.<minor>.<patch>[-build sequence] e.g 1.16.3 or 1.16.4-rc.7
 ```
-
-If you are creating a custom image for Cloudbreak, always make sure that you are using the correct branch from cloudbreak-images git repository.
+If you are creating a custom image for Cloudbreak, always make sure that you are using the correct branch from `cloudbreak-images` repository.
 You can find the related branch based on the <major> and <minor> version numbers of Cloudbreak (e.g if you are using 1.16.3 or 1.16.4-rc.7 version of Cloudbreak then the related branch is rc-1.16).
 If you are using 2.0.1 version of Cloudbreak then the related image branch is rc-2.0.
 
-> Note: If you are not using the appropriate branch for creating your image then there is a chance that Cloudbreak will not be able to install the cluster successfully.
+> Note: If you do not use the appropriate branch for creating your image then there is a chance that Cloudbreak will not be able to install the cluster successfully.
 
 ## Packer
 
@@ -68,7 +67,11 @@ Main configuration of Packer is located `packer.json` file, you can find more de
 
 ### Prerequisites
 
-Only [Docker](https://www.docker.com/) and [GNU Make](https://www.gnu.org/software/make/) are necessary for building Cloudbreak custom images, since every step of image building is encapsulated by Docker containers.
+The following are requirements for the image building environment:
+
+- [Docker](https://www.docker.com/)
+- [GNU Make](https://www.gnu.org/software/make/)
+- [jq](https://stedolan.github.io/jq/)
 
 ### AWS
 
