@@ -1,215 +1,66 @@
-**Table of Contents**
-
-- [Custom Images for Cloudbreak](#cloud-images-for-cloudbreak)
-  - [What is Cloudbreak?](#what-is-cloudbreak)
-  - [What are Custom Images?](#what-are-custom-images)
-  - [Using this Repository](#using-this-repository)
-  - [Finding the Correct Branch](#finding-the-correct-branch)
-- [Building a Custom Image](#building-a-custom-image)
-  - [Packer](#packer)
-    - [Prerequisites](#prerequisites)
-    - [AWS](#aws)
-    - [Azure](#azure)
-    - [OpenStack](#openstack)
-    - [GCP](#gcp)
-    - [Running packer in debug mode](#running-packer-in-debug-mode)
-    - [Check the logs without debug mode](#check-the-logs-without-debug-mode)
-    - [Advanced topics](#advanced-topics)
-
-
 # Custom Images for Cloudbreak
 
-## What is Cloudbreak?
-Cloudbreak is a tool to simplify the provisioning, configuration and scaling of **Hortonworks Data Platform** clusters
-on cloud provider infrastructure. Cloudbreak can be used to provision across
-cloud infrastructure providers including: Amazon Web Services (AWS), Microsoft Azure and Google Cloud Platform (GCP).
+This section covers advanced topics for building Custom Images.
 
-Learn more about Cloudbreak here: http://hortonworks.github.io/cloudbreak-docs/
+## Customizing the Base Image
 
-## What are Custom Images?
-Cloudbreak launches clusters from an image that includes default configuration and default tooling for provisioning. These
-are considered the **Standard** default images and these images are provided with each Cloudbreak version.
+If you would like to start from a customized image, you could either:
 
-From bird's-eye view, images contain the following:
-- Operating system (e.g. CentOS, Amazon Linux)
-- Standard configuration (disabled SE Linux, permissive iptables, best practice configs, etc.)
-- Standard tooling (bootstrap scripts, bootstrap binaries)
+- Set Packer to start from your [own custom image](#custom_base)
+- Add your [custom logic](#custom_logic) - either as custom script or as custom [Salt]((https://docs.saltstack.com/en/latest/)) state
 
-> Important: Ambari and HDP packages are not part of the image and the desired version of Ambari and HDP packages
-  are downloaded during provision time. This makes the images agnostic to the version of Ambari and HDP that can be installed by Cloudbreak.
+### <a name="custom_base"></a> Custom Base Image
 
-In some cases, these default images might not fit the requirements of users (e.g. they need custom OS hardening, libraries, tooling, etc) and
-instead, the user would like to start their clusters from their own **custom image**.
+You have the option to start from your own pre-created source image, you have to modify the relevant section in the `builders` in the  [packer.json](packer.json) file.
 
-The repository includes **instructions** and **scripts** to help build those **custom images**. Once you have an images, refer to the Cloudbreak documentation
-for information on how to register and use these images with Cloudbreak: http://hortonworks.github.io/cloudbreak-docs/
+The following table lists the property to be modified to be able to start from a custom image:  
 
-## Using this Repository
-Our recommendation is to fork this repo to to your own GitHub account or to the account of your organization and you can make changes there and create an image from there.
-If you think that some of the changes you made might be useful for the Cloudbreak product as a whole, feel free to send us a pull request.
+ Cloud Provider | Builder Name | Source Image Property 
+ ---- | ---- | ----
+ AWS | aws-amazonlinux | `source_ami: "ami-9398d3e0"`
+ AWS | aws-centos6 | `source_ami: "ami-edb9069e"`
+ AWS | aws-centos7 | `source_ami: "ami-061b1560"`
+ AWS | aws-rhel7 | `source_ami: "ami-b22961c1"`
+ AWS | aws-debian7 | `source_ami: "ami-61e56916"`
+ Azure | arm-centos7 |  driven by input parameters:`image_publisher`, ` image_offer` and `image_sku`
+ Google Cloud | gc-centos7 | `source_image: "centos-7-v20160921"`
+ OpenStack | os-centos7 | `source_image: "d619e553-6a78-4b86-8b03-39b8a06df35e"`
 
-> Note: After you have have forked the repository, you are responsible to keep it up to date and fetch the latest changes from the upstream repository. 
+> Note: For Azure, you can list popular images as written in [documentation](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/cli-ps-findimage#list-popular-images), but please note that only RHEL and CentOS is supported.
+ 
+### <a name="custom_logic"></a> Custom Script
 
-## Finding the Correct Branch
-This repository contains different branches for different Cloudbreak versions. Cloudbreak versions are defined as:
+Cloudbreak uses [SaltStack](https://docs.saltstack.com/en/latest/) for image provisioninig. You have an option to extend the factory scripts based on custom requirements.
+
+> Warning: This is very advanced option. Understanding the following content requires a basic understanding of the concepts of [SaltStack](https://docs.saltstack.com/en/latest/). Please read the relevant sections of the documentation.
+
+The provisioning steps are implemented with [Salt state files](https://docs.saltstack.com/en/latest/topics/tutorials/states_pt1.html), there is a placeholder state file called `custom`. The following section describes the steps required to extend this `custom` state with either your own script or Salt state file.
+ 
+ 1. Check the contents of the following directory:  `saltstack/salt/custom`, it provides extension points for implementing custom logic. The contents of the directory are the following:
+ 
+| Filename | Description | 
+| ---- | ---- |
+| `init.sls` |  Top level descriptor for state, it references other state files |
+| `custom.sls` | Example for custom state file, by default it contains the example of copying and running `custom.sh` with some basic logging configured |
+| `/tmp/custom.sh` | Placeholder for custom logic |
+ 
+ 2. You have the following options to extend this state:
+ - You can place your scripts inside `custom.sh`  
+ - You can copy and reference your scripts like `custom.sh` is referred from `custom.sls`. 
+ For each new file, a `file.managed` state is needed to copy the script to the VM and a `cmd.run` state is needed to actually run and log the script. 
+ - You can create and reference your state file like `custom.sls` is referred from `init.sls`. You can include any custom Salt states, if your new sls files are included in `init.sls`, they will be applied automatically  
+ 
+ > Warning: Please ensure that your script runs without any errors or mandatory user inputs
+
+
+## Packer Postprocessors
+
+By default all Packer postprocessors are removed before build. This behaviour can be changed by setting the: 
 ```
-<major>.<minor>.<patch>[-build sequence] e.g 1.16.3 or 1.16.4-rc.7
+export ENABLE_POSTPROCESSORS=1
 ```
-If you are creating a custom image for Cloudbreak, always make sure that you are using the correct branch from `cloudbreak-images` repository.
-You can find the related branch based on the <major> and <minor> version numbers of Cloudbreak (e.g if you are using 1.16.3 or 1.16.4-rc.7 version of Cloudbreak then the related branch is rc-1.16).
-If you are using 2.0.1 version of Cloudbreak then the related image branch is rc-2.0.
+ 
+For example a postprocessor could be used to store image metadata into  [HashiCorp Atlas](https://www.hashicorp.com/blog/atlas-announcement/) for further processing. 
 
-> Note: If you do not use the appropriate branch for creating your image then there is a chance that Cloudbreak will not be able to install the cluster successfully.
+If you don't know how postprocessors are working then you can safely ignore this section and please do NOT set ENABLE_POSTPROCESSORS=1 unless you know what you are doing.
 
-# Building a Custom Image
-
-## Packer
-
-Images for Cloudbreak are created by [Packer](https://www.packer.io/docs/). The main entry point for creating an image is the `Makefile` which provides wrapper functionality around Packer scripts.
-Main configuration of Packer is located `packer.json` file, you can find more details about how it works in the [Packer documentation](https://www.packer.io/docs/).
-
-### Prerequisites
-
-The following are requirements for the image building environment:
-
-- [Docker](https://www.docker.com/)
-- [GNU Make](https://www.gnu.org/software/make/)
-- [jq](https://stedolan.github.io/jq/)
-
-### AWS
-
-Set the following environment variables to build AWS images:
-
-* AWS_ACCESS_KEY_ID
-* AWS_SECRET_ACCESS_KEY
-
-Example for environment variables:
-```
-export AWS_ACCESS_KEY_ID=AKIAIQ**********
-export AWS_SECRET_ACCESS_KEY=XHj6bjmal***********************
-```
-
-Use the following commands to build images based on the following base operating systems:
-
-| OS | Command
-|---|---
-| Amazon Linux | `make build-aws-amazonlinux` |
-
-```
-
-If you would like to build images based on different operating systems like CentOS 6, CentOS 7 or RHEL 7 use one of the following commands: 
-```
-make build-aws-centos6
-make build-aws-centos7
-make build-aws-rhel7
-```
-### Azure
-
-Following environment variables are necessary for building Azure images:
-
-* ARM_CLIENT_ID
-* ARM_CLIENT_SECRET
-* ARM_SUBSCRIPTION_ID
-* ARM_TENANT_ID
-* ARM_GROUP_NAME
-* ARM_STORAGE_ACCOUNT
-* AZURE_IMAGE_PUBLISHER (OpenLogic|RedHat)
-* AZURE_IMAGE_OFFER (CentOS|RHEL)
-* AZURE_IMAGE_SKU (6.8|7.2)
-
-Example for environment variables:
-```
-export ARM_CLIENT_ID=3234bb21-e6d0-*****-****-**********
-export ARM_CLIENT_SECRET=2c8bzH******************************
-export ARM_SUBSCRIPTION_ID=a9d4456e-349f-*****-****-**********
-export ARM_TENANT_ID=b60c9401-2154-*****-****-**********
-export ARM_GROUP_NAME=resourcegroupname
-export ARM_STORAGE_ACCOUNT=storageaccountname
-export AZURE_IMAGE_PUBLISHER=OpenLogic
-export AZURE_IMAGE_OFFER=CentOS
-export AZURE_IMAGE_SKU=7.2
-```
-
-If you would like to build an image for Azure which is based on CentOS 7 you can execute:
-```
-make build-azure-centos7
-```
-
-### OpenStack
-
-Following environment variables are necessary for building OpenStack images:
-
-* OS_AUTH_URL
-* OS_TENANT_NAME
-* OS_USERNAME
-* OS_PASSWORD
-
-Example for environment variables:
-```
-export OS_AUTH_URL=http://openstack.eng.hortonworks.com:5000/v2.0
-export OS_USERNAME=cloudbreak
-export OS_TENANT_NAME=cloudbreak
-export OS_PASSWORD=**********
-```
-
-If you would like to build an image for OpenStack which is based on CentOS 7 you can execute:
-```
-make build-os-centos7
-```
-
-
-### GCP
-
-Following environment variables are necessary for building Google Cloud Platform images:
-
-* GCP_ACCOUNT_FILE
-* GCP_CLIENT_SECRET
-* GCP_PROJECT
-
-Example for environment variables:
-```
-export GCP_ACCOUNT_FILE=/var/lib/jenkins/.gce/siq-haas.json
-export GCP_CLIENT_SECRET=/var/lib/jenkins/.gce/client_secret.json
-export GCP_PROJECT=siq-haas
-```
-
-If you would like to build an image for Google Cloud Platform which is based on CentOS 7 you can execute:
-```
-make build-gc-centos7
-```
-
-
-### Running packer in debug mode
-
-If you run Packer in debug mode then you can SSH into the VM during build phase and do additional debugging steps on the VM.
-This is how to start a build in debug mode:
-
-```
-PACKER_OPTS=--debug make build-aws-rhel7
-```
-In debug mode, you need to hit enter before each step is executed by Packer. Once the VM is launched by Packer you can login and do additional debug steps:
-
-```
-ssh -i ec2_aws-rhel7.pem ec2-user@<address of the machine displayed by Packer>
-``` 
-
-### Check the logs without debug mode
-A simple file browser is launched during image creation which can be accessed on port 9999. 
-> User: `admin`, password: `secret`.
-
-To access the browser, you need to open port 9999 in the security group of the generated resource group manually on your cloud provider.
-The generated resource group name will be displayed at the start of the build process.
-
-E.g. on Azure:
-```
-    arm-centos7: Creating Azure Resource Manager (ARM) client ...
-==> arm-centos7: Creating resource group ...
-==> arm-centos7:  -> ResourceGroupName : 'packer-Resource-Group-qx0lx7wkg7'
-==> arm-centos7:  -> Location          : 'northeurope'
-==> arm-centos7:  -> Tags              :
-```
-
-## Advanced topics
-
-You can read more about postprocessors and customizing your base image with custom scripts and logic 
-[here](README.dev.md).
