@@ -25,6 +25,6 @@ This repository contains active development on a custom ODBC connector for Power
 3. Click Continue when presented with the warning message
 4. Enter your MongoDB BI Connector server, port and database
 5. Choose "DirectQuery" mode
-  > If this is the first time you are connecting to this data source, you will be prompted to enter your MongoDB username and password. (Example: jeff?source=admin and Pass123). These can be updated in ```File > Options and settings > Data Source settings```
 6. Click OK to continue
 
+> If this is the first time you are connecting to this data source, you will be prompted to enter your MongoDB username and password. (Example: jeff?source=admin and Pass123). This information can be updated in ```File > Options and settings > Data Source settings```
